@@ -7,28 +7,18 @@
     
 }
 
-
-
-
-
 .home{
     margin: var(--navbar_height), 100px;
     color: var(--colorFont);
     height: var(--heightSection);
-   
     background-image: var(--backgroundImageHome);
-  
-    background-repeat: no-repeat;
-    background-position: center;
     display: flex;
     justify-content: space-around;
-    /*align-self: center;*/
     text-align: center;
 }
 
 .home img{
     height: auto;
-   /* align-self:  center;*/
     padding:  30px;
     object-fit: contain;
 }
@@ -45,10 +35,12 @@
 }
 
 @media screen and (max-width: 700px) {
+
     .home{
         flex-direction: column;
         height: auto;
     }
+
     .home img{
         height: 300px;
         align-self:  center;

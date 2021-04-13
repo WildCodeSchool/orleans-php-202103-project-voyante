@@ -1,15 +1,12 @@
 @import "style.css";
 
-
 :root{
     --heightSection: 50vw;
-   
 }
 
 .story{
     color: var(--primary-color);
     height: var( --heightSection);
-    
     border: 1px solid; 
     text-align: center;
 }
@@ -33,7 +30,6 @@
 }
 
 .storyImgText p{
-    
     font-family: var(--font-family);
     font-weight: bolder;
     width: 40%;
@@ -52,9 +48,5 @@
 
     .story{
         height: auto;
-
     }
-
-
-
 }
