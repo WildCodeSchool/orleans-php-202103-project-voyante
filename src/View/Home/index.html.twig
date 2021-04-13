@@ -1,5 +1,30 @@
 {% extends 'layout.html.twig' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/indexStory.css">
+    <link rel="stylesheet" href="/assets/css/indexHome.css">
+{% endblock %}
 
 {% block content %}
-    <h1>Nathalie Milliet</h1>
+    <section class="home">
+        <img src="../../assets/images/home/LOGO.png" class="img-fluid" alt="Responsive image">
+        <div class="h2a">
+            <h2>Découvrez ce que l'avenir vous réserve</h2>
+            <a href="#Contact" type="button" class="btn btn-secondary btn-lg">Me contacter</a>
+        </div>
+    </section>
+
+    <section class="story">
+        <h2 class="storyH2">Qui suis je</h2>
+        <div class="storyImgText">
+            <img src="../../assets/images/story/photo_nathalie2.webp" class="img-fluid" alt="Responsive image">
+            
+            <p class="storyStory">Depuis l'age de 8 ans, je perçois des sons ainsi que des visions. 
+            A cette époque cela était difficile appréhender ce phénomène. 
+            Puis ne pouvant pas m'en défaire, j ai appris à l'accepter et à le maîtriser. 
+            C'est pourquoi je vous propose de partager mon don et de lire à travers les cartes votre avenir.
+            en savoir plus sur mon histoire.
+            <a href="/history/">En savoir+</a>
+            </p>
+        </div>
+    </section>
 {% endblock %}
