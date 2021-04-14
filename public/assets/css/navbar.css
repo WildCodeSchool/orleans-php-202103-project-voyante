@@ -1,0 +1,149 @@
+@import 'style.css';
+
+body {
+    padding:0;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    height: 100%;
+    padding-top: 1%;
+}
+
+.navbar {
+    background-image: url(../images/fond-medium-navbar.png);
+    padding: 0;
+    width: 100vw;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 3em;
+    padding-top: 0;
+    font-weight: 900;
+    letter-spacing: 10px;
+}
+
+.title:hover {
+    color: var(--primary-color);
+}
+
+.subtitle {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.subtitle:hover {
+    color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-family: var(--font-family);
+}
+
+
+
+.items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60vw;
+    align-self: flex-end;
+    margin-bottom: 0.4%;
+}
+
+.items a {
+    transition: all 0.6s ease-out;
+    color: var(--background-color);
+    font-size: 1.3em;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.items a:hover {
+    color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.burger {
+    font-size: 2em;
+    color: var(--primary-color);
+    display: none;
+    position:absolute;
+    top: 13%;
+    right: 3%;
+}
+
+.items:target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    font-size: 16pt;
+    background-color: #8d44ad69;
+    opacity: 0.95;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: ease 0.7s;
+}
+
+.close {
+    display: none;
+    position:absolute;
+    top: 32%;
+    right: 20%;
+    
+}
+
+@media screen and (max-width: 600px) {
+    .burger {
+        display: block;
+    }
+    .items {
+        display: none;
+    }
+
+    .nav-top {
+        padding: var(--secondaryPadding);
+        width: 100%;
+    }
+    .close {
+        display: block;
+    }
+    .items a {
+        font-size: 1.4em;
+        padding: 0 var(--primaryPadding);
+        margin: 5px;
+        font-weight: 800;
+    }
+
+    .navbar {
+        flex-direction: row;
+    }
+
+    .title {
+        letter-spacing: 2px;
+        font-size: 2.6em;
+        padding-top: 4%;
+    }
+}
