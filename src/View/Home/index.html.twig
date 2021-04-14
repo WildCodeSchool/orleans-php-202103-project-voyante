@@ -1,5 +1,50 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Nathalie Milliet</h1>
+<section class="prestations">
+    <div class="container">
+        <div class="prestations-heading">
+          <h2>Prestations</h2>
+          <p>Toutes les formules sont sur rendez-vous.</p>
+        </div>
+        <div class="row">
+          <div class="card">
+                <div class="card-header">
+                    <h3>Au cabinet</h3>
+                </div>
+                <div class="card-body">
+                    <p>Tarif (pour 1 heure) :</p>
+                    <p>75€ si règlement par chèque ou espèce</p>
+                    <p>77€ si règlement par carte bleue</p>
+                </div>
+          </div>
+          <div class="card">
+                <div class="card-header">
+                    <h3>À distance</h3>
+                </div>
+                <div class="card-body">
+                    <p>Tarif :</p>
+                    <p>75€ (pour 1 heure)</p>
+                    <p>50€ (pour 30 minutes)</p>
+                    <p>Consultation par téléphone ou visioconférence</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Formation</h3>
+                </div>
+                <div class="card-body">
+                    <p>Au programme : les bases, les protections, les esprits, la magie noire et blanche et de la culture générale concernant le monde du mystique.</p>
+                    <button class="button-prestations">En savoir plus</button>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="prestations-footer">
+            <p>Pour la voyance à distance, la consultation pourra être effectée une fois le paiement terminé via Western Union ou par chèque.</p>
+            <p>Compte tenu de la situation sanitaire, je ne peux vous recevoir au cabinet que si vous habitez proche de Chécy.</p>
+            <p>Sachez également qu'il n'y a aucune distinction quant à la qualité de la voyance au cabinet et à distance.</p>
+        </div>
+    </div>
+</section>
 {% endblock %}
