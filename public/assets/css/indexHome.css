@@ -4,6 +4,10 @@
     --heightSection: 40vw;
     --backgroundImageHome: url("../images/home/purple_nebula.jpg");
     --colorFont:  #FEF8FF;
+
+    --p-font-size: 3em;
+    --p-font-size-1600: 2em;
+    --p-font-size-700: 1.1em;
     
 }
 
@@ -20,20 +24,32 @@
 .home img{
     height: auto;
     padding:  30px;
-    object-fit: contain;
 }
 
 .h2a{
+    padding:  30px;
     align-self: center;
 }
-.home h2{
-    font-size: 3em;
+
+.home p{
+    font-size: var(--p-font-size);
     text-shadow: 2px 2px rebeccapurple;
 }
+
 .home a{
     margin: 20px;
 }
 
+.colorButton{
+    color: var(--background-color);
+    background-color: var(--secondary-color);
+}
+
+@media screen and (max-width: 1600px) {
+    .home p{
+        font-size: var(--p-font-size-1600);
+    }
+}
 @media screen and (max-width: 700px) {
 
     .home{
@@ -44,12 +60,9 @@
     .home img{
         height: 300px;
         align-self:  center;
-        margin: 30px;
-        object-fit: cover;
     }
 
-    .home h2{
-        font-size: 1.1em;
+    .home p{
+        font-size: var(--p-font-size-700);
     }
-  
 }
