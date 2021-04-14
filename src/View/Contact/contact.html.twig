@@ -1,0 +1,37 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/contact.css">{% endblock %}
+{% block content %}
+    <ul>
+        {% for error in errors %}
+            <li>{{ errors }}</li>
+        {% endfor %}
+    </ul>
+
+    <form action="/" class="form" method= "POST">
+        <h1>Contactez moi</h1>
+            <div class="info">
+                <label for="name">Nom complet :</label>
+                <input class="name" type="text" name="name" placeholder="Nom complet" required>
+                <label for="email">Adresse mail :</label>
+                <input class="email" type="text" name="email" placeholder="exemple@exemple.com" required>
+                <label for="tel">Numéro de téléphone :</label>
+                <input class="tel" type="text" name="tel" placeholder="00 00 00 00 00" required>
+                <label for="subject">Sujet : </label>
+                <select class="subject" name="subject" id="subject">
+                    <option value="">--Veuillez choisir votre sujet--</option>
+                    <option value="tel-session">Séance téléphonique</option>
+                    <option value="cabinet-session">Séance au cabinet</option>
+                    <option value="infos">Demande d'informations</option>
+                    <option value="other">Autres</option>
+                </select>
+            </div>
+            <div>
+                <label for="message">Votre message :</label>
+                <textarea id="message" rows="4" placeholder="Votre message" required></textarea>
+            </div>
+        <div class="buttoncontact">
+        <button type="submit" href="">Envoyer</button>
+        </div>
+    </form>
+{% endblock %}
