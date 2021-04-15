@@ -1,14 +1,7 @@
 @import 'style.css';
 
-:root{
-    
-    --backgroundImageHome: url("../images/home/purple_nebula.jpg");
-    
-
-}
-
 .home{
-    margin: var(--navbar_height), 100px;
+  
     color: var(--background-color);
     height: calc(var(--section_width)/2.5);
     background-image: var(--backgroundImageHome);

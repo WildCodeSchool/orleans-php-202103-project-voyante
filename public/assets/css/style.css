@@ -25,5 +25,7 @@
     --width-Middle: 40%;
 
     --textShadow: 2px 2px rebeccapurple;
+
+    --backgroundImageHome: url("../images/home/purple_nebula.jpg");
    
 }
