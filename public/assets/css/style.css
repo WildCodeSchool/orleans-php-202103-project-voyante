@@ -8,4 +8,22 @@
     --background-color : #FEF8FF;
     --font-family : 'Lato', sans-serif;
     
+    --padding-top:8px;
+    --big-size: 50px;
+    --medium-size: 45px;
+    --small-size: 30px;
+    --xsmall-size: 20px;
+
+    --navbar_height: 150px;
+
+    --img-Height_100: 100px;
+
+    --section_width: 100vw;
+
+    --width-Big: 90%;
+    --width-Full: 100%;
+    --width-Middle: 40%;
+
+    --textShadow: 2px 2px rebeccapurple;
+   
 }

@@ -1,20 +1,16 @@
 @import 'style.css';
 
 :root{
-    --heightSection: 40vw;
-    --backgroundImageHome: url("../images/home/purple_nebula.jpg");
-    --colorFont:  #FEF8FF;
-
-    --p-font-size: 3em;
-    --p-font-size-1600: 2em;
-    --p-font-size-700: 1.1em;
     
+    --backgroundImageHome: url("../images/home/purple_nebula.jpg");
+    
+
 }
 
 .home{
     margin: var(--navbar_height), 100px;
-    color: var(--colorFont);
-    height: var(--heightSection);
+    color: var(--background-color);
+    height: calc(var(--section_width)/2.5);
     background-image: var(--backgroundImageHome);
     display: flex;
     justify-content: space-around;
@@ -23,21 +19,21 @@
 
 .home img{
     height: auto;
-    padding:  30px;
+    padding: var(--medium-size);
 }
 
-.h2a{
-    padding:  30px;
+.contain-h2-a{
+    padding:  var(--small-size);
     align-self: center;
 }
 
 .home p{
-    font-size: var(--p-font-size);
-    text-shadow: 2px 2px rebeccapurple;
+    font-size: var(--big-size);
+    text-shadow: var(--textShadow);
 }
 
 .home a{
-    margin: 20px;
+    margin: var(--small-size);
 }
 
 .colorButton{
@@ -45,12 +41,15 @@
     background-color: var(--secondary-color);
 }
 
-@media screen and (max-width: 1600px) {
+/*--------------------------------------------------  1200px   ------------------*/
+@media screen and (max-width: 1200px) {
     .home p{
-        font-size: var(--p-font-size-1600);
+        font-size: calc(var(--big-size)/1.5);
     }
 }
-@media screen and (max-width: 700px) {
+
+/*--------------------------------------------------  768px   ------------------*/
+@media screen and (max-width: 768px) {
 
     .home{
         flex-direction: column;
@@ -58,11 +57,10 @@
     }
 
     .home img{
-        height: 300px;
+        height: calc(var(--img-Height_100)*3.5);
         align-self:  center;
     }
-
-    .home p{
-        font-size: var(--p-font-size-700);
-    }
+    .contain-h2-a{
+        padding:  var(--xsmall-size);
+    }  
 }
