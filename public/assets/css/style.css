@@ -1,16 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
-    --primary-color : #602e74 ;
-    --secondary-color: #b25bd8;
+    --primary-color : #4A235A ;
+    --secondary-color: #8E44AD;
     --background-color : #FEF8FF;
-    --light : #fffbff;
     --font-family : 'Lato', sans-serif;
+
+    --padding-top:8px;
     --big-size: 50px;
     --medium-size: 45px;
     --small-size: 30px;
     --xsmall-size: 20px;
+    --font-weight: 900;
+    --light-font-weight:500;
+    --letter-spacing: 10px;
+    --light-letter-spacing:3px;
+
     --navbar_height: 150px;
+
     --section_width: 100vw;
-    --padding-top:8px;
+    --width-Big: 90%;
+    --width-Full: 100%;
+    --width-Middle: 40%;
+    --width-half: 50%;
+    --phone-width:200px;
+    --resp-phone-width:130px;
+    --phone-height:33px;
+    --height:80%;
 }
