@@ -1,8 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap%27');
 
 :root {
-    --primary-color : #4A235A ;
-    --secondary-color: #8E44AD;
+    --primary-color : #602e74 ;
+    --secondary-color: #b25bd8;
     --background-color : #FEF8FF;
+    --light : #fffbff;
     --font-family : 'Lato', sans-serif;
+    --big-size: 50px;
+    --medium-size: 45px;
+    --small-size: 30px;
+    --xsmall-size: 20px;
+    --navbar_height: 150px;
+    --section_width: 100vw;
+    --padding-top:8px;
+    --width-Big: 90%;
+    --width-Full: 100%;
+    --width-Middle-: 40%
 }
