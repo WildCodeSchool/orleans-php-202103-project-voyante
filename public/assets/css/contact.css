@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap%27');
+@import 'style.css';
 
 :root {
     --primary-color : #4A235A ;
     --secondary-color: #8E44AD;
     --background-color : #FEF8FF;
     --font-family : 'Lato', sans-serif;
+    --margin-bottom : 20px;
+    --placeholder : #666;
+    --width-medium : 50%; 
 }
 
 html, body {
@@ -17,48 +21,33 @@ html, body {
 }
 
 h1 {
-    margin: 0 0 20px;
+    margin: 0 0 var(--margin-bottom);
     font-weight: 400;
     color: var(--background-color);
-}
-
-.main-block {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: var(--primary-color);
 }
 
 form {
     padding: 25px;
     margin: auto;
-    box-shadow: 0 2px 5px #f5f5f5; 
-    background: linear-gradient(to right,#4A235A,#8E44AD);
-}
-    
-.fas {
-    margin: 25px 10px 0;
-    font-size: 72px;
-    color: #fff;
+    box-shadow: 0 2px 5px var(--background-color); 
+    background: linear-gradient(to right,var(--primary-color),var(--secondary-color));
 }
     
 input, textarea {
-    width: calc(100% - 18px);
+    width: 100%;
     padding: 8px;
-    margin-bottom: 20px;
+    margin-bottom: var(--margin-bottom);
     border: 1px solid var(--primary-color);
     outline: none;
 }
     
 .placeholder {
-    color: #666;
+    color: var(--placeholder);
 }
     
 button {
-    width: 50%;
-    padding: 10px;
+    width: var(--width-medium);
+    padding: 8px;
     border: none;
     background: var(--background-color); 
     font-size: 16px;
@@ -77,8 +66,8 @@ button:hover {
 }    
    
 .subject {
-    margin-bottom: 20px;
-    width: 50%;
+    margin-bottom: var(--margin-bottom);
+    width: var(--width-medium);
 }
     
 select {
@@ -90,13 +79,18 @@ label {
     margin-bottom: 5px;
     font-size: 15pt;
 }
+
+.errors {
+    color: var(--background-color);
+    list-style: none;
+}
     
 @media (min-width: 568px) {
     .main-block {
     flex-direction: row;
     }
     .left-part, form {
-    width: 50%;
+    width: var(--width-medium);
     }
 }
 
