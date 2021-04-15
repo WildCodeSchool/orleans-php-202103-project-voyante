@@ -1,0 +1,83 @@
+@import 'style.css';
+
+.nath-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    background-color: var(--background-color);
+    width: var(--section_width);
+    height: var(--navbar_height);
+    margin: var(--padding-top);
+}
+
+.left-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    height: 80%;
+    color: var(--primary-color);
+    font-family: var(--font-family);
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+
+.right-footer {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    text-align: center;
+    justify-content: space-around;
+    border-left: 2px solid var(--primary-color);
+    width: 50%;
+    height: 80%;
+    
+}
+
+.right-footer a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-family: var(--font-family);
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.footer-phone {
+    width: 200px;
+    height:33px;
+    background-image: url('../images/telephone.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .nath-footer {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .right-footer {
+        border-left: none;
+    }
+
+    .left-footer {
+        font-size: 1.5em;
+    }
+
+    .right-footer {
+        font-size: 0.75em;
+    }
+
+    .footer-phone {
+        width: 130px;
+        height:33px;
+
+}
