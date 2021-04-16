@@ -6,8 +6,17 @@
     --primary-color : #4A235A ;
     --secondary-color: #8E44AD;
     --background-color : #FEF8FF;
+    --placeholder : #666;
+
     --font-family : 'Lato', sans-serif;
-    
+    --font-big-size: 50px;
+    --font-medium-size: 45px;
+    --font-small-size: 30px;
+    --font-xsmall-size: 20px;
+    --font-xxsmall-size: 15px;
+    --light-letter-spacing:3px;
+
+    --margin-bottom : 20px;
     --padding-top:8px;
     --big-size: 50px;
     --medium-size: 45px;
@@ -23,9 +32,12 @@
     --width-Big: 90%;
     --width-Full: 100%;
     --width-Middle: 40%;
+    --width-half : 50%;
 
     --textShadow: 2px 2px rebeccapurple;
 
     --backgroundImageHome: url("../images/home/purple_nebula.jpg");
-   
+    
+
+    
 }

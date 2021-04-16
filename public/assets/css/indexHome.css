@@ -15,13 +15,13 @@
     padding: var(--medium-size);
 }
 
-.contain-h2-a{
+.contain-p-a{
     padding:  var(--small-size);
     align-self: center;
 }
 
 .home p{
-    font-size: var(--big-size);
+    font-size: var(--font-big-size);
     text-shadow: var(--textShadow);
 }
 
@@ -37,7 +37,7 @@
 /*--------------------------------------------------  1200px   ------------------*/
 @media screen and (max-width: 1200px) {
     .home p{
-        font-size: calc(var(--big-size)/1.5);
+        font-size: calc(var(--font-big-size)/1.5);
     }
 }
 
