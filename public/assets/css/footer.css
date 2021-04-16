@@ -8,8 +8,8 @@
     justify-content: space-evenly;
     background-color: var(--background-color);
     width: var(--section-width);
-    height: var(--navbar_height);
-    margin: var(--padding-top);
+    height: var(--navbar-height);
+    padding-top: var(--padding-top);
 }
 
 .left-footer {
