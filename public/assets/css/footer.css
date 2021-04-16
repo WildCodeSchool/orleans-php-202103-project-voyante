@@ -7,7 +7,7 @@
     flex-wrap: nowrap;
     justify-content: space-evenly;
     background-color: var(--background-color);
-    width: var(--section_width);
+    width: var(--section-width);
     height: var(--navbar_height);
     margin: var(--padding-top);
 }
@@ -21,7 +21,7 @@
     height: var(--height);
     color: var(--primary-color);
     font-family: var(--font-family);
-    font-size: var(--small-size);
+    font-size: var(--font-small-size);
     font-weight: var(--font-weight);
     letter-spacing: var(--letter-spacing);
 }
@@ -41,7 +41,7 @@
     text-decoration: none;
     color: var(--primary-color);
     font-family: var(--font-family);
-    font-size: var(--xsmall-size);
+    font-size: var(--font-xsmall-size);
     font-weight: var(--font-weight);
     letter-spacing: var(--light-letter-spacing);
 }
@@ -49,7 +49,7 @@
 .footer-phone {
     width: var(--phone-width);
     height:var(--phone-height);
-    background-image: url('../images/telephone.png');
+    background-image: var(--footer-phone);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -68,11 +68,11 @@
     }
 
     .left-footer {
-        font-size: var(--xsmall-size);
+        font-size: var(--font-xsmall-size);
     }
 
     .right-footer {
-        font-size: calc(3/4*var(--xsmall-size));
+        font-size: calc(3/4*var(--font-xsmall-size));
     }
 
     .footer-phone {
