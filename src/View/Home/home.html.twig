@@ -1,7 +1,13 @@
-<section class="home">
-    <img src="assets/images/home/LOGO.png" class="img-fluid" alt="Responsive image">
-    <div class="contain-h2-a">
-        <p>Découvrez ce que l'avenir vous réserve</p>
-        <a href="#contact" type="button" class="btn colorButton btn-lg ">Me contacter</a>
-    </div>
-</section>
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/indexHome.css">
+{% endblock %}
+
+{% block content %}
+    <section class="home">
+        <img src="assets/images/home/LOGO.png" class="img-fluid" alt="Responsive image">
+        <div class="contain-h2-a">
+            <p>Découvrez ce que l'avenir vous réserve</p>
+            <a href="#contact" type="button" class="btn colorButton btn-lg ">Me contacter</a>
+        </div>
+    </section>
+{% endblock %}
