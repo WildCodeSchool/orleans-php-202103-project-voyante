@@ -1,19 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap%27);
 
 :root {
-    --primary-color : #602e74 ;
-    --secondary-color: #b25bd8;
+    --primary-color : #4A235A ;
+    --secondary-color: #8E44AD;
     --background-color : #FEF8FF;
-    --light : #fffbff;
     --font-family : 'Lato', sans-serif;
-    --big-size: 50px;
-    --medium-size: 45px;
-    --small-size: 30px;
-    --xsmall-size: 20px;
-    --navbar_height: 150px;
-    --section_width: 100vw;
+
     --padding-top:8px;
+    --font-big-size: 50px;
+    --font-medium-size: 45px;
+    --font-small-size: 30px;
+    --font-xsmall-size: 20px;
+    --font-xxsmall-size: 15px;
+    --font-weight: 900;
+    --light-font-weight:500;
+    --xlight-font-weight:300;
+    --letter-spacing: 10px;
+    --light-letter-spacing:3px;
+
+    --h2-font-size:40px;
+
+    --section-width: 100vw;
     --width-Big: 90%;
     --width-Full: 100%;
-    --width-Middle-: 40%
+    --width-Middle: 40%;
+    --width-half: 50%;
+    --phone-width:200px;
+    --resp-phone-width:130px;
+    --phone-height:33px;
+    --height:80%;
+
+    --navbar-height: 150px;
+
+    --img-height-100: 100px;
+
+    --textShadow: 2px 2px rebeccapurple;
+
+    --background-image-home: url("../images/home/purple_nebula.jpg");
+
+    --placeholder : #666;
+    --margin-bottom : 20px;
+    --width-half : 50%;
+}
+
+h2 {
+    font-family: var(--font-family);
+    font-size: var(--h2-font-size);
+    color: var(--primary-color);
 }
