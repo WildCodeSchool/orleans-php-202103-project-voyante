@@ -33,14 +33,14 @@
 }
 
 .storyImgText p {
-    font-size: var(--xsmall-size);
+    font-size: var(--font-xsmall-size);
     font-weight: bolder;
     width: var(--width-Middle);
     align-self: center;
 }
 
 .storyImgText a {
-    font-size: var(--xsmall-size);
+    font-size: var(--font-xsmall-size);
 }
 
 
@@ -48,7 +48,7 @@
 @media screen and (max-width: 1100px) {
 
     .storyImgText p {
-        font-size:  calc(var(--xsmall-size)/1.4);
+        font-size:  calc(var(--font-xsmall-size)/1.4);
         width: calc(var(--width-Middle)*1.4);
     }
 
