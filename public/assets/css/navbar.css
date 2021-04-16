@@ -8,7 +8,7 @@
 }
 
 .navbar-brand {
-    font-size: var(--big-size);
+    font-size: var(--font-big-size);
     padding-top: var(--padding-top);
     font-weight: var(--font-weight);
     letter-spacing: var(--letter-spacing);
@@ -46,6 +46,6 @@ button {
 
 @media screen and (max-width: 768px) {
     .navbar-brand {
-        font-size: var(--xsmall-size);
+        font-size: var(--font-xsmall-size);
     }
 }
