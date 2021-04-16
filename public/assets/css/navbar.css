@@ -27,7 +27,7 @@ a:hover {
 .nav-link {
     transition: all 0.6s ease-out;
     color: var(--background-color);
-    font-size: var(--xsmall-size);
+    font-size: var(--font-xsmall-size);
     font-weight: var(--light-font-weight);
     letter-spacing: var(--light-letter-spacing);
 }
