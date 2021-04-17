@@ -1,8 +1,7 @@
-@import "style.css";
-
 .story {
     margin: var(--small-size);
-    height: calc(var(--section_width)/2.5);
+    padding:var(--big-size);
+    height: auto;
     border: var(--border_solid)  var(--primary-color);
     border-radius: var(--border-radius); 
     text-align: center;
@@ -11,68 +10,6 @@
     justify-content: space-around;
     flex-direction: column;
 }
-
 .story h2 {
-    margin-top: var(--small-size);
-}
-
-.storyImgText {
-    margin : var(--small-size);
-    height: auto;
-    display: flex;
-    justify-content: space-around;
- }
-
-.storyImgText img {
-   
-    width: var(--width-Middle);
-    box-shadow: var(--img_BoxShadow);
-    object-fit: contain; 
-    align-self: center;
-
-}
-
-.storyImgText p {
-    font-size: var(--font-xsmall-size);
-    font-weight: bolder;
-    width: var(--width-Middle);
-    align-self: center;
-}
-
-.storyImgText a {
-    font-size: var(--font-xsmall-size);
-}
-
-
-/*----------------  1100px  -------------------------------------------------*/
-@media screen and (max-width: 1100px) {
-
-    .storyImgText p {
-        font-size:  calc(var(--font-xsmall-size)/1.4);
-        width: calc(var(--width-Middle)*1.4);
-    }
-
-}
-
-/*----------------  768px  ---------------------------------------------------*/
-@media screen and (max-width: 768px) {
-    .storyImgText {
-        margin: auto;
-        width: var(--width-Full);
-        height: auto;
-        flex-direction: column;
-    }
-
-    .story {
-        margin:0;
-        height: auto;
-    }
-    .storyImgText img {
-        width: var(--width-Big);
-    }
-
-    .storyImgText p {
-        margin:var(--xsmall-size);
-        width: var(--width-Big);
-    }
+   padding: var(--small-size);
 }
