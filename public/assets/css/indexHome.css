@@ -3,57 +3,17 @@
 .home{
   
     color: var(--background-color);
-    height: calc(var(--section_width)/2.5);
+    height: auto;
     background-image: var(--backgroundImageHome);
     display: flex;
-    justify-content: space-around;
     text-align: center;
 }
-
-.home img{
-    height: auto;
-    padding: var(--medium-size);
-}
-
-.contain-p-a{
-    padding:  var(--small-size);
-    align-self: center;
-}
-
-.home p{
-    font-size: var(--font-big-size);
-    text-shadow: var(--textShadow);
-}
-
-.home a{
-    margin: var(--small-size);
+.container{
+align-self: center;
+    padding:var(--big-size);
 }
 
 .colorButton{
     color: var(--background-color);
     background-color: var(--secondary-color);
-}
-
-/*--------------------------------------------------  1200px   ------------------*/
-@media screen and (max-width: 1200px) {
-    .home p{
-        font-size: calc(var(--font-big-size)/1.5);
-    }
-}
-
-/*--------------------------------------------------  768px   ------------------*/
-@media screen and (max-width: 768px) {
-
-    .home{
-        flex-direction: column;
-        height: auto;
-    }
-
-    .home img{
-        height: calc(var(--img-Height_100)*3.5);
-        align-self:  center;
-    }
-    .contain-h2-a{
-        padding:  var(--xsmall-size);
-    }  
 }
