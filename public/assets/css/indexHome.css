@@ -8,8 +8,9 @@
     display: flex;
     text-align: center;
 }
+
 .container{
-align-self: center;
+    align-self: center;
     padding:var(--big-size);
 }
 
