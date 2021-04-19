@@ -11,5 +11,9 @@
     flex-direction: column;
 }
 .story h2 {
-   padding: var(--small-size);
+    padding: var(--small-size);
+}
+
+.story img{
+    box-shadow: var(--img-BoxShadow);
 }
