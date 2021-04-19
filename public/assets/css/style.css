@@ -24,11 +24,11 @@
     --small-size: 30px;
     --xsmall-size: 20px;
 
-    --navbar_height: 150px;
+    --navbar-height: 150px;
 
-    --img-Height_100: 100px;
+    --img-Height-100: 100px;
 
-    --section_width: 100vw;
+    --section-width: 100vw;
 
     --width-Big: 90%;
     --width-Full: 100%;
@@ -36,8 +36,9 @@
     --width-half : 50%;
 
     --textShadow: 2px 2px rebeccapurple;
-    --img_BoxShadow: 5px 5px 2px 1px rgba(0, 0, 255, .2);
+    --img-BoxShadow: 5px 5px 2px 1px rgba(0, 0, 255, .2);
 
     --border-radius:4px;
-    --border_solid: 3px solid;
+    --border-solid: 3px solid;
+    
 }
