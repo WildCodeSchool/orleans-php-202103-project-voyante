@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap%27);
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap%27');
 
 :root {
     --primary-color : #4A235A ;
@@ -36,11 +36,11 @@
 
     --textShadow: 2px 2px rebeccapurple;
 
-    --background-image-home: url("../images/home/purple_nebula.jpg");
-
     --placeholder : #666;
     --margin-bottom : 20px;
     --width-half : 50%;
+    
+    --background-image-home: url("../images/home/purple_nebula.jpg");
 }
 
 h2 {
