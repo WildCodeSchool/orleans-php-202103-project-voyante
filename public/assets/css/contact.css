@@ -17,7 +17,7 @@ h1 {
 }
 
 form {
-    padding: 25px;
+    padding: calc(var(--padding)*3);
     margin: auto;
     box-shadow: 0 2px 5px var(--background-color); 
     background: linear-gradient(to right,var(--primary-color),var(--secondary-color));
@@ -66,7 +66,7 @@ select {
 }
 
 label {
-    margin-bottom: 5px;
+    margin-bottom: calc(var(--margin-bottom)/4);
     font-size: var(--font-xsmall-size);
     font-weight: var(--xlight-font-weight);
 }
