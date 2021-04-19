@@ -1,81 +1,24 @@
 @import 'style.css';
 
-.nath-footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
+#footer {
     background-color: var(--background-color);
-    width: var(--section-width);
     height: var(--navbar-height);
-    padding-top: var(--padding-top);
-}
-
-.left-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: var(--width-half);
-    height: var(--height);
-    color: var(--primary-color);
     font-family: var(--font-family);
-    font-size: var(--font-small-size);
-    font-weight: var(--font-weight);
     letter-spacing: var(--letter-spacing);
-}
-
-.right-footer {
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    text-align: center;
-    justify-content: space-around;
-    border-left: 2px solid var(--primary-color);
-    width: var(--width-half);
-    height: var(--height);    
-}
-
-.right-footer a {
-    text-decoration: none;
     color: var(--primary-color);
-    font-family: var(--font-family);
-    font-size: var(--font-xsmall-size);
-    font-weight: var(--font-weight);
+}
+
+#footer_left {
+    padding-top: calc(1.2*var(--margin-bottom));
+}
+
+#footer_right {
+    border-left: 2px solid var(--primary-color);
     letter-spacing: var(--light-letter-spacing);
 }
 
-.footer-phone {
-    width: var(--phone-width);
-    height:var(--phone-height);
-    background-image: var(--footer-phone);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
 @media screen and (max-width: 768px) {
-    
-    .nath-footer {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
-    
-    .right-footer {
-        border-left: none;
-    }
-
-    .left-footer {
-        font-size: var(--font-xsmall-size);
-    }
-
-    .right-footer {
-        font-size: calc(3/4*var(--font-xsmall-size));
-    }
-
-    .footer-phone {
-        width: var(--resp-phone-width);
+    #footer {
+        height:calc(1.5*var(--navbar-height));
     }
 }
