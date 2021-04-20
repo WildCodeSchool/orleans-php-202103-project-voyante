@@ -16,17 +16,21 @@ class ContactController extends AbstractController
     public function index()
     {
         $errors = [];
+        $subjects = ['Séance téléphonique', 'Séance au cabinet', 'Demande d\'informations', 'Autres'];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
             define('MAX_LENGTH_NAME', 255);
+            define('MAX_LENGTH_EMAIL',  320);
 
             if (empty($data['name'])) {
                 $errors[] = 'Un nom complet est obligatoire';
             } elseif ($data['name'] > MAX_LENGTH_NAME) {
-                $errors[] = 'Un nom complet doit faire moins de ' . MAX_LENGTH_NAME . ' caractères';
+                $errors[] = 'Le nom complet doit faire moins de ' . MAX_LENGTH_NAME . ' caractères';
             }
             if (empty($data['email'])) {
                 $errors[] = 'L\'email est obligatoire';
+            } elseif ($data['email'] > MAX_LENGTH_EMAIL) {
+                $errors[] = 'Votre adresse mail doit faire moins de ' . MAX_LENGTH_EMAIL . ' caractères';
             }
             if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
                 $errors[] = 'Mauvais format d\'email';
@@ -35,10 +39,16 @@ class ContactController extends AbstractController
                 $errors[] = 'Veuillez renseigner votre numéro de téléphone';
             }
             if (empty($data['subject'])) {
-                $errors[] = 'Veuillez renseigner le motif';
+                $errors[] = 'Veuillez choisir un sujet';
+            }
+            if (!in_array($data['subject'], $subjects)) {
+                $errors[] = 'Le sujet saisie n\'est pas valable';
             }
             if (empty($data['message'])) {
                 $errors[] = 'Un message est obligatoire';
+            }
+            if (empty($errors)) {
+                return 'Votre message à bien été envoyé.';
             }
         }
 

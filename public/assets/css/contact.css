@@ -87,7 +87,7 @@ label {
 
 @media (max-width: 768px) {
     .subject {
-        width: 70%;
+        width: var(--width-Big);
     }
 }
 
