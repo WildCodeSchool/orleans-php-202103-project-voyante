@@ -1,2 +1,53 @@
 @import 'style.css';
 
+h2 {
+    text-align: center;
+    margin: var(--margin-bottom);
+}
+
+.carousel-caption {
+    flex-direction: column-reverse;
+    background-color: rgba(0, 0, 0, 0.418);
+    background-position: center;
+    height: 100%;
+}
+
+.carousel-caption p {
+    font-family: var(--font-family);
+    font-size: var(--font-small-size);
+}
+
+.carousel-caption h3{
+    text-align: center;
+    font-family: var(--font-family);
+    font-size: var(--font-small-size);
+}
+
+@media screen and (min-width: 650px) and (max-width: 880px){
+    .carousel-caption p {
+        font-size: var(--font-xsmall-size);
+    }
+    .carousel-caption h3 {
+        font-size: var(--font-xsmall-size);
+    }
+}
+
+@media screen and (max-width: 650px){
+    .carousel-caption p {
+        font-size: var(--font-xxsmall-size);
+    }
+    .carousel-caption h3 {
+        font-size: var(--font-xxsmall-size);
+    }
+}
+
+@media screen and (max-width: 450px){
+    .carousel-caption p {
+        font-size: 10px;
+    }
+    .carousel-caption h3 {
+        font-size: 10px;
+    }
+}
+    
+
