@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
-    --primary-color : #4A235A ;
+    --primary-color :  ;
     --secondary-color: #8E44AD;
     --background-color : #FEF8FF;
     --font-family : 'Lato', sans-serif;
@@ -43,6 +43,13 @@
     --placeholder : #666;
     --margin-bottom : 20px;
     --width-half : 50%;
+
+    --card-hover-transform: scale(1.025);
+    --card-hover-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+    --transition-prestations: 0.4s;
+
+    --spacing-form : 0;
+    --box-shadow :  0 2px 5px #4A235A;
 }
 
 h2 {
