@@ -1,6 +1,6 @@
 .story {
     margin: var(--small-size);
-    padding:var(--big-size);
+    padding: var(--big-size);
     height: auto;
     border: var(--border-solid)  var(--primary-color);
     border-radius: var(--border-radius); 
