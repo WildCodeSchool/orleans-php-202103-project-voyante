@@ -3,20 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap%27');
 
 :root {
-
-    --primary-color : #4A235A ;
+    --primary-color: #4A235A ;
     --secondary-color: #8E44AD;
-    --background-color : #FEF8FF;
-    --placeholder : #666;
-
+    --background-color: #FEF8FF;
+    --placeholder: #666;
     --big-size: 50px;
     --medium-size: 45px;
     --small-size: 30px;
     --xsmall-size: 20px;
-
     --textShadow: 2px 2px rebeccapurple;
     --img-BoxShadow: 5px 5px 2px 1px rgba(0, 0, 255, .2);
-
     --border-radius:4px;
     --border-solid: 3px solid;
 }
