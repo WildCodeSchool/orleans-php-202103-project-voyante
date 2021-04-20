@@ -5,13 +5,14 @@
     color: var(--background-color);
     height: auto;
     background-image: var(--backgroundImageHome);
+    background-size: cover;
     display: flex;
     text-align: center;
 }
 
 .container{
     align-self: center;
-    padding:var(--big-size);
+    padding: var(--big-size);
 }
 
 .colorButton{
