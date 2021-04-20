@@ -12,49 +12,67 @@ class ContactController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-
+    
+    private $errors = [];
     public function index()
     {
-        $errors = [];
-        //$subjects = ['Séance téléphonique', 'Séance au cabinet', 'Demande d\'informations', 'Autres'];
+       
+        $subjects = ['Séance téléphonique', 'Séance au cabinet', 'Demande d\'informations', 'Autres'];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
             define('MAX_LENGTH_NAME', 255);
-            define('MAX_LENGTH_EMAIL', 320);
 
             if (empty($data['name'])) {
-                $errors[] = 'Un nom complet est obligatoire';
+                $this->setErrors('Un nom complet est obligatoire');
             }
             if (strlen($data['name']) > MAX_LENGTH_NAME) {
-                $errors[] = 'Le nom complet doit faire moins de ' . MAX_LENGTH_NAME . ' caractères';
+                $this->setErrors('Le nom complet doit faire moins de ' . MAX_LENGTH_NAME . ' caractères');
             }
-           /* if (empty($data['email'])) {
-                $errors[] = 'L\'email est obligatoire';
-            } else {
-                if (strlen($data['email']) > MAX_LENGTH_EMAIL) {
-                $errors[] = 'Votre adresse mail doit faire moins de ' . MAX_LENGTH_EMAIL . ' caractères';
-                }
-                if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-                $errors[] = 'Mauvais format d\'email';
-                }
-                }*/
             if (empty($data['tel'])) {
-                $errors[] = 'Veuillez renseigner votre numéro de téléphone';
+                $this->setErrors('Veuillez renseigner votre numéro de téléphone');
             }
             if (!in_array($data['subject'], $subjects)) {
-                $errors[] = 'Le sujet saisie n\'est pas valable';
+                $this->setErrors('Le sujet saisie n\'est pas valable');
             }
             if (empty($data['message'])) {
-                $errors[] = 'Un message est obligatoire';
+                $this->setErrors('Un message est obligatoire');
             }
             if (empty($errors)) {
                 echo 'Votre message à bien été envoyé.';
             }
+
+            $this->verifmail($data['email']);
         }
 
         return $this->twig->render('Contact/contact.html.twig', [
-            'errors' => $errors
+            'errors' => $this->getErrors()
         ]);
     }
+
+        public function verifmail(string $strVerif)
+        {
+            define('MAX_LENGTH_EMAIL', 320);
+            if (empty($strVerif)) {
+                $this->setErrors('L\'email est obligatoire');
+            } else 
+            {
+                if (strlen( $strVerif) > MAX_LENGTH_EMAIL) {
+                    $this->setErrors('Votre adresse mail doit faire moins de ' . MAX_LENGTH_EMAIL . ' caractères');
+                }
+                if (!filter_var( $strVerif, FILTER_VALIDATE_EMAIL)) {
+                    $this->setErrors('Mauvais format d\'email');
+                }
+            }
+        }
+
+        public function setErrors(string $errors)
+        {
+            $this->errors[] = $errors;
+        }
+
+        public function getErrors() : array
+        {
+            return $this->errors;
+        }
 }
