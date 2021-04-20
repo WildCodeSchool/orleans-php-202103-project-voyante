@@ -12,11 +12,10 @@ class ContactController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    
-    private $errors = [];
+
+    private array $errors = [];
     public function index()
     {
-       
         $subjects = ['Séance téléphonique', 'Séance au cabinet', 'Demande d\'informations', 'Autres'];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -38,7 +37,7 @@ class ContactController extends AbstractController
             if (empty($data['message'])) {
                 $this->setErrors('Un message est obligatoire');
             }
-            if (empty($errors)) {
+            if (empty($this->getErrors())) {
                 echo 'Votre message à bien été envoyé.';
             }
 
@@ -50,29 +49,28 @@ class ContactController extends AbstractController
         ]);
     }
 
-        public function verifmail(string $strVerif)
-        {
-            define('MAX_LENGTH_EMAIL', 320);
-            if (empty($strVerif)) {
-                $this->setErrors('L\'email est obligatoire');
-            } else 
-            {
-                if (strlen( $strVerif) > MAX_LENGTH_EMAIL) {
-                    $this->setErrors('Votre adresse mail doit faire moins de ' . MAX_LENGTH_EMAIL . ' caractères');
-                }
-                if (!filter_var( $strVerif, FILTER_VALIDATE_EMAIL)) {
-                    $this->setErrors('Mauvais format d\'email');
-                }
+    public function verifmail(string $strVerif)
+    {
+        define('MAX_LENGTH_EMAIL', 320);
+        if (empty($strVerif)) {
+            $this->setErrors('L\'email est obligatoire');
+        } else {
+            if (strlen($strVerif) > MAX_LENGTH_EMAIL) {
+                $this->setErrors('Votre adresse mail doit faire moins de ' . MAX_LENGTH_EMAIL . ' caractères');
+            }
+            if (!filter_var($strVerif, FILTER_VALIDATE_EMAIL)) {
+                $this->setErrors('Mauvais format d\'email');
             }
         }
+    }
 
-        public function setErrors(string $errors)
-        {
-            $this->errors[] = $errors;
-        }
+    public function setErrors(string $errors)
+    {
+        $this->errors[] = $errors;
+    }
 
-        public function getErrors() : array
-        {
-            return $this->errors;
-        }
+    public function getErrors(): array
+    {
+        return $this->errors;
+    }
 }
