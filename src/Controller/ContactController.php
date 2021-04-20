@@ -14,62 +14,71 @@ class ContactController extends AbstractController
      */
 
     private array $errors = [];
+
     public function index()
     {
-        $subjects = ['Séance téléphonique', 'Séance au cabinet', 'Demande d\'informations', 'Autres'];
+        $subjects = ['tel-session', 'cabinet-session', 'infos', 'other'];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
             $data = array_map('trim', $_POST);
             define('MAX_LENGTH_NAME', 255);
+            define('MAX_LENGTH_EMAIL', 320);
 
-            if (empty($data['name'])) {
-                $this->setErrors('Un nom complet est obligatoire');
-            }
-            if (strlen($data['name']) > MAX_LENGTH_NAME) {
-                $this->setErrors('Le nom complet doit faire moins de ' . MAX_LENGTH_NAME . ' caractères');
-            }
-            if (empty($data['tel'])) {
-                $this->setErrors('Veuillez renseigner votre numéro de téléphone');
-            }
-            if (!in_array($data['subject'], $subjects)) {
-                $this->setErrors('Le sujet saisie n\'est pas valable');
-            }
-            if (empty($data['message'])) {
-                $this->setErrors('Un message est obligatoire');
-            }
+            $this->SetCheckSentenceEmpty($data['name'],'Un nom complet est obligatoire');
+            $this->SetCheckSentenceEmpty($data['tel'],'Veuillez renseigner votre numéro de téléphone');
+            $this->SetCheckSentenceEmpty($data['message'],'Un message est obligatoire');
+            $this->SetCheckSentenceEmpty($data['email'],'L\'email est obligatoire');
+
+            $this->setCheckWordSize ($data['name'], MAX_LENGTH_NAME, 'Le nom complet doit faire moins de ' . MAX_LENGTH_NAME . ' caractères');
+            $this->setCheckWordSize ($data['email'], MAX_LENGTH_EMAIL, 'Votre adresse mail doit faire moins de ' . MAX_LENGTH_EMAIL . ' caractères');
+
+            $this->setCheckWordPresenceInArray($data['subject'], $subjects,'Le sujet saisie n\'est pas valable');
+            $this->setCheckFilterValidateEmail ($data['email'] , 'Mauvais format d\'email' );
+
             if (empty($this->getErrors())) {
                 echo 'Votre message à bien été envoyé.';
             }
-
-            $this->verifmail($data['email']);
         }
 
-        return $this->twig->render('Contact/contact.html.twig', [
-            'errors' => $this->getErrors()
-        ]);
+        return $this->twig->render('Contact/contact.html.twig', ['errors' => $this->getErrors()]);
     }
 
-    public function verifmail(string $strVerif)
+    public function setCheckWordPresenceInArray(string $word, array $array,string $message)
     {
-        define('MAX_LENGTH_EMAIL', 320);
-        if (empty($strVerif)) {
-            $this->setErrors('L\'email est obligatoire');
-        } else {
-            if (strlen($strVerif) > MAX_LENGTH_EMAIL) {
-                $this->setErrors('Votre adresse mail doit faire moins de ' . MAX_LENGTH_EMAIL . ' caractères');
-            }
-            if (!filter_var($strVerif, FILTER_VALIDATE_EMAIL)) {
-                $this->setErrors('Mauvais format d\'email');
-            }
+        var_dump($word);
+        if (!in_array($word, $array)) {
+            $this->setErrors($message);
         }
     }
 
-    public function setErrors(string $errors)
+    public function setCheckWordSize (string $word, int $length, string $messageError)
+    {
+        if (strlen($word) > $length) {
+            $this->setErrors($messageError);
+        }
+    }
+
+    public function setCheckFilterValidateEmail (string $sentence, string $messageError)
+    {
+        if (!filter_var($sentence, FILTER_VALIDATE_EMAIL)) {
+            $this->setErrors($messageError);
+        }
+    }
+
+    public function setCheckSentenceEmpty(string $sentences, string $messageError)
+    {
+        if (empty($sentences)) {
+            $this->setErrors($messageError);
+        }
+    }
+
+    private function setErrors(string $errors)
     {
         $this->errors[] = $errors;
     }
 
-    public function getErrors(): array
+    private function getErrors(): array
     {
         return $this->errors;
     }
