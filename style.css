@@ -1,0 +1,33 @@
+:root {
+    --primary: #846171;
+    --light: #f2f2f6;
+    --spacing: 8px;
+}
+
+form {
+    width: 50%;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top:8px;
+}
+
+button {
+    background-color: var(--primary);
+    color: var(--light);
+    border-radius: 4px;
+    padding: var(--spacing);
+    width: 100px;
+    margin:auto;
+    margin-top: var(--spacing);
+}
+
+button:hover {
+    filter:brightness(130%);
+}
+button:active {
+    filter:brightness(70%);
+}

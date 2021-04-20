@@ -16,30 +16,31 @@ class ContactController extends AbstractController
     public function index()
     {
         $errors = [];
-        $subjects = ['Séance téléphonique', 'Séance au cabinet', 'Demande d\'informations', 'Autres'];
+        //$subjects = ['Séance téléphonique', 'Séance au cabinet', 'Demande d\'informations', 'Autres'];
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
             define('MAX_LENGTH_NAME', 255);
-            define('MAX_LENGTH_EMAIL',  320);
+            define('MAX_LENGTH_EMAIL', 320);
 
             if (empty($data['name'])) {
                 $errors[] = 'Un nom complet est obligatoire';
-            } elseif ($data['name'] > MAX_LENGTH_NAME) {
+            }
+            if (strlen($data['name']) > MAX_LENGTH_NAME) {
                 $errors[] = 'Le nom complet doit faire moins de ' . MAX_LENGTH_NAME . ' caractères';
             }
-            if (empty($data['email'])) {
+           /* if (empty($data['email'])) {
                 $errors[] = 'L\'email est obligatoire';
-            } elseif ($data['email'] > MAX_LENGTH_EMAIL) {
+            } else {
+                if (strlen($data['email']) > MAX_LENGTH_EMAIL) {
                 $errors[] = 'Votre adresse mail doit faire moins de ' . MAX_LENGTH_EMAIL . ' caractères';
-            }
-            if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+                }
+                if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
                 $errors[] = 'Mauvais format d\'email';
-            }
+                }
+                }*/
             if (empty($data['tel'])) {
                 $errors[] = 'Veuillez renseigner votre numéro de téléphone';
-            }
-            if (empty($data['subject'])) {
-                $errors[] = 'Veuillez choisir un sujet';
             }
             if (!in_array($data['subject'], $subjects)) {
                 $errors[] = 'Le sujet saisie n\'est pas valable';
@@ -48,7 +49,7 @@ class ContactController extends AbstractController
                 $errors[] = 'Un message est obligatoire';
             }
             if (empty($errors)) {
-                return 'Votre message à bien été envoyé.';
+                echo 'Votre message à bien été envoyé.';
             }
         }
 
