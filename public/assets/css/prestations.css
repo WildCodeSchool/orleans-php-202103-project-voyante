@@ -4,11 +4,6 @@ body {
     background-color: var(--background-color);
 }
 
-h2 {
-    font-size: var(--font-medium-size);
-    font-family: var(--font-family);
-}
-
 .prestations {
     color: var(--primary-color);
 }
@@ -87,7 +82,7 @@ h2 {
 }
 
 .button-prestation {
-    width: 500px;
+    width: var(--button-prestation-width);
     padding: var(--padding-prestations);
     transition: var(--transition-prestations);
     text-decoration: none;
