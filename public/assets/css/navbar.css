@@ -7,7 +7,7 @@
     background-size: cover;
 }
 
-.navbar-brand {
+h1 {
     font-size: var(--font-big-size);
     padding-top: var(--padding-top);
     font-weight: var(--font-weight);
