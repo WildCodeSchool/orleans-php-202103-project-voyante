@@ -1,4 +1,5 @@
 {% extends 'layout.html.twig' %}
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/prestations.css">{% endblock %}
 
 {% block stylesheet %}
     <link rel="stylesheet" href="/assets/css/indexHome.css">
@@ -7,4 +8,6 @@
 
 {% block content %}
     {% include 'Home/_home.html.twig' %}
+    {% include "Home/_prestations.html.twig" %}
 {% endblock %}
+
