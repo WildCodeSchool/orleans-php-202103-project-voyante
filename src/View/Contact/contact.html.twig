@@ -3,7 +3,7 @@
 {% block stylesheet %}<link rel="stylesheet" href="/assets/css/contact.css">{% endblock %}
 {% block content %}
 
-    <form action="/contact/index" class="form" method= "POST" novalidate>
+    <form action="/contact/index" class="form" method= "POST">
         <h1>Contactez moi</h1>
         {% if errors %}
             <ul>
@@ -33,7 +33,7 @@
                 <label for="message">Votre message :</label>
                 <textarea name="message" id="message" rows="4" placeholder="Votre message" required></textarea>
             </div>
-        <div class="buttoncontact">
+        <div class="button-contact">
         <button type="submit" href="">Envoyer</button>
         </div>
     </form>
