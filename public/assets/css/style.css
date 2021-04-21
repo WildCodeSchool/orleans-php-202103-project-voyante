@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap%27');
 
 :root {
-    --primary-color : #4a235a;
+    --primary-color: #4a235a;
     --secondary-color: #8e44ad;
-    --background-color : #FEF8FF;
-    --light : #fffbff;
+    --background-color: #FEF8FF;
+    --light: #fffbff;
     --card-border-color: #dbc3df;
-    --font-family : 'Lato', sans-serif;
+    --font-family: 'Lato', sans-serif;
     --font-big-size: 50px;
     --font-medium-size: 45px;
     --font-small-size: 30px;
@@ -14,7 +14,7 @@
     --font-xxsmall-size: 15px;
     --navbar_height: 150px;
     --section_width: 100vw;
-    --padding-top:8px;
+    --padding-top: 8px;
     --width-Big: 90%;
     --width-Full: 100%;
     --width-Middle: 40%;
