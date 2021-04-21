@@ -1,5 +1,12 @@
 {% extends 'layout.html.twig' %}
 
-{% block content %}
-
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/prestations.css">
+    <link rel="stylesheet" href="/assets/css/indexHome.css">
 {% endblock %}
+
+{% block content %}
+    {% include 'Home/_home.html.twig' %}
+    {% include "Home/_prestations.html.twig" %}
+{% endblock %}
+
