@@ -1,8 +1,9 @@
 {% extends '/Visitor/layout.html.twig' %}
 
 {% block stylesheet %}
-    <link rel="stylesheet" href="/assets/css/prestations.css">
+    {{ parent() }}
     <link rel="stylesheet" href="/assets/css/indexHome.css">
+    <link rel="stylesheet" href="/assets/css/prestations.css">
 {% endblock %}
 
 {% block content %}
