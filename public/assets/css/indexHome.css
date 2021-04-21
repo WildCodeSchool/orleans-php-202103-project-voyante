@@ -4,7 +4,7 @@
   
     color: var(--background-color);
     height: auto;
-    background-image: var(--backgroundImageHome);
+    background-image: var(--background-Image-Home);
     background-size: cover;
     display: flex;
     text-align: center;
@@ -21,5 +21,5 @@
 }
 
 .home p{
-    text-shadow: var(--textShadow);
+    text-shadow: var(--text-Shadow);
 }
