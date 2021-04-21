@@ -1,7 +1,6 @@
 @import 'style.css';
 
-.home{
-  
+.home{ 
     color: var(--background-color);
     height: auto;
     background-image: var(--background-image-home);
