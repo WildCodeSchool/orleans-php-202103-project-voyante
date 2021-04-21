@@ -15,5 +15,5 @@
 }
 
 .story img{
-    box-shadow: var(--img-BoxShadow);
+    box-shadow: var(--box-shadow-img);
 }
