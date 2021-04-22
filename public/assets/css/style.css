@@ -7,7 +7,7 @@
     --background-carousel: rgba(0, 0, 0, 0.418);
     --font-family: 'Lato', sans-serif;
 
-    --padding-top:8px;
+    --padding-top: 8px;
     --font-big-size: 50px;
     --font-medium-size: 45px;
     --font-small-size: 30px;
@@ -15,22 +15,22 @@
     --font-xxsmall-size: 15px;
     --font-mini-size: 10px;
     --font-weight: 900;
-    --light-font-weight:500;
-    --xlight-font-weight:300;
+    --light-font-weight: 500;
+    --xlight-font-weight: 300;
     --letter-spacing: 10px;
-    --light-letter-spacing:3px;
+    --light-letter-spacing: 3px;
 
-    --h2-font-size:40px;
+    --h2-font-size: 40px;
 
     --section-width: 100vw;
     --width-Big: 90%;
     --width-Full: 100%;
     --width-Middle: 40%;
     --width-half: 50%;
-    --phone-width:200px;
-    --resp-phone-width:130px;
-    --phone-height:33px;
-    --height:80%;
+    --phone-width: 200px;
+    --resp-phone-width: 130px;
+    --phone-height: 33px;
+    --height: 80%;
 
     --carousel-height: 100%;
     --navbar-height: 150px;
