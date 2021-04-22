@@ -12,6 +12,7 @@
     --font-small-size: 30px;
     --font-xsmall-size: 20px;
     --font-xxsmall-size: 15px;
+    --h2-font-size: 40px;
     --navbar_height: 150px;
     --section_width: 100vw;
     --padding-top: 8px;
@@ -26,6 +27,13 @@
     --card-hover-transform: scale(1.025);
     --card-hover-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
     --button-prestation-width: 500px;
+    --border-radius-image: 10px 5px 10px 5px;
+    --part-before-after: 0;
+    --part-hover-width-height: 100%;
+    --part-hover-transition-delay: 0.2s;
+    --margin-top-formation: 30px;
+    --width-part-formation: 0px;
+    --height-part-formation: 2px;
 }
     
 h2 {
