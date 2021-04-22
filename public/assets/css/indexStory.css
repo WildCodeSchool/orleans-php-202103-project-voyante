@@ -4,7 +4,7 @@
     justify-content:center;
 }
 
-.box_story {
+.box-story {
     margin: var(--small-size);
     height: auto;
     width: var(--section-width);
