@@ -10,7 +10,7 @@ html, body {
     background-color: var(--background-color);
 }
 
-h1 {
+.contact-me {
     margin: var(--spacing-form) var(--spacing-form) var(--margin-bottom);
     font-weight: var(--xlight-font-weight);
     color: var(--background-color);
