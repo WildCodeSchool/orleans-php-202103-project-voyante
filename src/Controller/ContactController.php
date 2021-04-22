@@ -14,8 +14,8 @@ class ContactController extends AbstractController
      */
 
     private array $errors = [];
-    private const MAX_LENGTH_NAME = 255;
-    private const MAX_LENGTH_EMAIL = 320;
+    public const MAX_LENGTH_NAME = 255;
+    public const MAX_LENGTH_EMAIL = 320;
 
     public function index()
     {
@@ -26,18 +26,18 @@ class ContactController extends AbstractController
             $this->checkSentenceEmpty($data['name'], 'Un nom complet est obligatoire');
             $this->checkSentenceEmpty($data['tel'], 'Un numéro de téléphone est obligatoire');
             $this->checkSentenceEmpty($data['message'], 'Un message est obligatoire');
-            $this->checkSentenceEmpty($data['email'], 'L\'email est obligatoire');
+            $this->checkSentenceEmpty($data['email'], 'Un email est obligatoire');
 
             $this->checkWordSize($data['name'], self::MAX_LENGTH_NAME, 'Le nom complet doit faire moins de '
                 . self::MAX_LENGTH_NAME . ' caractères');
-            $this->checkWordSize($data['email'], self::MAX_LENGTH_EMAIL, 'Votre adresse mail doit faire moins de '
+            $this->checkWordSize($data['email'], self::MAX_LENGTH_EMAIL, 'L\'adresse mail doit faire moins de '
                 . self::MAX_LENGTH_EMAIL . ' caractères');
 
             $this->checkWordPresenceInArray($data['subject'], $subjects, 'Le sujet saisi n\'est pas valable');
-            $this->checkFilterValidateEmail($data['email'], 'Mauvais format d\'email');
+            $this->checkFilterValidateEmail($data['email'], 'L\'email saisi n\'est pas valable');
 
             if (empty($this->getErrors())) {
-                return 'Votre message à bien été envoyé.';
+                return $this->twig->render('Contact/success.html.twig');
             }
         }
 

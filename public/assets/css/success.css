@@ -1,0 +1,50 @@
+@import 'style.css';
+
+.box-container{
+    display: flex;
+    height: 60vh;
+}
+
+.success-message {
+    margin: var(--spacing-form) var(--spacing-form) var(--margin-bottom);
+    font-weight: var(--xlight-font-weight);
+    color: var(--background-color);
+    text-align: center;
+    margin-bottom: var(--margin-bottom);
+}
+
+.success-box {
+    padding: calc(var(--padding)*3);
+    margin: auto;
+    box-shadow: var(--box-shadow); 
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    margin-top: calc(var(--margin-top)*5);
+    align-self: center;
+}
+
+button {
+    width: var(--width-half);
+    padding: var(--padding);
+    border: none;
+    background: var(--background-color); 
+    font-size: var(--font-xxsmall-size);
+    font-weight: var(--xlight-font-weight);
+    color: var(--primary-color);
+}
+
+.button-contact {
+    display: flex;
+    justify-content: center;
+    transition: var(--transition-prestations);
+}
+    
+button:hover {
+    transform: var(--card-hover-transform);
+    box-shadow: var(--card-hover-shadow);
+}   
+
+@media (min-width: 568px) {
+    .success-box {
+        width: var(--width-half);
+    }
+}

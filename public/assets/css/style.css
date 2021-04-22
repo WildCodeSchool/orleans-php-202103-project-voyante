@@ -22,7 +22,8 @@
 
     --h2-font-size: 40px;
   
-    --section_width: 100vw;
+    --section-width: 100vw;
+    --section-height: 100vh;
     --padding-top: 8px;
     --padding: 8px;
     --width-Big: 90%;

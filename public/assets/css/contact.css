@@ -79,10 +79,7 @@ label {
 }
     
 @media (min-width: 568px) {
-    .main-block {
-        flex-direction: row;
-    }
-    .left-part, form {
+    form {
         width: var(--width-half);
     }
 }
