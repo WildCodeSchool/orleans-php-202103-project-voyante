@@ -2,6 +2,7 @@
 
 {% block stylesheet %}
     <link rel="stylesheet" href="/assets/css/navbar.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
 {% endblock %}
 
 {% block navbar %}
@@ -9,3 +10,7 @@
 {% endblock %}
 
 {% block content %}{% endblock %}
+
+{% block footer %}
+    {% include 'component/_footer.html.twig' %}
+{% endblock %}
