@@ -1,11 +1,57 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap%27');
 
 :root {
-    --primary-color: #4A235A;
-    --secondary-color: #8E44AD;
+    --primary-color: #4a235a;
+    --secondary-color: #8e44ad;
     --background-color: #FEF8FF;
-    --placeholder: #666;
+    --light: #fffbff;
+    --card-border-color: #dbc3df;
+  
+    --font-family: 'Lato', sans-serif;
+    --font-big-size: 50px;
+    --font-medium-size: 45px;
     --font-small-size: 30px;
+    --font-xsmall-size: 20px;
+    --font-xxsmall-size: 15px;
+    --font-weight: 900;
+    --light-font-weight: 500;
+    --xlight-font-weight: 300;
+    --letter-spacing: 10px;
+    --light-letter-spacing: 3px;
+    --h2-font-size:40px;
+  
+    --section_width: 100vw;
+    --padding-top: 8px;
+    --width-Big: 90%;
+    --width-Full: 100%;
+    --width-half: 50%;
+    --width-Middle: 40%;
+    --width-Small: 20%;
+    --height: 80%;
+  
+    --margin-bottom-prestations: 50px;
+    --transition-prestations: 0.4s;
+    --padding-prestations: 10px;
+    --card-hover-transform: scale(1.025);
+    --card-hover-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+    --button-prestation-width: 500px;
+  
+    --margin-bottom : 20px;
+    --phone-width: 200px;
+    --resp-phone-width: 130px;
+    --phone-height: 33px;
+    --navbar-height: 150px;
+    --img-height-100: 100px;
+    --text-shadow: 2px 2px rebeccapurple;
+    --placeholder: #666;
+  
+    --background-image-home:'../images/home/purple_nebula.jpg';
+    --footer-phone: '../images/telephone.png';
+}
+
+h2 {
+    font-family: var(--font-family);
+    font-size: var(--h2-font-size);
+    color: var(--primary-color);
+
 }
