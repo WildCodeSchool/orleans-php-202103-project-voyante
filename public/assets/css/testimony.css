@@ -30,7 +30,7 @@ h2 {
     margin: var(--small-size);
 }
 
-@media screen and (max-width: 880px){
+@media screen and (max-width: 1000px){
     .carousel-caption p {
         font-size: var(--font-xsmall-size);
     }
@@ -43,7 +43,7 @@ h2 {
     }
 }
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 750px){
     .carousel-caption p {
         font-size: var(--font-xxsmall-size);
     }
@@ -56,7 +56,7 @@ h2 {
     }
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 500px){
     .carousel-caption p {
         font-size: var(--font-mini-size);
     }
