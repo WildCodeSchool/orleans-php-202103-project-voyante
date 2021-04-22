@@ -1,0 +1,19 @@
+.story {
+    margin: var(--small-size);
+    padding: var(--big-size);
+    height: auto;
+    border: var(--border-solid)  var(--primary-color);
+    border-radius: var(--border-radius); 
+    text-align: center;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.story h2 {
+    padding: var(--small-size);
+}
+
+.story img{
+    box-shadow: var(--box-shadow-img);
+}
