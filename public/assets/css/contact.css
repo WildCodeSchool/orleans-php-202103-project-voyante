@@ -1,6 +1,5 @@
 @import 'style.css';
 
-
 html, body {
     min-height: var(--width-Full);
     padding: var(--spacing-form);
@@ -20,7 +19,7 @@ form {
     padding: calc(var(--padding)*3);
     margin: auto;
     box-shadow: var(--box-shadow); 
-    background: linear-gradient(to right,var(--primary-color),var(--secondary-color));
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 }
     
 input, textarea {
@@ -79,10 +78,10 @@ label {
     
 @media (min-width: 568px) {
     .main-block {
-    flex-direction: row;
+        flex-direction: row;
     }
     .left-part, form {
-    width: var(--width-half);
+        width: var(--width-half);
     }
 }
 
@@ -91,5 +90,3 @@ label {
         width: var(--width-Big);
     }
 }
-
-

@@ -14,22 +14,21 @@ class ContactController extends AbstractController
      */
 
     private array $errors = [];
-    const MAX_LENGTH_NAME = 255;
-    const MAX_LENGTH_EMAIL = 320;
-    
+    private const MAX_LENGTH_NAME = 255;
+    private const MAX_LENGTH_EMAIL = 320;
+
     public function index()
     {
         $subjects = ['tel-session', 'cabinet-session', 'infos', 'other'];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
-            
             $this->checkSentenceEmpty($data['name'], 'Un nom complet est obligatoire');
             $this->checkSentenceEmpty($data['tel'], 'Un numéro de téléphone est obligatoire');
             $this->checkSentenceEmpty($data['message'], 'Un message est obligatoire');
             $this->checkSentenceEmpty($data['email'], 'L\'email est obligatoire');
 
-            $this->checkWordSize($data['name'], self::MAX_LENGTH_NAME , 'Le nom complet doit faire moins de '
+            $this->checkWordSize($data['name'], self::MAX_LENGTH_NAME, 'Le nom complet doit faire moins de '
                 . self::MAX_LENGTH_NAME . ' caractères');
             $this->checkWordSize($data['email'], self::MAX_LENGTH_EMAIL, 'Votre adresse mail doit faire moins de '
                 . self::MAX_LENGTH_EMAIL . ' caractères');
