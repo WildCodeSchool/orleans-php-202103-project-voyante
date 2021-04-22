@@ -55,8 +55,6 @@ Tout simplement : merci d’être sur mon chemin ! À bientôt...", TRUE );
 --
 -- Index pour la table `item`
 --
-ALTER TABLE `témoignages`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
