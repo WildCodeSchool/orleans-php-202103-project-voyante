@@ -6,7 +6,7 @@
 
 .box-story {
     margin: var(--small-size);
-    height: auto;
+    height: var(--height);
     width: var(--section-width);
     border: var(--border-solid)  var(--primary-color);
     border-radius: var(--border-radius); 
@@ -20,4 +20,10 @@
 
 .story img{
     box-shadow: var(--box-shadow-img);
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
 }

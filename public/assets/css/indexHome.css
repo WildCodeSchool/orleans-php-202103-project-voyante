@@ -22,3 +22,9 @@
 .home p{
     text-shadow: var(--text-shadow);
 }
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
+}
