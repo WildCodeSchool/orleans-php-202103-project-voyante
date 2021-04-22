@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap%27');
 
 :root {
-    --primary-color : #4A235A ;
+    --primary-color: #4A235A ;
     --secondary-color: #8E44AD;
-    --background-color : #FEF8FF;
-    --font-family : 'Lato', sans-serif;
+    --background-color: #FEF8FF;
+    --background-carousel: rgba(0, 0, 0, 0.418);
+    --font-family: 'Lato', sans-serif;
 
     --padding-top:8px;
     --font-big-size: 50px;
@@ -12,6 +13,7 @@
     --font-small-size: 30px;
     --font-xsmall-size: 20px;
     --font-xxsmall-size: 15px;
+    --font-mini-size: 10px;
     --font-weight: 900;
     --light-font-weight:500;
     --xlight-font-weight:300;
@@ -30,15 +32,16 @@
     --phone-height:33px;
     --height:80%;
 
+    --carousel-height: 100%;
     --navbar-height: 150px;
 
     --img-height-100: 100px;
 
     --textShadow: 2px 2px rebeccapurple;
 
-    --placeholder : #666;
-    --margin-bottom : 20px;
-    --width-half : 50%;
+    --placeholder: #666;
+    --margin-bottom: 20px;
+    --width-half: 50%;
     
     --background-image-home: url("../images/home/purple_nebula.jpg");
 }

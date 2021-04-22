@@ -7,9 +7,9 @@ h2 {
 
 .carousel-caption {
     flex-direction: column-reverse;
-    background-color: rgba(0, 0, 0, 0.418);
+    background-color: var(--background-carousel);
     background-position: center;
-    height: 100%;
+    height: var(--carousel-height);
 }
 
 .carousel-caption p {
@@ -43,10 +43,10 @@ h2 {
 
 @media screen and (max-width: 450px){
     .carousel-caption p {
-        font-size: 10px;
+        font-size: var(--font-mini-size);
     }
     .carousel-caption h3 {
-        font-size: 10px;
+        font-size: var(--font-mini-size);
     }
 }
     
