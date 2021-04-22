@@ -1,62 +1,62 @@
 @import url("style.css");
 
 .formation {
-  height: auto;
-  font-family: var(--font-family);
-  color: var(--primary-color);
+    height: auto;
+    font-family: var(--font-family);
+    color: var(--primary-color);
 }
 
 .program {
-  text-align: center;
-  font-size: var(--font-small-size);
-  margin-bottom: var(--margin-bottom-prestations);
+    text-align: center;
+    font-size: var(--font-small-size);
+    margin-bottom: var(--margin-bottom-prestations);
 }
 
 h3 {
-  font-size: var(--font-small-size);
-  font-weight: bold;
+    font-size: var(--font-small-size);
+    font-weight: bold;
 }
 
 .formation-heading {
-  text-align: center;
-  margin-top: var(--margin-top-formation);
-  font-family: var(--font-family);
-  margin-bottom: var(--margin-bottom-prestations);
+    text-align: center;
+    margin-top: var(--margin-top-formation);
+    font-family: var(--font-family);
+    margin-bottom: var(--margin-bottom-prestations);
 }
 
 .formation img {
-  border-radius: var(--border-radius-image);
+    border-radius: var(--border-radius-image);
 }
 
 .part {
-  display: inline-block;
-  position: relative;
-  border: none;
-  cursor: pointer;
-  color: var(--primary-color);
-  font-size: var(--font-xsmall-size);
-  background: var(--light);
+    display: inline-block;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-size: var(--font-xsmall-size);
+    background: var(--light);
 }
 
 .part::before, .part::after {
-  content:"";
-  position: absolute;
-  width: var(--width-part-formation);
-  height: var(--height-part-formation);
-  transition: all var(--part-hover-transition-delay) linear;
-  background: var(--primary-color);
+    content:"";
+    position: absolute;
+    width: var(--width-part-formation);
+    height: var(--height-part-formation);
+    transition: all var(--part-hover-transition-delay) linear;
+    background: var(--primary-color);
 }
 
 .part:hover::before, .part:hover::after {
-  width: var(--part-hover-width-height);
+    width: var(--part-hover-width-height);
 }
 
 .part::before {
-  right: var(--part-before-after);
-  top: var(--part-before-after);
+    right: var(--part-before-after);
+    top: var(--part-before-after);
 }
 
 .part::after {
-  left: var(--part-before-after);
-  bottom: var(--part-before-after);
+    left: var(--part-before-after);
+    bottom: var(--part-before-after);
 }

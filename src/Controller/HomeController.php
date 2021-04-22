@@ -10,7 +10,6 @@ class HomeController extends AbstractController
     {
         $prestationManager = new PrestationManager();
         $prestations = $prestationManager->selectAll();
-            
         return $this->twig->render('Home/index.html.twig', [
             'prestations' => $prestations,
         ]);
