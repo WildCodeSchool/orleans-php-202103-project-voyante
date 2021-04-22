@@ -1,6 +1,22 @@
 {% extends 'layout.html.twig' %}
-{% block stylesheet %}<link rel="stylesheet" href="/assets/css/prestations.css">{% endblock %}
+
+{% block stylesheet %}
+<<<<<<< HEAD
+    <link rel="stylesheet" href="/assets/css/indexStory.css">
+=======
+    <link rel="stylesheet" href="/assets/css/prestations.css">
+    <link rel="stylesheet" href="/assets/css/indexHome.css">
+    <link rel="stylesheet" href="/assets/css/prestations.css">
+>>>>>>> 94c34a087e47b9405acd2821aeb01488e8697504
+{% endblock %}
+
 
 {% block content %}
-{% include "Home/_prestations.html.twig" %}
+<<<<<<< HEAD
+    {% include 'Home/_story.html.twig' %}
+=======
+    {% include 'Home/_home.html.twig' %}
+    {% include "Home/_prestations.html.twig" %}
+>>>>>>> 94c34a087e47b9405acd2821aeb01488e8697504
 {% endblock %}
+
