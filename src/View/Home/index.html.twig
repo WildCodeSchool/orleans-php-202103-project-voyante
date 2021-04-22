@@ -1,5 +1,13 @@
 {% extends 'layout.html.twig' %}
 
-{% block content %}
-    <h1>Nathalie Milliet</h1>
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/prestations.css">
+    <link rel="stylesheet" href="/assets/css/indexHome.css">
+    <link rel="stylesheet" href="/assets/css/prestations.css">
 {% endblock %}
+
+{% block content %}
+    {% include 'Home/_home.html.twig' %}
+    {% include "Home/_prestations.html.twig" %}
+{% endblock %}
+

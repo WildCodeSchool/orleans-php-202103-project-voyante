@@ -1,0 +1,24 @@
+@import 'style.css';
+
+#footer {
+    background-color: var(--background-color);
+    height: var(--navbar-height);
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing);
+    color: var(--primary-color);
+}
+
+#footer_left {
+    padding-top: calc(1.2*var(--margin-bottom));
+}
+
+#footer_right {
+    border-left: 2px solid var(--primary-color);
+    letter-spacing: var(--light-letter-spacing);
+}
+
+@media screen and (max-width: 768px) {
+    #footer {
+        height:calc(1.5*var(--navbar-height));
+    }
+}
