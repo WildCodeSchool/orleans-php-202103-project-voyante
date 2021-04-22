@@ -1,11 +1,12 @@
-.fullStory {
+.full-story {
     height: auto;
     text-align: left;
     color: var(--primary-color);
 }
 
-.fullStory h2 {
+.full-story h2 {
     margin: var(--small-size);
     padding: var(--small-size);
     text-align: center;
 }
+a
