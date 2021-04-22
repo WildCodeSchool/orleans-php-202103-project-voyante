@@ -1,15 +1,11 @@
-.story {
-    margin: var(--small-size);
-    padding:var(--big-size);
+.fullStory {
     height: auto;
-    border: var(--border_solid)  var(--primary-color);
-    border-radius: var(--border-radius); 
-    text-align: center;
+    text-align: left;
     color: var(--primary-color);
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
 }
-.story h2 {
-   padding: var(--small-size);
+
+.fullStory h2 {
+    margin: var(--small-size);
+    padding: var(--small-size);
+    text-align: center;
 }

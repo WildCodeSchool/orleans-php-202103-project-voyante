@@ -3,42 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap%27');
 
 :root {
-
-    --primary-color : #4A235A ;
+    --primary-color: #4A235A;
     --secondary-color: #8E44AD;
-    --background-color : #FEF8FF;
-    --placeholder : #666;
-
-    --font-family : 'Lato', sans-serif;
-    --font-big-size: 50px;
-    --font-medium-size: 45px;
+    --background-color: #FEF8FF;
+    --placeholder: #666;
     --font-small-size: 30px;
-    --font-xsmall-size: 20px;
-    --font-xxsmall-size: 15px;
-    --light-letter-spacing:3px;
-
-    --margin-bottom : 20px;
-    --padding-top:8px;
-    --big-size: 50px;
-    --medium-size: 45px;
-    --small-size: 30px;
-    --xsmall-size: 20px;
-
-    --navbar-height: 150px;
-
-    --img-Height-100: 100px;
-
-    --section-width: 100vw;
-
-    --width-Big: 90%;
-    --width-Full: 100%;
-    --width-Middle: 40%;
-    --width-half : 50%;
-
-    --textShadow: 2px 2px rebeccapurple;
-    --img-BoxShadow: 5px 5px 2px 1px rgba(0, 0, 255, .2);
-
-    --border-radius:4px;
-    --border-solid: 3px solid;
-    
 }
