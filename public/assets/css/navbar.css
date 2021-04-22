@@ -45,7 +45,7 @@ button {
 }
 
 @media screen and (max-width: 768px) {
-    .navbar-brand {
+    h1 {
         font-size: var(--font-xsmall-size);
     }
 }

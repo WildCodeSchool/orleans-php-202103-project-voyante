@@ -1,0 +1,23 @@
+.story {
+    height:var(--section-height);
+    display: flex;
+    justify-content:center;
+}
+
+.box-story {
+    margin: var(--small-size);
+    height: auto;
+    width: var(--section-width);
+    border: var(--border-solid)  var(--primary-color);
+    border-radius: var(--border-radius); 
+    text-align: center;
+    color: var(--primary-color);
+    align-self: center;
+}
+.story h2 {
+    padding: var(--small-size);
+}
+
+.story img{
+    box-shadow: var(--box-shadow-img);
+}
