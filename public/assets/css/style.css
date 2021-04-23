@@ -21,6 +21,9 @@
     --letter-spacing: 10px;
     --light-letter-spacing: 3px;
 
+    --background-carousel: rgba(0, 0, 0, 0.418);
+    --height-carousel: 100%;
+    
     --h2-font-size: 40px;
   
     --section-width: 100vw;
