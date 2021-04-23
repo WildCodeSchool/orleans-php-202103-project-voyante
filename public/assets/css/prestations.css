@@ -6,11 +6,6 @@ body {
     color: var(--primary-color);
 }
 
-.container {
-    width: var(--width-Big);
-    margin: var(--font-big-size) auto;
-}
-
 .prestations-heading {
     text-align: center;
     font-size: var(--font-small-size);

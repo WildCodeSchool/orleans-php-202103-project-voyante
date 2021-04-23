@@ -8,16 +8,22 @@
     --card-border-color: #dbc3df;
     
     --font-family: 'Lato', sans-serif;
+
     --font-big-size: 50px;
     --font-medium-size: 45px;
     --font-small-size: 30px;
     --font-xsmall-size: 20px;
-    --font-xxsmall-size: 15px;
+    --font-xxsmall-size: 14px;
+    --font-mini-size: 9px;
     --font-weight: 900;
     --light-font-weight: 500;
     --xlight-font-weight: 300;
     --letter-spacing: 10px;
     --light-letter-spacing: 3px;
+
+    --background-carousel: rgba(0, 0, 0, 0.418);
+    --height-carousel: 100%;
+
     --h2-font-size: 40px;
   
     --section-width: 100vw;
@@ -48,14 +54,15 @@
     --small-size: 30px;
     --xsmall-size: 20px;
 
-    --textShadow: 2px 2px rebeccapurple;
+    --text-shadow: 2px 2px rebeccapurple;
     --box-shadow-img: 5px 5px 2px 1px rgba(0, 0, 255, .2);
-    --border-radius:4px;
+    --border-radius: 4px;
     --border-solid: 3px solid;
     --placeholder: #666;
   
     --background-image-home: url("../images/home/purple_nebula.webp");
     --footer-phone: url('../images/telephone.png');
+
 }
 
 h2 {

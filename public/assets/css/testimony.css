@@ -1,0 +1,70 @@
+@import 'style.css';
+
+h2 {
+    text-align: center;
+    margin: var(--margin-bottom);
+}
+
+.carousel-caption {
+    flex-direction: column-reverse;
+    background-color: var(--background-carousel);
+    background-position: center;
+    height: var(--height-carousel);
+}
+
+.carousel-caption p {
+    font-family: var(--font-family);
+    font-size: var(--font-small-size);
+}
+
+.carousel-caption h3{
+    text-align: center;
+    font-family: var(--font-family);
+    font-size: var(--font-small-size);
+}
+
+.testimony {
+    border: var(--border-solid)  var(--primary-color);
+    border-radius: var(--border-radius); 
+    padding: var(--big-size);
+    margin: var(--small-size);
+}
+
+@media screen and (max-width: 1000px){
+    .carousel-caption p {
+        font-size: var(--font-xsmall-size);
+    }
+    .carousel-caption h3 {
+        font-size: var(--font-xsmall-size);
+    }
+    .testimony {
+        padding: var(--small-size);
+        margin: var(--xsmall-size);
+    }
+}
+
+@media screen and (max-width: 750px){
+    .carousel-caption p {
+        font-size: var(--font-xxsmall-size);
+    }
+    .carousel-caption h3 {
+        font-size: var(--font-xxsmall-size);
+    }
+    .testimony {
+        padding: var(--xsmall-size);
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .carousel-caption p {
+        font-size: var(--font-mini-size);
+    }
+    .carousel-caption h3 {
+        font-size: var(--font-mini-size);
+    }
+    .testimony {
+        padding: 0;
+        margin: 0;
+    }
+}   
