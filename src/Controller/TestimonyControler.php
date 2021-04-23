@@ -11,10 +11,10 @@ class TestimonyController extends AbstractController
      */
     public function index(): string
     {
-        $TestimonyManager = new TestimonyManager();
-        $Testimonys = $TestimonyManager->selectAll('title');
+        $testimonyManager = new TestimonyManager();
+        $testimonys = $testimonyManager->selectAll('title');
 
-        return $this->twig->render('Admin/Testimony/index.html.twig', ['Testimonys' => $Testimonys]);
+        return $this->twig->render('Admin/Testimony/index.html.twig', ['testimonys' => $testimonys]);
     }
 
     /**
@@ -22,10 +22,10 @@ class TestimonyController extends AbstractController
      */
     public function show(int $id): string
     {
-        $TestimonyManager = new TestimonyManager();
-        $Testimony = $TestimonyManager->selectOneById($id);
+        $testimonyManager = new TestimonyManager();
+        $testimony = $testimonyManager->selectOneById($id);
 
-        return $this->twig->render('Admin/Testimony/show.html.twig', ['Testimony' => $Testimony]);
+        return $this->twig->render('Admin/Testimony/show.html.twig', ['testimony' => $testimony]);
     }
 
     /**
@@ -33,22 +33,22 @@ class TestimonyController extends AbstractController
      */
     public function edit(int $id): string
     {
-        $TestimonyManager = new TestimonyManager();
-        $Testimony = $TestimonyManager->selectOneById($id);
+        $testimonyManager = new TestimonyManager();
+        $testimony = $testimonyManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
-            $Testimony = array_map('trim', $_POST);
+            $testimony = array_map('trim', $_POST);
 
             // TODO validations (length, format...)
 
             // if validation is ok, update and redirection
-            $TestimonyManager->update($Testimony);
+            $testimonyManager->update($testimony);
             header('Location: Admin/Testimony/show/' . $id);
         }
 
         return $this->twig->render('Admin/Testimony/edit.html.twig', [
-            'Testimony' => $Testimony,
+            'testimony' => $testimony,
         ]);
     }
 
@@ -59,13 +59,13 @@ class TestimonyController extends AbstractController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
-            $Testimony = array_map('trim', $_POST);
+            $testimony = array_map('trim', $_POST);
 
             // TODO validations (length, format...)
 
             // if validation is ok, insert and redirection
-            $TestimonyManager = new TestimonyManager();
-            $id = $TestimonyManager->insert($Testimony);
+            $testimonyManager = new TestimonyManager();
+            $id = $testimonyManager->insert($testimony);
             header('Location: /Admin/Testimony/show/' . $id);
         }
 
@@ -79,8 +79,8 @@ class TestimonyController extends AbstractController
     public function delete(int $id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $TestimonyManager = new TestimonyManager();
-            $TestimonyManager->delete($id);
+            $testimonyManager = new TestimonyManager();
+            $testimonyManager->delete($id);
             header('Location: /Admin/Testimony/index');
         }
     }
