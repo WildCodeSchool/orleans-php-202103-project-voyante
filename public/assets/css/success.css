@@ -2,7 +2,7 @@
 
 .box-container{
     display: flex;
-    height: 60vh;
+    height: calc(var(--section-height)-20);
 }
 
 .success-message {
@@ -19,6 +19,7 @@
     box-shadow: var(--box-shadow); 
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     margin-top: calc(var(--margin-top)*5);
+    margin-bottom: calc(var(--margin-bottom)*6);
     align-self: center;
 }
 

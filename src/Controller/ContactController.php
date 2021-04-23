@@ -17,7 +17,7 @@ class ContactController extends AbstractController
     public const MAX_LENGTH_NAME = 255;
     public const MAX_LENGTH_EMAIL = 320;
 
-    public function index() : string
+    public function index(): string
     {
         $subjects = ['tel-session', 'cabinet-session', 'infos', 'other'];
 
@@ -44,35 +44,35 @@ class ContactController extends AbstractController
         return $this->twig->render('Contact/contact.html.twig', ['errors' => $this->getErrors()]);
     }
 
-    private function checkWordPresenceInArray(string $word, array $array, string $message) : void
+    private function checkWordPresenceInArray(string $word, array $array, string $message): void
     {
         if (!in_array($word, $array)) {
             $this->setErrors($message);
         }
     }
 
-    private function checkWordSize(string $word, int $length, string $messageError) : void
+    private function checkWordSize(string $word, int $length, string $messageError): void
     {
         if (strlen($word) > $length) {
             $this->setErrors($messageError);
         }
     }
 
-    private function checkFilterValidateEmail(string $sentence, string $messageError) : void
+    private function checkFilterValidateEmail(string $sentence, string $messageError): void
     {
         if (!filter_var($sentence, FILTER_VALIDATE_EMAIL)) {
             $this->setErrors($messageError);
         }
     }
 
-    private function checkSentenceEmpty(string $sentences, string $messageError) : void
+    private function checkSentenceEmpty(string $sentences, string $messageError): void
     {
         if (empty($sentences)) {
             $this->setErrors($messageError);
         }
     }
 
-    private function setErrors(string $errors) : void
+    private function setErrors(string $errors): void
     {
         $this->errors[] = $errors;
     }
