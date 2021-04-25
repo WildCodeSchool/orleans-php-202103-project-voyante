@@ -11,7 +11,6 @@ class TestimonyManager extends AbstractManager
      */
     //`id`, `name`, `mail`, `message`, `validation`
 
-
     public function insert(array $item): int
     {
         $query = "INSERT INTO " . self::TABLE . "('name', 'mail', 'message', 'validation') 
