@@ -9,11 +9,10 @@ class TestimonyController extends AbstractController
     /**
      * List Testimonys
      */
-    
     public function index(): string
     {
         $testimonyManager = new TestimonyManager();
-        $testimonys = $testimonyManager->selectAll(); 
+        $testimonys = $testimonyManager->selectAll();
         return $this->twig->render('Admin/Testimony/index.html.twig', ['testimonys' => $testimonys]);
     }
 
@@ -45,9 +44,7 @@ class TestimonyController extends AbstractController
             $testimonyManager->update($testimony);
             header('Location: Admin/Testimony/show/' . $id);
         }
-        
-        return $this->twig->render('Admin/Testimony/edit.html.twig', 
-        ['testimony' => $testimony,]);
+        return $this->twig->render('Admin/Testimony/edit.html.twig', ['testimony' => $testimony,]);
     }
 
     /**
