@@ -26,7 +26,7 @@ class TestController extends AbstractController
         //verification d'un nom dans un tableau de nom
         $word = 'aurelien';
         $array = ['julie','natasha','sophie','clara'];
-        $validation->wordIsInArray($word, $array, 'le mot n est pas dans le tableau ');
+        $validation->wordIsInArray($word, $array, 'le mot n\'est pas dans le tableau ');
 
         //verification email : vide, comforme et longueur < 320 caracteres
         $email = 'aurelien@gmail.com';

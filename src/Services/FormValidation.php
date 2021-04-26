@@ -4,9 +4,8 @@ namespace App\Services;
 
 class FormValidation
 {
-
+    
     protected array $errors = [];
-    protected int $EmailmaxLength = 320;
 
     public function sentenceEmpty(string $sentences, string $messageError): bool
     {
