@@ -20,9 +20,9 @@
     --width-Full: 100%;
     --width-Middle: 40%;
     --width-Small: 20%;
-    --margin-bottom-prestations: 50px;
-    --transition-prestations: 0.4s;
-    --padding-prestations: 10px;
+    --margin-bottom-services: 50px;
+    --transition-services: 0.4s;
+    --padding-services: 10px;
     --textShadow: 2px 2px rebeccapurple;
     --card-hover-transform: scale(1.025);
     --card-hover-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
@@ -31,9 +31,10 @@
     --part-before-after: 0;
     --part-hover-width-height: 100%;
     --part-hover-transition-delay: 0.2s;
-    --margin-top-formation: 30px;
-    --width-part-formation: 0px;
-    --height-part-formation: 2px;
+    --margin-top-training: 30px;
+    --width-part-training: 0px;
+    --height-part-training: 2px;
+    --card-width: 18rem;
 }
     
 h2 {

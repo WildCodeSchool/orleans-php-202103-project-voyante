@@ -1,15 +1,15 @@
 @import url("style.css");
 
-.formation {
+.training {
     height: auto;
     font-family: var(--font-family);
     color: var(--primary-color);
 }
 
-.programme {
+.program {
     text-align: center;
     font-size: var(--font-small-size);
-    margin-bottom: var(--margin-bottom-prestations);
+    margin-bottom: var(--margin-bottom-services);
 }
 
 h3 {
@@ -17,14 +17,14 @@ h3 {
     font-weight: bold;
 }
 
-.formation-heading {
+.training-heading {
     text-align: center;
-    margin-top: var(--margin-top-formation);
+    margin-top: var(--margin-top-training);
     font-family: var(--font-family);
-    margin-bottom: var(--margin-bottom-prestations);
+    margin-bottom: var(--margin-bottom-services);
 }
 
-.formation img {
+.training img {
     border-radius: var(--border-radius-image);
 }
 
@@ -41,8 +41,8 @@ h3 {
 .part::before, .part::after {
     content:"";
     position: absolute;
-    width: var(--width-part-formation);
-    height: var(--height-part-formation);
+    width: var(--width-part-training);
+    height: var(--height-part-training);
     transition: all var(--part-hover-transition-delay) linear;
     background: var(--primary-color);
 }
