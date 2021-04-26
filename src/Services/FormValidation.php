@@ -4,7 +4,6 @@ namespace App\Services;
 
 class FormValidation
 {
-    
     protected array $errors = [];
 
     public function sentenceEmpty(string $sentences, string $messageError): bool
