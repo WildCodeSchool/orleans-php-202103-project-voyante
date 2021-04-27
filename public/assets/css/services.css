@@ -82,7 +82,7 @@ body {
 }
 
 .button-services {
-    width: var(--button-prestation-width);
+    width: var(--button-services-width);
     padding: var(--padding-services);
     transition: var(--transition-services);
     text-decoration: none;

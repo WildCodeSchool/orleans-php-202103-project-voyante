@@ -1,6 +1,15 @@
 {% extends 'layout.html.twig' %}
-{% block stylesheet %}<link rel="stylesheet" href="/assets/css/services.css">{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/indexHome.css">
+    <link rel="stylesheet" href="/assets/css/indexStory.css">
+    <link rel="stylesheet" href="/assets/css/services.css">
+    <link rel="stylesheet" href="/assets/css/testimony.css">
+{% endblock %}
 
 {% block content %}
-{% include "Home/_services.html.twig" %}
+    {% include 'Home/_home.html.twig' %}
+    {% include 'Home/_story.html.twig' %}
+    {% include "Home/_services.html.twig" %}
+    {% include 'Home/_carousel.html.twig' %}
 {% endblock %}

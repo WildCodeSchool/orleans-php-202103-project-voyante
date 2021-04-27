@@ -1,0 +1,24 @@
+@import 'style.css';
+
+.home{ 
+    color: var(--background-color);
+    height: var(--section-height);
+    background-image: var(--background-image-home);
+    background-size: cover;
+    display: flex;
+    text-align: center;
+}
+
+.container{
+    align-self: center;
+    padding: var(--big-size);
+}
+
+.colorButton{
+    color: var(--background-color);
+    background-color: var(--secondary-color);
+}
+
+.home p{
+    text-shadow: var(--text-shadow);
+}
