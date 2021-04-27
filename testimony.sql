@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `témoignages`
 --
 
-CREATE TABLE `témoignages` (
+CREATE TABLE IF NOT EXISTS `témoignages` (
   `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` VARCHAR (80) NOT NULL,
   `mail` VARCHAR (320) NOT NULL,
