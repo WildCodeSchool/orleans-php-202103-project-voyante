@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use App\Model\ServicesManager;
-
 class HomeController extends AbstractController
 {
     public function index()
