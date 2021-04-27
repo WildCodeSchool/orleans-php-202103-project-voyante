@@ -8,7 +8,7 @@
     --card-border-color: #dbc3df;
     
     --font-family: 'Lato', sans-serif;
-
+   
     --font-big-size: 50px;
     --font-medium-size: 45px;
     --font-small-size: 30px;
@@ -23,11 +23,12 @@
 
     --background-carousel: rgba(0, 0, 0, 0.418);
     --height-carousel: 100%;
-
+    
     --h2-font-size: 40px;
     --section-width: 100vw;
     --section-height: 100vh;
     --padding-top: 8px;
+    --padding: 8px;
     --width-Big: 90%;
     --width-Full: 100%;
     --width-half: 50%;
@@ -52,6 +53,7 @@
 
     --height: 80%;
     --margin-bottom: 20px;
+    --margin-top: 30px;
     --phone-width: 200px;
     --resp-phone-width: 130px;
     --phone-height: 33px;
@@ -79,3 +81,4 @@ h2 {
     font-size: var(--h2-font-size);
     color: var(--primary-color);
 }
+
