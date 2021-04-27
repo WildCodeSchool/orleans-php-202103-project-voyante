@@ -1,5 +1,3 @@
-@import 'style.css';
-
 html, body {
     min-height: var(--width-Full);
     padding: var(--spacing-form);
