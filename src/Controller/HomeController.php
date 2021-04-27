@@ -2,11 +2,17 @@
 
 namespace App\Controller;
 
+use App\Model\ServicesManager;
+
 class HomeController extends AbstractController
 {
     public function index()
     {
-        return $this->twig->render('Visitor/Home/index.html.twig');
+        $servicesManager = new ServicesManager();
+        $services = $servicesManager->selectAll();
+        return $this->twig->render('Home/index.html.twig', [
+            'services' => $services,
+        ]);
     }
 
     public function fullStory()
