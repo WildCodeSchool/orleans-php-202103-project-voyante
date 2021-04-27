@@ -54,7 +54,7 @@ body {
 
 .card-body {
     padding: calc(var(--padding-services) * 3);
-    color : var(--primary-color);
+    color: var(--primary-color);
     text-align: center;
     font-size: var(--font-xsmall-size);
     font-family: var(--font-family);
