@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-CREATE DATABASE  IF NOT EXISTS projet_voyance /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE  IF NOT EXISTS projet_voyance; /*!40100 DEFAULT CHARACTER SET latin1 */
 
 USE projet_voyance;
 
@@ -33,13 +33,13 @@ CREATE TABLE IF NOT EXISTS `service` (
   `description` VARCHAR(255),
   `price1hour` INT NOT NULL,
   `price30min` INT
-)
+);
 
 --
 -- Contenu de la table `service`
 --
 
 INSERT INTO `service` (`name`, `description`, `price1hour`) VALUES
-(`Au cabinet`, `Pendant le rendez-vous nous pratiquons le tirage de carte de tarot, la lecture des lignes de la main, l'astrologie avancée et la lecture de votre avenir.`, 75);
+("Au cabinet", "Pendant le rendez-vous nous pratiquons le tirage de carte de tarot, la lecture des lignes de la main, l'astrologie avancée et la lecture de votre avenir.", 75);
 INSERT INTO `service` (`name`, `description`, `price1hour`, `price30min`) VALUES
-(`À distance`, `Nous pratiquons la même prestation qu'en rendez-vous au cabinet, le tout adapté pour lire votre avenir de manière toute aussi précise. Consultation par téléphone ou visioconférence.`, 75, 50);
+("À distance", "Nous pratiquons la même prestation qu'en rendez-vous au cabinet, le tout adapté pour lire votre avenir de manière toute aussi précise. Consultation par téléphone ou visioconférence.", 75, 50);
