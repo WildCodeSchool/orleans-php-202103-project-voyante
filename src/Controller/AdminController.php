@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\ServicesManager;
+
 class AdminController extends AbstractController
 {
     /**
@@ -14,6 +16,10 @@ class AdminController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Admin/Home/index.html.twig');
+        $servicesManager = new ServicesManager();
+        $services = $servicesManager->selectAll();
+        return $this->twig->render('Admin/Home/index.html.twig', [
+            'services' => $services,
+        ]);
     }
 }
