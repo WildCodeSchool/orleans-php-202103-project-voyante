@@ -7,12 +7,12 @@ use App\Model\TestimoniesManager;
 class TestimoniesController extends AbstractController
 {
     /**
-     * Show informations for a specific Testimony
+     * List Testimonys
      */
-    public function show(int $id): string
+    public function index(): string
     {
         $testimoniesManager = new TestimoniesManager();
-        $testimony = $testimoniesManager->selectOneById($id);
-        return $this->twig->render('Admin/Testimony/show.html.twig', ['testimony' => $testimony]);
+        $testimonys = $testimoniesManager->selectAll();
+        return $this->twig->render('Admin/Testimony/index.html.twig', ['testimonys' => $testimonys]);
     }
 }
