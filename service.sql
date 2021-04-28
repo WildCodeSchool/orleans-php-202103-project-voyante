@@ -20,8 +20,9 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-CREATE DATABASE  IF NOT EXISTS `projet_voyance` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `projet_voyance`;
+CREATE DATABASE  IF NOT EXISTS projet_voyance; /*!40100 DEFAULT CHARACTER SET latin1 */
+
+USE projet_voyance;
 
 -- Structure de la table `service`
 --
