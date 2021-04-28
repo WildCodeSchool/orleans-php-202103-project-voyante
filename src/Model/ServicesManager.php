@@ -4,5 +4,5 @@ namespace App\Model;
 
 class ServicesManager extends AbstractManager
 {
-    public const TABLE = 'services';
+    public const TABLE = 'service';
 }

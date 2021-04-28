@@ -22,10 +22,10 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 --
--- Structure de la table `services`
+-- Structure de la table `service`
 --
 
-CREATE TABLE IF NOT EXISTS `services` (
+CREATE TABLE IF NOT EXISTS `service` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
   `name` VARCHAR(20) NOT NULL,
   `description` VARCHAR(255),
@@ -34,10 +34,10 @@ CREATE TABLE IF NOT EXISTS `services` (
 )
 
 --
--- Contenu de la table `services`
+-- Contenu de la table `service`
 --
 
-INSERT INTO `services` (`name`, `description`, `price1hour`) VALUES
+INSERT INTO `service` (`name`, `description`, `price1hour`) VALUES
 (`Au cabinet`, `Pendant le rendez-vous nous pratiquons le tirage de carte de tarot, la lecture des lignes de la main, l'astrologie avancée et la lecture de votre avenir.`, 75);
-INSERT INTO `services` (`name`, `description`, `price1hour`, `price30min`) VALUES
+INSERT INTO `service` (`name`, `description`, `price1hour`, `price30min`) VALUES
 (`À distance`, `Nous pratiquons la même prestation qu'en rendez-vous au cabinet, le tout adapté pour lire votre avenir de manière toute aussi précise. Consultation par téléphone ou visioconférence.`, 75, 50);
