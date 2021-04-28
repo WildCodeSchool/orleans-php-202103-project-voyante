@@ -1,0 +1,24 @@
+<form action="/Admin/addservice" class="form" method= "POST">
+    <h2 class="add_service">Ajouter une prestation</h2>
+    {% if errors %}
+        <ul>
+        {% for error in errors %}
+            <li class="errors">{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    <div class="info">
+        <label for="name">Nom de la prestation :</label>
+        <input class="name" type="text" name="name" placeholder="Nom de la prestation" value="{{ service.name }}"required>
+        <label for="price1hour">Tarif 1h :</label>
+        <input class="price1hour" type="number" name="price1hour" placeholder="70" value="{{ service.price1hour }}" required>
+        <label for="price30min">Tarif 30min :</label>
+        <input class="price30min" type="number" name="price30min" placeholder="35" value="{{ service.price30min }}"required>
+    <div>
+        <label for="description">Votre message :</label>
+        <textarea name="description" id="description" rows="4" placeholder="Description du service" value="{{ service.description }}"required></textarea>
+    </div>
+    <div class="button-contact">
+        <button type="submit">Enregistrer</button>
+    </div>
+</form>
