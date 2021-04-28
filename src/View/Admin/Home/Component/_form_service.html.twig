@@ -1,10 +1,10 @@
-<form action="/Admin/addservice" class="form" method="POST">
+<form action="/Admin/addservice" class="form" method= "POST">
     <h2 class="add_service">Ajouter une prestation</h2>
     {% if errors %}
         <ul>
-            {% for error in errors %}
-                <li class="errors">{{ error }}</li>
-            {% endfor %}
+        {% for error in errors %}
+            <li class="errors">{{ error }}</li>
+        {% endfor %}
         </ul>
     {% endif %}
     <div class="info">
@@ -18,7 +18,7 @@
         <label for="description">Votre message :</label>
         <textarea name="description" id="description" rows="4" placeholder="Description du service" value="{{ service.description }}"required></textarea>
     </div>
-        <div class="button-contact">
+    <div class="button-contact">
         <button type="submit">Enregistrer</button>
     </div>
-</form>
+</form> 
