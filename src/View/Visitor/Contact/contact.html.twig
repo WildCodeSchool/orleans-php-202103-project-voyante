@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-    <form action="/contact/index" class="form" method= "POST">
+    <form action="/contact/index" class="form" method= "POST" novalidate>
         <h2 class="contact-me">Contactez moi</h2>
         {% if errors %}
             <ul>
@@ -36,7 +36,7 @@
             <textarea name="message" id="message" rows="4" placeholder="Votre message" required></textarea>
         </div>
         <div class="button-contact">
-            <button type="submit">Envoyer</button>
+            <button type="submit" name="sendmail">Envoyer</button>
         </div>
     </form>
 {% endblock %}
