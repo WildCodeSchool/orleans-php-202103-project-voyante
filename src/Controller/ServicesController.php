@@ -6,9 +6,6 @@ use App\Model\ServicesManager;
 
 class ServicesController extends AbstractController
 {
-    /**
-     * Show informations for a specific Testimony
-     */
     public function show(int $id): string
     {
         $servicesManager = new ServicesManager();
