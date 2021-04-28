@@ -14,10 +14,7 @@ class TestimoniesController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $testimony = array_map('trim', $_POST);
-
-            // TODO validations (length, format...)
-          
-            // if validation is ok, insert and redirection
+            
             $testimoniesManager = new TestimoniesManager();
             $id = $testimoniesManager->insert($testimony);
             header('Location: /Admin/Testimony/show/' . $id);
