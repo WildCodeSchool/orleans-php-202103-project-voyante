@@ -6,6 +6,6 @@ class TrainingController extends AbstractController
 {
     public function index(): string
     {
-        return $this->twig->render('Training/index.html.twig');
+        return $this->twig->render('Visitor/Training/index.html.twig');
     }
 }

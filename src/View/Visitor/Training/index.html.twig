@@ -1,6 +1,7 @@
-{% extends 'layout.html.twig' %}
+{% extends 'Visitor/layout.html.twig' %}
 {% block title %}Formation{% endblock %}
 {% block stylesheet %}
+    {{ parent()}}
     <link rel="stylesheet" href="/assets/css/services.css">
     <link rel="stylesheet" href="/assets/css/training.css">
 {% endblock %}
