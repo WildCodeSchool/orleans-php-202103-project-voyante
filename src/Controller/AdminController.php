@@ -21,4 +21,9 @@ class AdminController extends AbstractController
     {
         return $this->twig->render('Admin/Services/edit_service.html.twig');
     }
+
+    public function addService()
+    {
+        return $this->twig->render('Admin/Services/add_service.html.twig');
+    }
 }
