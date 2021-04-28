@@ -2,7 +2,9 @@
 
 {% block stylesheet %}
     {{ parent() }}
+    <link rel="stylesheet" href="/assets/css/addservice.css">
 {% endblock %}
 
 {% block content %}
+    {% include 'Admin/Home/Component/_form_service.html.twig' %}
 {% endblock %}
