@@ -17,4 +17,13 @@ class TestimoniesController extends AbstractController
             header('Location: /Admin/Testimony/index');
         }
     }
+    /**
+     * List Testimonys
+     */
+    public function index(): string
+    {
+        $testimoniesManager = new TestimoniesManager();
+        $testimonies = $testimoniesManager->selectAll();
+        return $this->twig->render('Admin/Testimony/index.html.twig', ['testimonies' => $testimonies]);
+    }
 }
