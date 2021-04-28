@@ -27,7 +27,7 @@ USE `projet_voyance`;
 -- Structure de la table `témoignages`
 --
 DROP TABLE IF EXISTS `testimonies`;
-CREATE TABLE `testimonies` (
+CREATE TABLE `testimony` (
   `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` VARCHAR (80) NOT NULL,
   `mail` VARCHAR (320) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE `testimonies` (
 -- Contenu de la table `testimony`
 --
 
-INSERT INTO `testimonies` (`id`, `name`, `mail`, `message`, `validation`) VALUES
+INSERT INTO `testimony` (`id`, `name`, `mail`, `message`, `validation`) VALUES
 (1, 'océane', 'océane.h@gmail.com', "Je recommande Nathalie, qui explique très bien comment elle fonctionne et 
 je la remercie pour les réponses qu'elle a pu me donner !", TRUE ),
 (2, 'clémence', 'clémence.d@gmail.com', "J'ai consulté Mme MILLIET 2 fois en quatre ans et je ne peux que vous la recommander, 
@@ -64,7 +64,7 @@ Tout simplement : merci d’être sur mon chemin ! À bientôt...", TRUE );
 --
 -- AUTO_INCREMENT pour la table `témoignages`
 --
-ALTER TABLE `testimonies`
+ALTER TABLE `testimony`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
