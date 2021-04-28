@@ -26,7 +26,7 @@ USE `projet_voyance`;
 --
 -- Structure de la table `témoignages`
 --
-DROP TABLE IF EXISTS `testimonies`;
+DROP TABLE IF EXISTS `testimony`;
 CREATE TABLE `testimony` (
   `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` VARCHAR (80) NOT NULL,
