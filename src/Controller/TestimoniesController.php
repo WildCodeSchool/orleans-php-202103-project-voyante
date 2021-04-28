@@ -7,12 +7,14 @@ use App\Model\TestimoniesManager;
 class TestimoniesController extends AbstractController
 {
     /**
-     * List Testimonys
+     * Delete a specific Testimony
      */
-    public function index(): string
+    public function delete(int $id)
     {
-        $testimoniesManager = new TestimoniesManager();
-        $testimonys = $testimoniesManager->selectAll();
-        return $this->twig->render('Admin/Testimony/index.html.twig', ['testimonys' => $testimonys]);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $testimoniesManager = new TestimoniesManager();
+            $testimoniesManager->delete($id);
+            header('Location: /Admin/Testimony/index');
+        }
     }
 }
