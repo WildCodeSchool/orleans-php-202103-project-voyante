@@ -7,6 +7,7 @@
 
 .full-story h2 {
     margin: var(--small-size);
+    margin-top:0;
     padding: var(--small-size);
     text-align: center;
 }
