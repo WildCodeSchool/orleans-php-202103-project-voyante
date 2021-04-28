@@ -37,11 +37,11 @@ class ContactController extends AbstractController
             $this->checkFilterValidateEmail($data['email'], 'L\'email saisi n\'est pas valable');
 
             if (empty($this->getErrors())) {
-                return $this->twig->render('Contact/success.html.twig');
+                return $this->twig->render('Visitor/Contact/success.html.twig');
             }
         }
 
-        return $this->twig->render('Contact/contact.html.twig', ['errors' => $this->getErrors()]);
+        return $this->twig->render('Visitor/Contact/contact.html.twig', ['errors' => $this->getErrors()]);
     }
 
     private function checkWordPresenceInArray(string $word, array $array, string $message): void

@@ -11,6 +11,6 @@ class HomeController extends AbstractController
 
     public function fullStory()
     {
-        return $this->twig->render('History/index.html.twig');
+        return $this->twig->render('Visitor/History/index.html.twig');
     }
 }
