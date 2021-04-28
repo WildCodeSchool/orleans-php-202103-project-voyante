@@ -7,17 +7,12 @@ use App\Model\TestimoniesManager;
 class TestimoniesController extends AbstractController
 {
     /**
-     * Add a new Testimony
+     * Show informations for a specific Testimony
      */
-    public function add(): string
+    public function show(int $id): string
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // clean $_POST data
-            $testimony = array_map('trim', $_POST);
-            $testimoniesManager = new TestimoniesManager();
-            $id = $testimoniesManager->insert($testimony);
-            header('Location: /Admin/Testimony/show/' . $id);
-        }
-        return $this->twig->render('Admin/Testimony/add.html.twig');
+        $testimoniesManager = new TestimoniesManager();
+        $testimony = $testimoniesManager->selectOneById($id);
+        return $this->twig->render('Admin/Testimony/show.html.twig', ['testimony' => $testimony]);
     }
 }
