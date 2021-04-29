@@ -30,9 +30,9 @@ class TestimoniesController extends AbstractController
 
             // if validation is ok, insert and redirection
             $testimoniesManager = new TestimoniesManager();
-            $id = $testimoniesManager->insert($testimony);
-            header('Location: /Admin/Testimony/show/' . $id);
+            $testimoniesManager->insert($testimony);
+            header('Location: /Admin/index');
         }
-        return $this->twig->render('Admin/Testimony/add.html.twig');
+        return $this->twig->render('Admin/Home/index.html.twig');
     }
 }
