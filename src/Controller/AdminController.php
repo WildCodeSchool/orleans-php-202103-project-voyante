@@ -14,15 +14,7 @@ class AdminController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function index(): string
-    {
-        return $this->twig->render('Admin/Home/index.html.twig');
-    }
 
-    public function editService(): string
-    {
-        return $this->twig->render('Admin/Services/edit_service.html.twig');
-    }
     public function addService(): string
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
