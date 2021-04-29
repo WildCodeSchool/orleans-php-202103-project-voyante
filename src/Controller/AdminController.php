@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\TestimoniesManager;
 use App\Model\ServicesManager;
 
 class AdminController extends AbstractController
@@ -16,11 +17,15 @@ class AdminController extends AbstractController
      */
     public function index(): string
     {
+        $testimoniesManager = new TestimoniesManager();
+        $testimonies = $testimoniesManager->selectAll();
+
         $servicesManager = new ServicesManager();
         $services = $servicesManager->selectAll();
         return $this->twig->render('Admin/Home/index.html.twig', [
             'services' => $services,
-        ]);
+            'testimonies' => $testimonies
+            ]);
     }
 
     public function editService($id): string
@@ -34,7 +39,9 @@ class AdminController extends AbstractController
             $servicesManager->update($services);
             header('Location: Admin/index');
         }
-        return $this->twig->render('Admin/Services/edit_service.html.twig', ['services' => $services]);
+        return $this->twig->render('Admin/Services/edit_service.html.twig', [
+            'services' => $services
+            ]);
     }
 
     public function addService(): string
