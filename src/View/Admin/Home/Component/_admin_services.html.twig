@@ -17,7 +17,7 @@
                             <li class="list-group-item">Tarif 30 minutes : {{ service.price30min }} €</li>
                         {% endif %}
                         <a class="btn btn-sm btn-secondary" id="button-edit" href="/Admin/editService/{{ service.id }}">Modifier</a>
-                        <a class="btn btn-sm btn-secondary" id="button-delete" href="#">Supprimer</a>
+                        <a class="btn btn-sm btn-secondary" id="button-delete" href="/Admin/deleteService/{{ service.id }}">Supprimer</a>
                     </ul>
                 </div>
             {% endfor %}
