@@ -7,14 +7,6 @@ use App\Model\ServicesManager;
 
 class AdminController extends AbstractController
 {
-    /**
-     * Display home page
-     *
-     * @return string
-     * @throws \Twig\Error\LoaderError
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
-     */
     public function index(): string
     {
         $testimoniesManager = new TestimoniesManager();
@@ -44,8 +36,12 @@ class AdminController extends AbstractController
             ]);
     }
 
-    public function addService(): string
+    public function deleteService($id): void
     {
-        return $this->twig->render('Admin/Services/add_service.html.twig');
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $servicesManager = new ServicesManager();
+            $servicesManager->delete($id);
+            header('Location: /Admin/index');
+        }
     }
 }
