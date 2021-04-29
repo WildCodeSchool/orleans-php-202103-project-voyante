@@ -24,7 +24,7 @@ class AdminController extends AbstractController
         return $this->twig->render('Admin/Services/edit_service.html.twig');
     }
 
-    public function deleteService(int $id)
+    public function deleteService(int $id): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $servicesManager = new ServicesManager();
