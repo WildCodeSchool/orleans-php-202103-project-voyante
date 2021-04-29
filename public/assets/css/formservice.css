@@ -34,7 +34,7 @@ input, textarea {
     color: var(--placeholder);
 }
     
-.send {
+button {
     width: var(--width-half);
     padding: var(--padding);
     border: none;
