@@ -18,6 +18,22 @@ class AdminController extends AbstractController
     {
         $servicesManager = new ServicesManager();
         $services = $servicesManager->selectAll();
-        return $this->twig->render('Admin/Home/index.html.twig', ['services' => $services]);
+        return $this->twig->render('Admin/Home/index.html.twig', [
+            'services' => $services,
+        ]);
+    }
+
+    public function editService($id): string
+    {
+        $servicesManager = new ServicesManager();
+        $services = $servicesManager->selectOneById($id);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // clean $_POST data
+            $services = array_map('trim', $_POST);
+
+            $servicesManager->update($services);
+            header('Location: Admin/index');
+        }
+        return $this->twig->render('Admin/Services/edit_service.html.twig', ['services' => $services]);
     }
 }

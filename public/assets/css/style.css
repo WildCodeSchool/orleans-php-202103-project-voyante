@@ -50,6 +50,7 @@
     --width-part-training: 0px;
     --height-part-training: 2px;
     --card-width: 18rem;
+    --margin-bottom-admin: 5px;
 
     --height: 80%;
     --margin-bottom: 20px;
@@ -81,4 +82,3 @@ h2 {
     font-size: var(--h2-font-size);
     color: var(--primary-color);
 }
-
