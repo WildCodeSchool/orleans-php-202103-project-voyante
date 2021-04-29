@@ -1,0 +1,51 @@
+<section class="services" id="services">
+    <div class="container">
+        <div class="services-heading">
+            <h2>Prestations</h2>
+            <p>Toutes les formules sont sur rendez-vous.</p>
+            <p class="schedule">Du lundi au vendredi de 10h à 19h - Le samedi de 11h à 16h - Fermé le dimanche et les jours fériés</p>
+        </div>
+        <div class="row">
+            {% for service in services %}
+                <div class="card" id="card">
+                    <div class="card-header">
+                        <h3>{{ service.name }}</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text-center">{{ service.description }}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% if service.price1hour == true %}
+                            <li class="list-group-item">Tarif 1 heure : {{ service.price1hour }} €</li>
+                        {% endif %}
+                        {% if service.price30min == true %}
+                            <li class="list-group-item">Tarif 30 minutes : {{ service.price30min }} €</li>
+                        {% endif %}
+                    </ul>
+                </div>
+            {% endfor %}
+            <div class="card" id="card">
+                <div class="card-header">
+                    <h3>Formation</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text-center">Au programme : les bases, les protections, les esprits, la magie noire et blanche et de la culture générale concernant le monde du mystique.</p>
+                    <a href="/training/index"><button class="button-training">En savoir plus</button></a>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Tarif : 250€</li>
+                    <li class="list-group-item">Durée : 5h30 durant une journée</li>
+                </ul>
+            </div>
+        </div>
+        <div class="services-contact">
+            <a href="/contact/index" class="button-services">Prendre rendez-vous</a>
+        </div>
+        <div class="services-footer">
+            <p>Pour la voyance à distance, la consultation pourra être effectée une fois le paiement terminé via Western Union ou par chèque.</p>
+            <p><b>Compte tenu de la situation sanitaire, je ne peux vous recevoir au cabinet que si vous habitez proche de Chécy.</b></p>
+            <p>Sachez également qu'il n'y a aucune distinction quant à la qualité de la voyance au cabinet et à distance.</p>
+            <p><b>Tout rendez-vous non annulé 48h à l'avance est dû, merci de votre compréhension.</b></p>
+        </div>
+    </div>
+</section>

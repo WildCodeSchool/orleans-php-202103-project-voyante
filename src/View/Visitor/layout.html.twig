@@ -1,0 +1,16 @@
+{% extends 'base_layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+{% endblock %}
+
+{% block navbar %}
+    {% include 'Visitor/Home/Component/_navbar.html.twig' %}
+{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block footer %}
+    {% include 'Visitor/Home/Component/_footer.html.twig' %}
+{% endblock %}

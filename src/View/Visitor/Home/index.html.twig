@@ -1,0 +1,16 @@
+{% extends 'Visitor/layout.html.twig' %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/assets/css/indexHome.css">
+    <link rel="stylesheet" href="/assets/css/indexStory.css">
+    <link rel="stylesheet" href="/assets/css/services.css">
+    <link rel="stylesheet" href="/assets/css/testimony.css">
+{% endblock %}
+
+{% block content %}
+    {% include 'Visitor/Home/Component/_home.html.twig' %}
+    {% include 'Visitor/Home/Component/_story.html.twig' %}
+    {% include "Visitor/Home/Component/_services.html.twig" %}
+    {% include 'Visitor/Home/Component/_carousel.html.twig' %}
+{% endblock %}
