@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\ServicesManager;
+
 class AdminController extends AbstractController
 {
     /**
@@ -12,13 +14,22 @@ class AdminController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function index()
+    public function index(): string
     {
         return $this->twig->render('Admin/Home/index.html.twig');
     }
 
-    public function editService()
+    public function editService($id): string
     {
-        return $this->twig->render('Admin/Services/edit_service.html.twig');
+        $servicesManager = new ServicesManager();
+        $services = $servicesManager->selectOneById($id);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // clean $_POST data
+            $services = array_map('trim', $_POST);
+
+            $servicesManager->update($services);
+            header('Location: Admin/index');
+        }
+        return $this->twig->render('Admin/Services/edit_service.html.twig', ['services' => $services]);
     }
 }
