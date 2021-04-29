@@ -103,7 +103,7 @@ body {
 }
 
 #container-admin {
-    margin-top: var(--margin-bottom-services)
+    margin-top: var(--margin-bottom-services);
 }
 
 #button-edit {
