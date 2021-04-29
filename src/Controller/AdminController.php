@@ -14,23 +14,10 @@ class AdminController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function index()
-    {
-        $services = $this->loadAllServices();
-        return $this->twig->render('Admin/Home/index.html.twig', ['services' => $services]);
-    }
-
-    public function editService()
-    {
-        return $this->twig->render('Admin/Services/edit_service.html.twig');
-    }
-    /**
-     * List Services
-     */
-    private function loadAllServices(): array
+    public function index(): string
     {
         $servicesManager = new ServicesManager();
         $services = $servicesManager->selectAll();
-        return $services;
+        return $this->twig->render('Admin/Home/index.html.twig', ['services' => $services]);
     }
 }
