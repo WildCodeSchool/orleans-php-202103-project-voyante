@@ -19,7 +19,6 @@ class AdminController extends AbstractController
             'testimonies' => $testimonies
             ]);
     }
-
     public function editService($id): string
     {
         $servicesManager = new ServicesManager();
@@ -35,7 +34,6 @@ class AdminController extends AbstractController
             'services' => $services
             ]);
     }
-
     public function deleteService($id): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -43,5 +41,16 @@ class AdminController extends AbstractController
             $servicesManager->delete($id);
             header('Location: /Admin/index');
         }
+    }
+    public function addService(): string
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // clean $_POST data
+            $service = array_map('trim', $_POST);
+            $servicesManager = new ServicesManager();
+            $servicesManager->insert($service);
+            header('Location: /Admin/index');
+        }
+        return $this->twig->render('Admin/Services/edit_service.html.twig');
     }
 }
