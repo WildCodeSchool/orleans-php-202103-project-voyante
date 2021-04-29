@@ -17,12 +17,12 @@ class AdminController extends AbstractController
         return $this->twig->render('Admin/Home/index.html.twig');
     }
 
-    public function editService()
+    public function editService(): string
     {
         return $this->twig->render('Admin/Services/edit_service.html.twig');
     }
 
-    public function addService()
+    public function addService(): string
     {
         return $this->twig->render('Admin/Services/add_service.html.twig');
     }
