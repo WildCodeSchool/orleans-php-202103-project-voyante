@@ -7,17 +7,14 @@ use App\Model\TestimoniesManager;
 class TestimoniesController extends AbstractController
 {
     /**
-     * Add a new Testimony
+     * Delete a specific Testimony
      */
-    public function add(): string
+    public function delete(int $id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // clean $_POST data
-            $testimony = array_map('trim', $_POST);
             $testimoniesManager = new TestimoniesManager();
-            $id = $testimoniesManager->insert($testimony);
-            header('Location: /Admin/Testimony/show/' . $id);
+            $testimoniesManager->delete($id);
+            header('Location: /Admin/Testimony/index');
         }
-        return $this->twig->render('Admin/Testimony/add.html.twig');
     }
 }
