@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Service\FormValidation;
+
 class ContactController extends AbstractController
 {
      /**
@@ -13,72 +15,40 @@ class ContactController extends AbstractController
      * @throws \Twig\Error\SyntaxError
      */
 
-    private array $errors = [];
+
+    public array $errors = [];
     public const MAX_LENGTH_NAME = 255;
     public const MAX_LENGTH_EMAIL = 320;
 
     public function index(): string
     {
+        $validation = new FormValidation();
         $subjects = ['tel-session', 'cabinet-session', 'infos', 'other'];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
-            $this->checkSentenceEmpty($data['name'], 'Un nom complet est obligatoire');
-            $this->checkSentenceEmpty($data['tel'], 'Un numéro de téléphone est obligatoire');
-            $this->checkSentenceEmpty($data['message'], 'Un message est obligatoire');
-            $this->checkSentenceEmpty($data['email'], 'Un email est obligatoire');
+            $validation->sentenceEmpty($data['name'], 'Un nom complet est obligatoire');
+            $validation->sentenceEmpty($data['tel'], 'Un numéro de téléphone est obligatoire');
+            $validation->sentenceEmpty($data['message'], 'Un message est obligatoire');
+            $validation->sentenceEmpty($data['email'], 'Un email est obligatoire');
 
-            $this->checkWordSize($data['name'], self::MAX_LENGTH_NAME, 'Le nom complet doit faire moins de '
+            $validation->wordMaxSize($data['name'], self::MAX_LENGTH_NAME, 'Le nom complet doit faire moins de '
                 . self::MAX_LENGTH_NAME . ' caractères');
-            $this->checkWordSize($data['email'], self::MAX_LENGTH_EMAIL, 'L\'adresse mail doit faire moins de '
+            $validation->wordMaxSize($data['email'], self::MAX_LENGTH_EMAIL, 'L\'adresse mail doit faire moins de '
                 . self::MAX_LENGTH_EMAIL . ' caractères');
 
-            $this->checkWordPresenceInArray($data['subject'], $subjects, 'Le sujet saisi n\'est pas valable');
-            $this->checkFilterValidateEmail($data['email'], 'L\'email saisi n\'est pas valable');
+            $validation->wordIsInArray($data['subject'], $subjects, 'Le sujet saisi n\'est pas valable');
+            $validation->emailFilterValidate($data['email'], 'L\'email saisi n\'est pas valable');
 
-            if (empty($this->getErrors())) {
+            if (empty($validation->getErrors())) {
+                    $message = 'Vous avez reçu un nouveau message de la part de ' . $data['name'] .
+                    ', vous pouvez le joindre à ce numéro : ' . $data['tel'] . ' ou part mail : ' . $data['email'] .
+                     'Son message est : ' . $data['message'];
+                    mail("projetvoyance@gmail.com", $data['subject'], $message);
                 return $this->twig->render('Visitor/Contact/success.html.twig');
             }
         }
 
-        return $this->twig->render('Visitor/Contact/contact.html.twig', ['errors' => $this->getErrors()]);
-    }
-
-    private function checkWordPresenceInArray(string $word, array $array, string $message): void
-    {
-        if (!in_array($word, $array)) {
-            $this->setErrors($message);
-        }
-    }
-
-    private function checkWordSize(string $word, int $length, string $messageError): void
-    {
-        if (strlen($word) > $length) {
-            $this->setErrors($messageError);
-        }
-    }
-
-    private function checkFilterValidateEmail(string $sentence, string $messageError): void
-    {
-        if (!filter_var($sentence, FILTER_VALIDATE_EMAIL)) {
-            $this->setErrors($messageError);
-        }
-    }
-
-    private function checkSentenceEmpty(string $sentences, string $messageError): void
-    {
-        if (empty($sentences)) {
-            $this->setErrors($messageError);
-        }
-    }
-
-    private function setErrors(string $errors): void
-    {
-        $this->errors[] = $errors;
-    }
-
-    private function getErrors(): array
-    {
-        return $this->errors;
+        return $this->twig->render('Visitor/Contact/contact.html.twig', ['errors' => $validation->getErrors()]);
     }
 }
