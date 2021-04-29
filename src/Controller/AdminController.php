@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\ServicesManager;
+
 class AdminController extends AbstractController
 {
     /**
@@ -14,11 +16,21 @@ class AdminController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Admin/Home/index.html.twig');
+        $services = $this->loadAllServices();
+        return $this->twig->render('Admin/Home/index.html.twig', ['services' => $services]);
     }
 
     public function editService()
     {
         return $this->twig->render('Admin/Services/edit_service.html.twig');
+    }
+    /**
+     * List Services
+     */
+    private function loadAllServices(): array
+    {
+        $servicesManager = new ServicesManager();
+        $services = $servicesManager->selectAll();
+        return $services;
     }
 }
