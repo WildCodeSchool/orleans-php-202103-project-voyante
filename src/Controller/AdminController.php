@@ -23,10 +23,6 @@ class AdminController extends AbstractController
     {
         return $this->twig->render('Admin/Services/edit_service.html.twig');
     }
-
-    /**
-     * Add a new Services
-     */
     public function addService(): string
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
