@@ -16,7 +16,7 @@ class ContactController extends AbstractController
      */
 
 
-    protected array $errors = [];
+    public array $errors = [];
     public const MAX_LENGTH_NAME = 255;
     public const MAX_LENGTH_EMAIL = 320;
 
@@ -41,7 +41,7 @@ class ContactController extends AbstractController
             $validation->emailFilterValidate($data['email'], 'L\'email saisi n\'est pas valable');
 
             if (empty($validation->getErrors())) {
-                    $message = 'Voici avez reçu un nouveau message de la part de ' . $data['name'] .
+                    $message = 'Vous avez reçu un nouveau message de la part de ' . $data['name'] .
                     ', vous pouvez le joindre à ce numéro : ' . $data['tel'] . ' ou part mail : ' . $data['email'] .
                      'Son message est : ' . $data['message'];
                     mail("projetvoyance@gmail.com", $data['subject'], $message);
