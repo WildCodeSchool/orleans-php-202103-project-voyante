@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\ServicesManager;
+
 class AdminController extends AbstractController
 {
     /**
@@ -20,5 +22,14 @@ class AdminController extends AbstractController
     public function editService()
     {
         return $this->twig->render('Admin/Services/edit_service.html.twig');
+    }
+
+    public function deleteService(int $id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $servicesManager = new ServicesManager();
+            $servicesManager->delete($id);
+            header('Location: /Admin/index');
+        }
     }
 }
