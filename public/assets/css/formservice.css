@@ -8,7 +8,7 @@ html, body {
     background-color: var(--background-color);
 }
 
-.contact-me {
+.add_service {
     margin: var(--spacing-form) var(--spacing-form) var(--margin-bottom);
     font-weight: var(--xlight-font-weight);
     color: var(--background-color);
@@ -34,7 +34,7 @@ input, textarea {
     color: var(--placeholder);
 }
     
-.send {
+button {
     width: var(--width-half);
     padding: var(--padding);
     border: none;
@@ -44,7 +44,7 @@ input, textarea {
     color: var(--primary-color);
 }
     
-.button-contact {
+.button-register {
     display: flex;
     justify-content: center;
     transition: var(--transition-prestations);

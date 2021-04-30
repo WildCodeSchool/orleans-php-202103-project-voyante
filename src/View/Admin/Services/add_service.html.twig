@@ -1,0 +1,10 @@
+{% extends '/Admin/admin_layout.html.twig' %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/assets/css/formservice.css">
+{% endblock %}
+
+{% block content %}
+    {% include 'Admin/Home/Component/_form_service.html.twig' %}
+{% endblock %}
