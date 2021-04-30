@@ -22,16 +22,16 @@ class AdminController extends AbstractController
     public function editService($id): string
     {
         $servicesManager = new ServicesManager();
-        $services = $servicesManager->selectOneById($id);
+        $service = $servicesManager->selectOneById($id);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
-            $services = array_map('trim', $_POST);
+            $service = array_map('trim', $_POST);
 
-            $servicesManager->update($services);
+            $servicesManager->update($service);
             header('Location: Admin/index');
         }
         return $this->twig->render('Admin/Services/edit_service.html.twig', [
-            'services' => $services
+            'service' => $service
             ]);
     }
     public function deleteService($id): void
