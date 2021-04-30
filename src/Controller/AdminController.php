@@ -53,4 +53,13 @@ class AdminController extends AbstractController
         }
         return $this->twig->render('Admin/Services/edit_service.html.twig');
     }
+
+    public function deleteTestimony(int $id): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $TestimoniesManager = new TestimoniesManager();
+            $TestimoniesManager->delete($id);
+            header('Location: /Admin/index');
+        }
+    }
 }
