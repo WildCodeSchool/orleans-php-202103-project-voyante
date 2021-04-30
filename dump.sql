@@ -10,21 +10,45 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Base de données :  `testimony`
+-- Base de données :  projet_voyance
 --
 
 -- --------------------------------------------------------
-CREATE DATABASE  IF NOT EXISTS `projet_voyance` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `projet_voyance`;
+CREATE DATABASE  IF NOT EXISTS projet_voyance; /*!40100 DEFAULT CHARACTER SET latin1 */
+
+USE projet_voyance;
+
+-- Structure de la table `service`
 --
--- Structure de la table `témoignages`
+
+CREATE TABLE IF NOT EXISTS `service` (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(20) NOT NULL,
+  `description` VARCHAR(255),
+  `price1hour` INT NOT NULL,
+  `price30min` INT
+);
+
+--
+-- Contenu de la table `service`
+--
+
+INSERT INTO `service` (`name`, `description`, `price1hour`) VALUES
+("Au cabinet", "Pendant le rendez-vous nous pratiquons le tirage de carte de tarot, la lecture des lignes de la main, l'astrologie avancée et la lecture de votre avenir.", 75);
+INSERT INTO `service` (`name`, `description`, `price1hour`, `price30min`) VALUES
+("À distance", "Nous pratiquons la même prestation qu'en rendez-vous au cabinet, le tout adapté pour lire votre avenir de manière toute aussi précise. Consultation par téléphone ou visioconférence.", 75, 50);
+
+-------------------------------------------------------------
+--
+-- Base de données :  `testimony`
+--
+--
+-- Structure de la table `testimony`
 --
 DROP TABLE IF EXISTS `testimony`;
 CREATE TABLE `testimony` (
@@ -50,19 +74,7 @@ Tout simplement stupéfiante ! Bienveillante, pédagogue, sensible, souriante et
 Tout simplement : merci d’être sur mon chemin ! À bientôt...", TRUE );
 
 --
--- Index pour les tables exportées
---
-
---
--- Index pour la table `item`
---
-
---
--- AUTO_INCREMENT pour les tables exportées
---
-
---
--- AUTO_INCREMENT pour la table `témoignages`
+-- AUTO_INCREMENT pour la table `testimony`
 --
 ALTER TABLE `testimony`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
