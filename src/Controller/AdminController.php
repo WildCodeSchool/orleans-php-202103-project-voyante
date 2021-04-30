@@ -32,7 +32,7 @@ class AdminController extends AbstractController
         }
         return $this->twig->render('Admin/Services/edit_service.html.twig', [
             'services' => $services
-            ]);
+        ]);
     }
     public function deleteService(int $id): void
     {
