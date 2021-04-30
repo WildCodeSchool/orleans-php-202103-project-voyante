@@ -17,7 +17,7 @@ class AdminController extends AbstractController
         return $this->twig->render('Admin/Home/index.html.twig', [
             'services' => $services,
             'testimonies' => $testimonies
-            ]);
+        ]);
     }
     public function editService(int $id): string
     {
