@@ -1,0 +1,41 @@
+<main id="adminTestimonies" class="container">
+    <h2 class="mt-5 pb-2">
+        Liste des témoignages
+    </h2>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td>Nom</td>
+                    <td>Email</td>
+                    <td>Message</td>
+                    <td>Statut</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody> 
+            {% for testimony in testimonies %}
+                <tr>
+                    <td>{{testimony.name}}</td>
+                    <td>{{testimony.mail}}</td>
+                    <td>{{testimony.message}}</td>
+                    <td>{% if testimony.validation == TRUE %}
+                        Affiché
+                    {% else %}
+                        Proposé
+                    {% endif %}</td>
+                    <td>{% if testimony.validation == FALSE %}
+                            <form action"/Testimonies/validate/{{testimony.id}}">
+                                <button class="btn btn-sm btn-success">Valider</button>
+                            </form>
+                        {% endif %}
+                        <form method="POST" onSubmit="return confirm('Voulez vous supprimer ?')" action="/Testimonies/delete/{{testimony.id}}">
+                            <button class="btn btn-sm btn-danger">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
