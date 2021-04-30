@@ -17,30 +17,28 @@ class AdminController extends AbstractController
         return $this->twig->render('Admin/Home/index.html.twig', [
             'services' => $services,
             'testimonies' => $testimonies
-            ]);
+        ]);
     }
-    public function editService($id): string
+    public function editService(int $id): string
     {
         $servicesManager = new ServicesManager();
         $services = $servicesManager->selectOneById($id);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $_POST["id"] = $id;
             // clean $_POST data
             $services = array_map('trim', $_POST);
-
             $servicesManager->update($services);
-            header('Location: Admin/index');
+            header('Location: /Admin/index');
         }
         return $this->twig->render('Admin/Services/edit_service.html.twig', [
             'services' => $services
-            ]);
+        ]);
     }
-    public function deleteService($id): void
+    public function deleteService(int $id): void
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $servicesManager = new ServicesManager();
             $servicesManager->delete($id);
             header('Location: /Admin/index');
-        }
     }
     public function addService(): string
     {
@@ -51,6 +49,6 @@ class AdminController extends AbstractController
             $servicesManager->insert($service);
             header('Location: /Admin/index');
         }
-        return $this->twig->render('Admin/Services/edit_service.html.twig');
+        return $this->twig->render('Admin/Services/add_service.html.twig');
     }
 }

@@ -9,9 +9,9 @@ html, body {
 }
 
 .add_service {
-    margin: var(--spacing-form) var(--spacing-form) var(--margin-bottom);
+    margin-top:var(--margin-top);
+    text-align: center;
     font-weight: var(--xlight-font-weight);
-    color: var(--background-color);
 }
 
 form {
