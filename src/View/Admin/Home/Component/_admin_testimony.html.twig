@@ -25,7 +25,7 @@
                         Proposé
                     {% endif %}</td>
                     <td>{% if testimony.validation == FALSE %}
-                            <form method="POST" onSubmit="return confirm('Voulez vous ajouter ?')" action"/Admin/validateTestimony/{{testimony.id}}">
+                            <form method="POST" onSubmit="return confirm('Voulez vous afficher ce témoignage côté visiteur ?')" action"/Admin/validateTestimony/{{testimony.id}}">
                                 <button class="btn btn-sm btn-success">Valider</button>
                             </form>
                         {% endif %}
