@@ -25,11 +25,11 @@
                         Proposé
                     {% endif %}</td>
                     <td>{% if testimony.validation == FALSE %}
-                            <form action"/Testimonies/validate/{{testimony.id}}">
+                            <form action"/Admin/validateTestimony/{{testimony.id}}">
                                 <button class="btn btn-sm btn-success">Valider</button>
                             </form>
                         {% endif %}
-                        <form method="POST" onSubmit="return confirm('Voulez vous supprimer ?')" action="/Testimonies/delete/{{testimony.id}}">
+                        <form method="POST" onSubmit="return confirm('Voulez vous supprimer ?')" action="/Admin/deleteTestimony/{{testimony.id}}">
                             <button class="btn btn-sm btn-danger">Supprimer</button>
                         </form>
                     </td>
