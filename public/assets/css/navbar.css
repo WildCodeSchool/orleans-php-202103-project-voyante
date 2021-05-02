@@ -3,7 +3,10 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    height: var(--navbar-height);
 }
+
+
 
 h1 {
     font-size: var(--font-big-size);

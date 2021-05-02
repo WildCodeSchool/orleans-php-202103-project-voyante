@@ -1,6 +1,6 @@
 .home{ 
     color: var(--background-color);
-    height: var(--section-height);
+    height: calc(100vh - var(--navbar-height));
     background-image: var(--background-image-home);
     background-size: cover;
     display: flex;
