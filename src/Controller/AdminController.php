@@ -66,4 +66,17 @@ class AdminController extends AbstractController
         }
         return $this->twig->render('Admin/Testimony/add.html.twig');
     }
+
+    public function selectValidation(string $validation): string
+    {
+        $testimoniesManager = new TestimoniesManager();
+        $testimonies = $testimoniesManager->selectValidation($validation);
+
+        $servicesManager = new ServicesManager();
+        $services = $servicesManager->selectAll();
+        return $this->twig->render('Admin/Home/index.html.twig', [
+            'services' => $services,
+            'testimonies' => $testimonies
+        ]);
+    }
 }

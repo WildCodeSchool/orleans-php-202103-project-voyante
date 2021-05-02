@@ -38,4 +38,12 @@ class TestimoniesManager extends AbstractManager
 
         return $statement->execute();
     }
+
+    public function selectValidation(string $validation = 'false'): array
+    {
+        $query = 'SELECT * FROM ' . static::TABLE;
+        $query .= ' WHERE ' . $validation;
+
+        return $this->pdo->query($query)->fetchAll();
+    }
 }
