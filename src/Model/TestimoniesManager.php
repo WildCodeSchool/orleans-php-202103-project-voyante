@@ -7,7 +7,7 @@ class TestimoniesManager extends AbstractManager
     public const TABLE = 'testimony';
 
     /**
-     * Insert new item in database
+     * Insert new testimony in database
      */
     //`id`, `name`, `mail`, `message`, `validation`
 
@@ -24,7 +24,7 @@ class TestimoniesManager extends AbstractManager
         return (int)$this->pdo->lastInsertId();
     }
     /**
-     * Update item in database
+     * Update testimony in database
      */
     public function update(array $item): bool
     {
@@ -36,6 +36,16 @@ class TestimoniesManager extends AbstractManager
         $statement->bindValue('message', $item['message'], \PDO::PARAM_STR);
         $statement->bindValue('validation', $item['validation'], \PDO::PARAM_BOOL);
 
+        return $statement->execute();
+    }
+    /**
+     * Update testimony in database
+     */
+    public function updateValidate(array $item): bool
+    {
+        $query = "UPDATE " . self::TABLE . " SET 'validation'=:validation WHERE id=:id";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('validation', $item['validation'], \PDO::PARAM_BOOL);
         return $statement->execute();
     }
 }
