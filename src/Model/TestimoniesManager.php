@@ -13,7 +13,7 @@ class TestimoniesManager extends AbstractManager
 
     public function insert(array $item): int
     {
-        $query = "INSERT INTO " . self::TABLE . "('name', 'mail', 'message', 'validation') 
+        $query = "INSERT INTO " . self::TABLE . "(`name`, `mail`, `message`, `validation`) 
                 VALUES (:name, :mail, :message, :validation)";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue('name', $item['name'], \PDO::PARAM_STR);
