@@ -44,7 +44,7 @@ class TestimonyController extends AbstractController
                     $testimony = array_map('trim', $_POST);
                     $testimonyManager = new TestimoniesManager();
                     $testimonyManager->insert($testimony);
-                    header('Location: /Home/index');
+                    header('Location: /');
             }
         }
 
