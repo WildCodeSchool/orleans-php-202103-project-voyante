@@ -15,8 +15,6 @@ class ContactController extends AbstractController
      * @throws \Twig\Error\SyntaxError
      */
 
-
-    public array $errors = [];
     public const MAX_LENGTH_NAME = 255;
     public const MAX_LENGTH_EMAIL = 320;
 
