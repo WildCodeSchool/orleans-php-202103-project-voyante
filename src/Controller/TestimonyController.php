@@ -16,8 +16,6 @@ class TestimonyController extends AbstractController
      * @throws \Twig\Error\SyntaxError
      */
 
-
-    public array $errors = [];
     public const MAX_LENGTH_NAME = 80;
     public const MAX_LENGTH_EMAIL = 320;
 
