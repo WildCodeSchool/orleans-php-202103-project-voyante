@@ -1,3 +1,7 @@
+.row {
+    margin-right: 0;
+}
+
 #footer {
     background-color: var(--background-color);
     height: var(--navbar-height);

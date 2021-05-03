@@ -28,8 +28,8 @@ h2.carousel-title {
     background-size: cover;
     background-repeat: no-repeat;
     height: var(--section-height);
-    width: var(--section-width);
 }
+
 .testimony-contact {
     display: flex;
     justify-content: center;
