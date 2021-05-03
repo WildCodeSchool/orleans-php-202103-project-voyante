@@ -9,7 +9,7 @@
 .box-story {
     margin: var(--small-size);
     padding: var(--small-size);
-    height: 100%;
+    height: var(--width-Full);
     border: var(--border-solid)  var(--primary-color);
     border-radius: var(--border-radius); 
     text-align: center;
@@ -17,7 +17,7 @@
 }
 
 .container-story{
-    height: 100%;
+    height: var(--width-Full);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -25,41 +25,42 @@
 }
 
 .story img{
-    height: 50%;
-    width: 80%;
+    height: var(--width-half);
+    width: calc(var(--width-Middle)*2);
     object-fit: contain;
+    border-radius: 1%;
 }
 
 .story p{
     margin: calc(var(--padding)*6);
-    height: 40%;
-    width: 80%;
+    height: var(--width-Middle);
+    width: calc(var(--width-Middle)*2);
     font-size: var(--font-small-size);
-}
-
-.story a{
-    color: blue;
-    text-decoration: underline;
 }
 
 /* Small devices (landscape phones, 576px and up)*/
 @media (max-width: 576px) { 
     .box-story {
-        padding: 20px;
-        height: 100%;
+        padding: var(--xsmall-size);
+        height: var(--width-Full);
         border: 0;
     }
     .story p{
-        width: 100%;
-        font-size: calc(var(--font-small-size)*0.7) ;
+        width: var(--width-Full);
+        font-size: calc(var(--font-small-size)*0.7);
     }
     .story img{
-        height: 60%;
-        width: 100%;
+        height: var(--width-half);
+        width: var(--width-Full);
         object-fit: contain;
     }
-    
 
+    .story .services-contact {
+        width: var(--width-Full);
+    }
+    .story .button-services {
+        width: var(--width-Full);
+    }
 }
 
 /*Extra large devices (large desktops, 1200px and up)*/
