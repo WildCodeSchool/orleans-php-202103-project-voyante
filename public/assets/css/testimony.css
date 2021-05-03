@@ -1,68 +1,68 @@
-h2 {
+h2.carousel-title {
     text-align: center;
     margin: var(--margin-bottom);
+    color: var(--background-color);
 }
 
-.carousel-caption {
-    flex-direction: column-reverse;
-    background-color: var(--background-carousel);
-    background-position: center;
-    height: var(--height-carousel);
-}
-
-.carousel-caption p {
+.carousel-item p {
     font-family: var(--font-family);
     font-size: var(--font-small-size);
+    height: calc(1/2 * var(--section-height));
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.carousel-caption h3{
+.testifying {
     text-align: center;
     font-family: var(--font-family);
     font-size: var(--font-small-size);
 }
 
 .testimony {
-    border: var(--border-solid)  var(--primary-color);
-    border-radius: var(--border-radius); 
     padding: var(--big-size);
-    margin: var(--small-size);
+    color: var(--background-color);
+    background-image: url(../images/592367.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: var(--section-height);
+    width: var(--section-width);
+}
+.testimony-contact {
+    display: flex;
+    justify-content: center;
+}
+
+.button-testimony {
+    width: var(--button-services-width);
+    padding: var(--padding-services);
+    transition: var(--transition-services);
+    text-decoration: none;
+    text-align: center;
+    color: var(--primary-color);
+    background-color: var(--light);
+    border: solid var(--primary-color) 1px;
+    font-size: var(--font-xsmall-size);
+    margin-top: var(--margin-top);
+    margin-bottom: calc(4 * var(--margin-bottom)); 
+}
+
+.button-testimony:hover {
+    box-shadow: var(--card-hover-shadow);
 }
 
 @media screen and (max-width: 1000px){
     .carousel-caption p {
         font-size: var(--font-xsmall-size);
     }
-    .carousel-caption h3 {
-        font-size: var(--font-xsmall-size);
-    }
-    .testimony {
-        padding: var(--small-size);
-        margin: var(--xsmall-size);
-    }
 }
 
 @media screen and (max-width: 750px){
-    .carousel-caption p {
+    .carousel-item p {
         font-size: var(--font-xxsmall-size);
-    }
-    .carousel-caption h3 {
-        font-size: var(--font-xxsmall-size);
-    }
-    .testimony {
-        padding: var(--xsmall-size);
-        margin: 0;
-    }
+    } 
 }
 
-@media screen and (max-width: 500px){
-    .carousel-caption p {
-        font-size: var(--font-mini-size);
-    }
-    .carousel-caption h3 {
-        font-size: var(--font-mini-size);
-    }
-    .testimony {
-        padding: 0;
-        margin: 0;
-    }
-}   
+
