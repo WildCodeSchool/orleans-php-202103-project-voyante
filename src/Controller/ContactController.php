@@ -16,7 +16,6 @@ class ContactController extends AbstractController
      */
 
 
-    public array $errors = [];
     public const MAX_LENGTH_NAME = 255;
     public const MAX_LENGTH_EMAIL = 320;
 
