@@ -18,7 +18,7 @@ class TestimonyController extends AbstractController
 
 
     public array $errors = [];
-    public const MAX_LENGTH_NAME = 255;
+    public const MAX_LENGTH_NAME = 80;
     public const MAX_LENGTH_EMAIL = 320;
 
     public function index(): string
@@ -47,7 +47,6 @@ class TestimonyController extends AbstractController
                     header('Location: /');
             }
         }
-
         return $this->twig->render('Visitor/addTestimony/index.html.twig', ['errors' => $validation->getErrors()]);
     }
 }
