@@ -41,7 +41,7 @@ class TestimoniesManager extends AbstractManager
     /**
      * Update testimony in database
      */
-    public function updateValidate(array $item): bool
+    public function updateStatus(array $item): bool
     {
         $query = "UPDATE " . self::TABLE . " SET 'validation'=:validation WHERE id=:id";
         $statement = $this->pdo->prepare($query);
