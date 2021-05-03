@@ -113,6 +113,6 @@ body {
 
 #button-delete {
     color: var(--light);
-    background-color: var(--primary-color);
     margin-bottom: var(--margin-bottom-admin);
+    width: var(--width-Full);
 }
