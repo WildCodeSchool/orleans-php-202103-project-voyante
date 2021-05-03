@@ -1,22 +1,22 @@
-.home{ 
+.home { 
     color: var(--background-color);
-    height: var(--section-height);
+    height: calc((var(--section-height)) - var(--navbar-height));
     background-image: var(--background-image-home);
     background-size: cover;
     display: flex;
     text-align: center;
 }
 
-.container{
+.container {
     align-self: center;
     padding: var(--big-size);
 }
 
-.colorButton{
+.colorButton {
     color: var(--background-color);
     background-color: var(--secondary-color);
 }
 
-.home p{
+.home p {
     text-shadow: var(--text-shadow);
 }
