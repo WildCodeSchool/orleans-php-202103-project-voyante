@@ -51,7 +51,7 @@ class AdminController extends AbstractController
         }
         return $this->twig->render('Admin/Services/add_service.html.twig');
     }
-    public function testimonyAddStatus(): void
+    public function testimonyStatus(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $testimony = array_map('trim', $_POST);
