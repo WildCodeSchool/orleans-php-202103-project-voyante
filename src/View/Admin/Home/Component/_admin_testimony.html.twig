@@ -24,11 +24,14 @@
                     {% else %}
                         Proposé
                     {% endif %}</td>
-                    <td>{% if testimony.validation == FALSE %}
-                            <form method="POST" onSubmit="return confirm('Voulez vous afficher ce témoignage côté visiteur ?')" action"/Admin/validateTestimony/{{testimony.id}}">
+                    <td>{% if testimony.validation == FAlSE %}
+                            <form method="POST" onSubmit="return confirm('Voulez vous afficher ce témoignage côté visiteur ?')" action"/Admin/testimonyStatus/{{testimony.id}}">
                                 <button class="btn btn-sm btn-success">Valider</button>
                             </form>
                         {% endif %}
+                        <form method="POST" onSubmit="return confirm('Voulez vous afficher ce témoignage côté visiteur ?')" action"/Admin/testimony/{{testimony.id}}">
+                                <button class="btn btn-sm btn-success">Valider</button>
+                        </form>
                         <form method="POST" onSubmit="return confirm('Voulez vous supprimer ?')" action="/Admin/deleteTestimony/{{testimony.id}}">
                             <button class="btn btn-sm btn-danger">Supprimer</button>
                         </form>
