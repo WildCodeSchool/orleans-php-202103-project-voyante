@@ -1,0 +1,8 @@
+h2 {
+    text-align: center;
+    margin: var(--margin-bottom);
+}
+
+table td {
+    vertical-align: middle; 
+}

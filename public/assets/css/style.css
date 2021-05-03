@@ -12,6 +12,7 @@
     --font-big-size: 50px;
     --font-medium-size: 45px;
     --font-small-size: 30px;
+    --font-mid-small-size: 25px;
     --font-xsmall-size: 20px;
     --font-xxsmall-size: 14px;
     --font-mini-size: 9px;
@@ -31,6 +32,7 @@
     --padding: 8px;
     --width-Big: 90%;
     --width-Full: 100%;
+    --width-half-full: 66%;
     --width-half: 50%;
     --width-Middle: 40%;
     --width-Small: 20%;
@@ -59,7 +61,7 @@
     --phone-width: 200px;
     --resp-phone-width: 130px;
     --phone-height: 33px;
-    --navbar-height: 150px;
+    --navbar-height: 20vh;
     --img-height-100: 100px;
 
     --big-size: 50px;

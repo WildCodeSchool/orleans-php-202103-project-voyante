@@ -36,9 +36,11 @@ class AdminController extends AbstractController
     }
     public function deleteService(int $id): void
     {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $servicesManager = new ServicesManager();
             $servicesManager->delete($id);
             header('Location: /Admin/index');
+        }
     }
     public function addService(): string
     {
@@ -58,6 +60,15 @@ class AdminController extends AbstractController
             $testimoniesManager = new TestimoniesManager();
             $testimoniesManager->updateStatus($testimony);
             header('Location: /Admin/index');
+        }
+    }
+
+    public function deleteTestimony(int $id): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $testimoniesManager = new TestimoniesManager();
+            $testimoniesManager->delete($id);
+            header('Location: /Admin/index/#adminTestimonies');
         }
     }
 }
