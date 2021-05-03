@@ -53,13 +53,13 @@ class AdminController extends AbstractController
         }
         return $this->twig->render('Admin/Services/add_service.html.twig');
     }
-    public function testimonyStatus(): void
+
+    public function testimonyStatus(int $id): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $testimony = array_map('trim', $_POST);
             $testimoniesManager = new TestimoniesManager();
-            $testimoniesManager->updateStatus($testimony);
-            header('Location: /Admin/index');
+            $testimoniesManager->updateStatus(true, $id);
+            header('Location: /Admin/index/#adminTestimonies');
         }
     }
 
