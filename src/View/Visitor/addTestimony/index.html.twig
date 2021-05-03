@@ -1,0 +1,32 @@
+{% extends 'Visitor/layout.html.twig' %}
+
+{% block stylesheet %}
+    {{ parent()}}
+    <link rel="stylesheet" href="/assets/css/contact.css">
+{% endblock %}
+
+{% block content %}
+   <form action="/Testimony/index" class="form" method= "POST">
+        <h2 class="contact-me">Témoignez</h2>
+        {% if errors %}
+            <ul>
+            {% for error in errors %}
+                <li class="errors">{{ error }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        <div class="info">
+            <label for="name">Nom complet :</label>
+            <input class="name" type="text" name="name" placeholder="Nom complet" required>
+            <label for="mail">Adresse mail :</label>
+            <input class="mail" type="email" name="mail" placeholder="exemple@exemple.com" required>
+        </div>
+        <div>
+            <label for="message">Votre témoignage :</label>
+            <textarea name="message" id="message" rows="4" placeholder="Votre témoignage..." required></textarea>
+        </div>
+        <div class="button-contact">
+            <button class="send" type="submit">Envoyer</button>
+        </div>
+    </form>
+{% endblock %}
