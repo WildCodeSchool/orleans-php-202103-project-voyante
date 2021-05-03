@@ -1,13 +1,62 @@
+@import url("style.css");
+
 .full-story {
     height: auto;
-    text-align: left;
+    font-family: var(--font-family);
     color: var(--primary-color);
-    background-color: var(--background-color);
 }
 
-.full-story h2 {
-    margin: var(--small-size);
-    margin-top:0;
-    padding: var(--small-size);
+.journey {
     text-align: center;
+    font-size: var(--font-small-size);
+    margin-bottom: var(--margin-bottom-services);
+}
+
+h3 {
+    font-size: var(--font-small-size);
+    font-weight: bold;
+}
+
+.full-story-heading {
+    text-align: center;
+    margin-top: var(--margin-top-training);
+    font-family: var(--font-family);
+    margin-bottom: var(--margin-bottom-services);
+}
+
+.full-story img {
+    border-radius: var(--border-radius-image);
+}
+
+.part {
+    display: inline-block;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-size: var(--font-xsmall-size);
+    background: var(--light);
+}
+
+.part::before, .part::after {
+    content:"";
+    position: absolute;
+    width: var(--width-part-training);
+    height: var(--height-part-training);
+    transition: all var(--part-hover-transition-delay) linear;
+    background: var(--primary-color);
+}
+
+.part:hover::before, .part:hover::after {
+    width: var(--part-hover-width-height);
+}
+
+.part::before {
+    right: var(--part-before-after);
+    top: var(--part-before-after);
+}
+
+.part::after {
+    left: var(--part-before-after);
+    bottom: var(--part-before-after);
 }
