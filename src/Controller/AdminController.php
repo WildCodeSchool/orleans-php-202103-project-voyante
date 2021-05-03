@@ -59,7 +59,7 @@ class AdminController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $testimoniesManager = new TestimoniesManager();
             $testimoniesManager->delete($id);
-            header('Location: /Admin/index');
+            header('Location: /Admin/index/#adminTestimonies');
         }
     }
 }
