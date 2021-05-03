@@ -36,9 +36,11 @@ class AdminController extends AbstractController
     }
     public function deleteService(int $id): void
     {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $servicesManager = new ServicesManager();
             $servicesManager->delete($id);
             header('Location: /Admin/index');
+        }
     }
     public function addService(): string
     {
@@ -51,19 +53,13 @@ class AdminController extends AbstractController
         }
         return $this->twig->render('Admin/Services/add_service.html.twig');
     }
-    public function testimonyaddValidation(): string
+
+    public function deleteTestimony(int $id): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // clean $_POST data
-            $testimony = array_map('trim', $_POST);
-
-            // TODO validations (length, format...)
-
-            // if validation is ok, insert and redirection
             $testimoniesManager = new TestimoniesManager();
-            $id = $testimoniesManager->insert($testimony);
-            header('Location: /Admin/Testimony/show/' . $id);
+            $testimoniesManager->delete($id);
+            header('Location: /Admin/index/#adminTestimonies');
         }
-        return $this->twig->render('Admin/Testimony/add.html.twig');
     }
 }
