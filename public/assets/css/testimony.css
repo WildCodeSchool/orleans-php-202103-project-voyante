@@ -28,15 +28,34 @@ h2.carousel-title {
     background-size: cover;
     background-repeat: no-repeat;
     height: var(--section-height);
+    width: var(--section-width);
+}
+.testimony-contact {
+    display: flex;
+    justify-content: center;
+}
+
+.button-testimony {
+    width: var(--button-services-width);
+    padding: var(--padding-services);
+    transition: var(--transition-services);
+    text-decoration: none;
+    text-align: center;
+    color: var(--primary-color);
+    background-color: var(--light);
+    border: solid var(--primary-color) 1px;
+    font-size: var(--font-xsmall-size);
+    margin-top: var(--margin-top);
+    margin-bottom: calc(4 * var(--margin-bottom)); 
+}
+
+.button-testimony:hover {
+    box-shadow: var(--card-hover-shadow);
 }
 
 @media screen and (max-width: 1000px){
     .carousel-caption p {
         font-size: var(--font-xsmall-size);
-    }
-    .testimony {
-        padding: var(--small-size);
-        margin: var(--xsmall-size);
     }
 }
 
