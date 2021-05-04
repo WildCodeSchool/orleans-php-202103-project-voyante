@@ -37,11 +37,11 @@ input, textarea {
 .send {
     width: var(--width-half);
     padding: var(--padding);
-    border: none;
-    background: var(--background-color); 
-    font-size: var(--font-xxsmall-size);
-    font-weight: var(--xlight-font-weight);
-    color: var(--primary-color);
+    border-radius: var(--border-radius-contact-button);
+    border: solid 1px var(--light);
+    background: var(--primary-color); 
+    font-size: var(--font-xsmall-size);
+    color: var(--light);
 }
     
 .button-contact {
@@ -74,6 +74,11 @@ label {
 .errors {
     color: var(--background-color);
     list-style: none;
+}
+
+.phone-number {
+    padding: var(--padding);
+    width: var(--phone-form-width);
 }
     
 @media (min-width: 568px) {
