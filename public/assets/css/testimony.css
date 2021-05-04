@@ -23,14 +23,20 @@ h2.carousel-title {
 }
 
 .testimony {
+    height: var(--section-height);
+    padding-top: 50px;
+}
+
+.testimonyCarousel {
     padding: var(--big-size);
     color: var(--background-color);
     background-image: url(../images/592367.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: var(--section-height);
-    width: var(--section-width);
+    height: var(--height);
+
 }
+
 .testimony-contact {
     display: flex;
     justify-content: center;
