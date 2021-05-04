@@ -6,9 +6,13 @@
     --background-color: #f1e6fd;
     --light: #fffbff;
     --card-border-color: #dbc3df;
+
+    --position-right: 5%;
+    --position-left: 10%;
     
     --font-family: 'Lato', sans-serif;
    
+    --font-bigger-size: 55px;
     --font-big-size: 50px;
     --font-medium-size: 45px;
     --font-small-size: 30px;
@@ -97,14 +101,14 @@ html {
 .fas {
     display:block;
     position: fixed;
-    bottom: 10%;
-    right: 3%;
+    bottom: var(--position-left);
+    right: var(--position-right);
     color: var(--primary-color);
-    height:50px;
+    height:var(--big-size);
     width: auto;
-    font-size: 50px;
+    font-size: var(--font-big-size);
 }
 
 .fas:hover {
-    font-size: 55px;
+    font-size: var(--font-bigger-size);
 }
