@@ -23,19 +23,16 @@ class TestimoniesManager extends AbstractManager
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
-    /**
-     * Update item in database
-     */
-    public function update(array $item): bool
-    {
-        $query = "UPDATE " . self::TABLE . " SET 'name'=:name, 'mail'=:mail, 
-                'message'=:message, 'validation'=:validation WHERE id=:id";
-        $statement = $this->pdo->prepare($query);
-        $statement->bindValue('name', $item['name'], \PDO::PARAM_STR);
-        $statement->bindValue('mail', $item['mail'], \PDO::PARAM_STR);
-        $statement->bindValue('message', $item['message'], \PDO::PARAM_STR);
-        $statement->bindValue('validation', $item['validation'], \PDO::PARAM_BOOL);
 
+    /**
+     * Update testimony in database
+     */
+    public function updateStatus(bool $status, int $id): bool
+    {
+        $query = "UPDATE " . self::TABLE . " SET `validation`=:validation WHERE `id`=:id";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('validation', $status, \PDO::PARAM_BOOL);
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
         return $statement->execute();
     }
 }

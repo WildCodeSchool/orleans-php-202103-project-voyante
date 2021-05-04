@@ -62,4 +62,13 @@ class AdminController extends AbstractController
             header('Location: /Admin/index/#adminTestimonies');
         }
     }
+
+    public function testimonyStatus(int $id): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $testimoniesManager = new TestimoniesManager();
+            $testimoniesManager->updateStatus(true, $id);
+            header('Location: /Admin/index/#adminTestimonies');
+        }
+    }
 }
