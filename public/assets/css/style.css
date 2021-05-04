@@ -93,3 +93,18 @@ html {
     width: auto;
     margin: 0;
 }
+
+.fas {
+    display:block;
+    position: fixed;
+    bottom: 10%;
+    right: 3%;
+    color: var(--primary-color);
+    height:50px;
+    width: auto;
+    font-size: 50px;
+}
+
+.fas:hover {
+    font-size: 55px;
+}
