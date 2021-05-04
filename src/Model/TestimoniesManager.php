@@ -25,7 +25,7 @@ class TestimoniesManager extends AbstractManager
     }
 
     /**
-     * Update testimony in database
+     * Update testimony status in database
      */
     public function updateStatus(bool $status, int $id): bool
     {
@@ -34,5 +34,16 @@ class TestimoniesManager extends AbstractManager
         $statement->bindValue('validation', $status, \PDO::PARAM_BOOL);
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         return $statement->execute();
+    }
+     /**
+     * Select testimony status true or false in database
+     */
+    public function selectedOrderValidate(bool $validation): array
+    {
+        $query = "SELECT * FROM " . static::TABLE . " WHERE validation=:validation";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('validation', $validation, \PDO::PARAM_BOOL);
+        $statement->execute();
+        return $statement->fetchAll();
     }
 }

@@ -9,17 +9,43 @@ class AdminController extends AbstractController
 {
     public function index(): string
     {
+        $selectTestimonies = ['Tous les messages','Uniquement les messages validés',
+        'Uniquement les messages non validés'];
+        $selectActive = 0;
+        $testimonies = [];
         $testimoniesManager = new TestimoniesManager();
-        $testimonies = $testimoniesManager->selectAll();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            switch ($_POST['filterTestimonies']) {
+                case 1:
+                    $testimonies = $testimoniesManager->selectAll();
+                    $selectActive = 1;
+                    break;
+                case 2:
+                    $testimonies = $testimoniesManager->selectedOrderValidate(true);
+                    $selectActive = 2;
+                    break;
+                case 3:
+                    $testimonies = $testimoniesManager->selectedOrderValidate(false);
+                    $selectActive = 3;
+                    break;
+            }
+        } else {
+            $testimonies = $testimoniesManager->selectAll();
+        }
 
         $servicesManager = new ServicesManager();
         $services = $servicesManager->selectAll();
+
         return $this->twig->render('Admin/Home/index.html.twig', [
             'services' => $services,
-            'testimonies' => $testimonies
+            'testimonies' => $testimonies,
+            'selectTestimonies' => $selectTestimonies,
+            'selectActive' => $selectActive
         ]);
     }
-    public function editService(int $id): string
+
+    public function editService($id): string
     {
         $servicesManager = new ServicesManager();
         $services = $servicesManager->selectOneById($id);

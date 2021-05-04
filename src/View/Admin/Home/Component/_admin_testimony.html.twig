@@ -1,8 +1,21 @@
 <main id="adminTestimonies" class="container">
     <h2 class="mt-5 pb-2">
         Liste des témoignages
-    </h2>
-    <div class="table-responsive">
+    </h2>                      
+    <label for="selectTestimonies">Filtre d'affichage des témoignages</label>
+    <form class="m-2" method="POST" action="/Admin/index/" >
+        <select name="filterTestimonies" id="selectTestimonies" class="form-select w-auto" value= "2" aria-label="Filtres d'affichage des témoignages" onChange="this.parentNode.submit()" > 
+            {% for selectTestimony in selectTestimonies %}
+                {% if selectActive == loop.index %}
+                    <option selected value={{loop.index}}>{{selectTestimony}}</option> 
+                {% else %}
+                    <option value={{loop.index}}>{{selectTestimony}}</option> 
+                {% endif %}       
+            {% endfor %}
+        </select>
+    </form>
+    
+    <div class="table-responsive min-vh-100 m-5">
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -23,7 +36,8 @@
                         Affiché
                     {% else %}
                         Proposé
-                    {% endif %}</td>
+                    {% endif %}
+                    </td>
                     <td>{% if testimony.validation == FALSE %}
                             <form method="POST" onSubmit="return confirm('Voulez vous afficher ce témoignage côté visiteur ?')" action="/Admin/testimonyStatus/{{testimony.id}}">
                                 <button class="btn btn-sm btn-success">Valider</button>
