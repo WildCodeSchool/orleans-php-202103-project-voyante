@@ -4,10 +4,10 @@
     display: flex;
     justify-content: center;
     align-self: center;
+    padding: var(--padding-border);
 }
 
 .box-story {
-    margin: var(--small-size);
     padding: var(--small-size);
     height: var(--width-Full);
     border: var(--border-solid)  var(--primary-color);
@@ -33,7 +33,6 @@
 
 .story p{
     margin: calc(var(--padding)*6);
-    height: var(--width-Middle);
     width: calc(var(--width-Middle)*2);
     font-size: var(--font-small-size);
 }
