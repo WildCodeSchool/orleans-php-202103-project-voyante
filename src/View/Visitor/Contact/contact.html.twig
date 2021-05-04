@@ -22,13 +22,13 @@
         {% endif %}
         <div class="info">
             <label for="name">Nom complet :</label>
-            <input class="name" type="text" name="name" placeholder="Nom complet" required>
+            <input class="name" type="text" name="name" placeholder="Nom complet" value="{{ data.name }}" required>
             <label for="email">Adresse mail :</label>
-            <input class="email" type="text" name="email" placeholder="exemple@exemple.com" required>
+            <input class="email" type="text" name="email" placeholder="exemple@exemple.com" value="{{ data.email }}" required>
             <label for="tel">Numéro de téléphone :</label>
-            <input class="tel" type="tel" name="tel" size="14" placeholder="00 00 00 00 00" required>
+            <input class="tel" type="tel" name="tel" size="14" placeholder="00 00 00 00 00" value="{{ data.tel }}" required>
             <label for="subject">Sujet : </label>
-            <select class="subject" name="subject" id="subject">
+            <select class="subject" name="subject" id="subject" value="{{ data.subject }}" >
                 <option value="">--Veuillez choisir votre sujet--</option>
                 <option value="tel-session">Séance téléphonique</option>
                 <option value="cabinet-session">Séance au cabinet</option>
@@ -38,7 +38,7 @@
         </div>
         <div>
             <label for="message">Votre message :</label>
-            <textarea name="message" id="message" rows="4" placeholder="Votre message" required></textarea>
+            <textarea name="message" id="message" rows="4" placeholder="Votre message" required>{{- data.message -}}</textarea>
         </div>
         <div class="button-contact">
             <button class="send" type="submit">Envoyer</button>
