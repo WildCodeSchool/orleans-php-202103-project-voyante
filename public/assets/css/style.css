@@ -6,9 +6,13 @@
     --background-color: #f1e6fd;
     --light: #fffbff;
     --card-border-color: #dbc3df;
+
+    --position-right: 5%;
+    --position-left: 10%;
     
     --font-family: 'Lato', sans-serif;
    
+    --font-bigger-size: 55px;
     --font-big-size: 50px;
     --font-medium-size: 45px;
     --font-small-size: 30px;
@@ -92,4 +96,19 @@ html {
     scroll-behavior: smooth;
     width: auto;
     margin: 0;
+}
+
+.fas {
+    display:block;
+    position: fixed;
+    bottom: var(--position-left);
+    right: var(--position-right);
+    color: var(--primary-color);
+    height:var(--big-size);
+    width: auto;
+    font-size: var(--font-big-size);
+}
+
+.fas:hover {
+    font-size: var(--font-bigger-size);
 }
