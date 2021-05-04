@@ -43,6 +43,10 @@ input, textarea {
     font-size: var(--font-xsmall-size);
     color: var(--light);
 }
+
+.send:hover {
+    background-color: var(--secondary-color);
+}
     
 .button-contact {
     display: flex;
