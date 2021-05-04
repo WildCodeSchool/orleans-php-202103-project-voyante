@@ -17,6 +17,7 @@ h2.carousel-title {
 
 .testifying {
     text-align: center;
+    text-transform: capitalize;
     font-family: var(--font-family);
     font-size: var(--font-small-size);
 }
