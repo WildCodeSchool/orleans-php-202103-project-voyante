@@ -19,6 +19,14 @@
     letter-spacing: var(--light-letter-spacing);
 }
 
+#footer_right a {
+    text-decoration: underline;
+}
+
+#footer_right a:hover {
+    color: var(--secondary-color);
+}
+
 @media screen and (max-width: 768px) {
     #footer {
         height:calc(1.5*var(--navbar-height));
