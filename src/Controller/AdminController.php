@@ -9,7 +9,7 @@ class AdminController extends AbstractController
 {
     public function index(): string
     {
-        $testimoniesLabels = ['Tous les messages','Uniquement les messages validés',
+        $labelsTesti = ['Tous les messages','Uniquement les messages validés',
         'Uniquement les messages non validés'];
         $activeLabelTesti = 0;
         $testimonies = [];
@@ -40,7 +40,7 @@ class AdminController extends AbstractController
         return $this->twig->render('Admin/Home/index.html.twig', [
             'services' => $services,
             'testimonies' => $testimonies,
-            'testimoniesLabels' => $testimoniesLabels,
+            'labelsTesti' => $labelsTesti,
             'activeLabelTesti' => $activeLabelTesti
         ]);
     }

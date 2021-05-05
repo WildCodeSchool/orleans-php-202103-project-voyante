@@ -5,11 +5,11 @@
     <label for="selectTestimonies">Filtre d'affichage des témoignages</label>
     <form class="m-2" method="POST" action="/Admin/index/#adminTestimonies" >
         <select name="filterTestimonies" id="selectTestimonies" class="form-select w-auto" value= "2" aria-label="Filtres d'affichage des témoignages" onChange="submit()" > 
-            {% for testimoniesLabel in testimoniesLabels %}
+            {% for labelTesti in labelsTesti %}
                 {% if activeLabelTesti == loop.index %}
-                    <option selected value={{loop.index}}>{{testimoniesLabel}}</option> 
+                    <option selected value={{loop.index}}>{{labelTesti}}</option> 
                 {% else %}
-                    <option value={{loop.index}}>{{testimoniesLabel}}</option> 
+                    <option value={{loop.index}}>{{labelTesti}}</option> 
                 {% endif %}       
             {% endfor %}
         </select>
