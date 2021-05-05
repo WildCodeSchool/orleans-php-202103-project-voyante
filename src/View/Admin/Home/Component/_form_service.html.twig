@@ -1,6 +1,6 @@
 <form class="form" method= "POST">
     {% if errors %}
-        <ul>
+        <ul class="errors-ul">
         {% for error in errors %}
             <li class="errors">{{ error }}</li>
         {% endfor %}

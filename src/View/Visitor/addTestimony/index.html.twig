@@ -9,7 +9,7 @@
    <form action="/Testimony/index" class="form" method= "POST">
         <h2 class="contact-me">Témoignez</h2>
         {% if errors %}
-            <ul>
+            <ul class="errors-ul">
             {% for error in errors %}
                 <li class="errors">{{ error }}</li>
             {% endfor %}
