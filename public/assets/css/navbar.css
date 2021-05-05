@@ -55,12 +55,22 @@ button {
     text-align: center;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
     h1 {
         font-size: var(--font-xsmall-size);
     }
 
     .navbar {
         height: auto;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1450px) {
+    .nav-link {
+        font-size: var(--font-xxsmall-size);
+    }
+
+    .collapse {
+        width: var(--width-full);
     }
 }
