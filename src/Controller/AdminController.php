@@ -4,9 +4,12 @@ namespace App\Controller;
 
 use App\Model\TestimoniesManager;
 use App\Model\ServicesManager;
+use App\Service\FormValidation;
 
 class AdminController extends AbstractController
 {
+    public const MAX_LENGTH_NAME = 20;
+    public const MAX_LENGTH_MESSAGE = 255;
     public function index(): string
     {
         $testimoniesManager = new TestimoniesManager();
@@ -21,17 +24,30 @@ class AdminController extends AbstractController
     }
     public function editService(int $id): string
     {
+        $validation = new FormValidation();
         $servicesManager = new ServicesManager();
         $services = $servicesManager->selectOneById($id);
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_POST["id"] = $id;
             // clean $_POST data
             $services = array_map('trim', $_POST);
-            $servicesManager->update($services);
-            header('Location: /Admin/index');
+
+            $validation->sentenceEmpty($services['name'], 'Un nom complet est obligatoire');
+            $validation->sentenceEmpty($services['price1hour'], 'Un tarif d\'une heure est obligatoire');
+            $validation->wordMaxSize($services['name'], self::MAX_LENGTH_NAME, 'Le nom de la prestation doit
+             faire moins de ' . self::MAX_LENGTH_NAME . ' caractères');
+            $validation->wordMaxSize($services['description'], self::MAX_LENGTH_MESSAGE, 'La description doit
+             faire moins de ' . self::MAX_LENGTH_MESSAGE . ' caractères');
+
+            if (empty($validation->getErrors())) {
+                $servicesManager->update($services);
+                header('Location: /Admin/index');
+            }
         }
         return $this->twig->render('Admin/Services/edit_service.html.twig', [
-            'services' => $services
+            'services' => $services,
+            'errors' => $validation->getErrors()
         ]);
     }
     public function deleteService(int $id): void
@@ -44,14 +60,27 @@ class AdminController extends AbstractController
     }
     public function addService(): string
     {
+        $validation = new FormValidation();
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $service = array_map('trim', $_POST);
-            $servicesManager = new ServicesManager();
-            $servicesManager->insert($service);
-            header('Location: /Admin/index');
+            $validation->sentenceEmpty($service['name'], 'Un nom complet est obligatoire');
+            $validation->sentenceEmpty($service['price1hour'], 'Un tarif d\'une heure est obligatoire');
+            $validation->wordMaxSize($service['name'], self::MAX_LENGTH_NAME, 'Le nom de la prestation doit 
+            faire moins de ' . self::MAX_LENGTH_NAME . ' caractères');
+            $validation->wordMaxSize($service['description'], self::MAX_LENGTH_MESSAGE, 'La description doit 
+            faire moins de ' . self::MAX_LENGTH_MESSAGE . ' caractères');
+
+            if (empty($validation->getErrors())) {
+                $servicesManager = new ServicesManager();
+                $servicesManager->insert($service);
+                header('Location: /Admin/index');
+            }
         }
-        return $this->twig->render('Admin/Services/add_service.html.twig');
+        return $this->twig->render('Admin/Services/add_service.html.twig', [
+            'errors' => $validation->getErrors()
+            ]);
     }
 
     public function deleteTestimony(int $id): void
