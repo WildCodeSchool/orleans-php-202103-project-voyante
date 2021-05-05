@@ -10,7 +10,7 @@ class HomeController extends AbstractController
     public function index()
     {
         $testimoniesManager = new TestimoniesManager();
-        $testimonies = $testimoniesManager->selectAll();
+        $testimonies = $testimoniesManager->selectedOrderValidate(true);
 
         $servicesManager = new ServicesManager();
         $services = $servicesManager->selectAll();
