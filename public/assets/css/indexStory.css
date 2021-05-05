@@ -34,7 +34,7 @@
 .story p{
     margin: calc(var(--padding)*6);
     width: calc(var(--width-Middle)*2);
-    font-size: var(--font-small-size);
+    font-size: var(--font-xsmall-size);
 }
 
 /* Small devices (landscape phones, 576px and up)*/
