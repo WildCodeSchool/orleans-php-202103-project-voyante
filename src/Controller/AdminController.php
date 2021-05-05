@@ -9,9 +9,9 @@ class AdminController extends AbstractController
 {
     public function index(): string
     {
-        $selectTestimonies = ['Tous les messages','Uniquement les messages validés',
+        $testimoniesLabels = ['Tous les messages','Uniquement les messages validés',
         'Uniquement les messages non validés'];
-        $selectActiveTesti = 0;
+        $activeLabelTesti = 0;
         $testimonies = [];
         $testimoniesManager = new TestimoniesManager();
 
@@ -19,15 +19,15 @@ class AdminController extends AbstractController
             switch ($_POST['filterTestimonies']) {
                 case 1:
                     $testimonies = $testimoniesManager->selectAll();
-                    $selectActiveTesti = 1;
+                    $activeLabelTesti = 1;
                     break;
                 case 2:
                     $testimonies = $testimoniesManager->selectedOrderValidate(true);
-                    $selectActiveTesti = 2;
+                    $activeLabelTesti = 2;
                     break;
                 case 3:
                     $testimonies = $testimoniesManager->selectedOrderValidate(false);
-                    $selectActiveTesti = 3;
+                    $activeLabelTesti = 3;
                     break;
             }
         } else {
@@ -40,17 +40,17 @@ class AdminController extends AbstractController
         return $this->twig->render('Admin/Home/index.html.twig', [
             'services' => $services,
             'testimonies' => $testimonies,
-            'selectTestimonies' => $selectTestimonies,
-            'selectActiveTesti' => $selectActiveTesti
+            'testimoniesLabels' => $testimoniesLabels,
+            'activeLabelTesti' => $activeLabelTesti
         ]);
     }
 
-    public function editService($id): string
+    public function editService(int $id): string
     {
         $servicesManager = new ServicesManager();
         $services = $servicesManager->selectOneById($id);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $_POST["id"] = $id;
+            $_POST['id'] = $id;
             // clean $_POST data
             $services = array_map('trim', $_POST);
             $servicesManager->update($services);
