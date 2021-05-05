@@ -11,7 +11,7 @@ class AdminController extends AbstractController
     {
         $selectTestimonies = ['Tous les messages','Uniquement les messages validés',
         'Uniquement les messages non validés'];
-        $selectActive = 0;
+        $selectActiveTesti = 0;
         $testimonies = [];
         $testimoniesManager = new TestimoniesManager();
 
@@ -19,15 +19,15 @@ class AdminController extends AbstractController
             switch ($_POST['filterTestimonies']) {
                 case 1:
                     $testimonies = $testimoniesManager->selectAll();
-                    $selectActive = 1;
+                    $selectActiveTesti = 1;
                     break;
                 case 2:
                     $testimonies = $testimoniesManager->selectedOrderValidate(true);
-                    $selectActive = 2;
+                    $selectActiveTesti = 2;
                     break;
                 case 3:
                     $testimonies = $testimoniesManager->selectedOrderValidate(false);
-                    $selectActive = 3;
+                    $selectActiveTesti = 3;
                     break;
             }
         } else {
@@ -41,7 +41,7 @@ class AdminController extends AbstractController
             'services' => $services,
             'testimonies' => $testimonies,
             'selectTestimonies' => $selectTestimonies,
-            'selectActive' => $selectActive
+            'selectActiveTesti' => $selectActiveTesti
         ]);
     }
 

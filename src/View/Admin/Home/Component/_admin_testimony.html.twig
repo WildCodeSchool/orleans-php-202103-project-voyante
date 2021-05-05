@@ -6,7 +6,7 @@
     <form class="m-2" method="POST" action="/Admin/index/#adminTestimonies" >
         <select name="filterTestimonies" id="selectTestimonies" class="form-select w-auto" value= "2" aria-label="Filtres d'affichage des témoignages" onChange="submit()" > 
             {% for selectTestimony in selectTestimonies %}
-                {% if selectActive == loop.index %}
+                {% if selectActiveTesti == loop.index %}
                     <option selected value={{loop.index}}>{{selectTestimony}}</option> 
                 {% else %}
                     <option value={{loop.index}}>{{selectTestimony}}</option> 
@@ -36,8 +36,7 @@
                         Affiché
                     {% else %}
                         Proposé
-                    {% endif %}
-                    </td>
+                    {% endif %}</td>
                     <td>{% if testimony.validation == FALSE %}
                             <form method="POST" onSubmit="return confirm('Voulez vous afficher ce témoignage côté visiteur ?')" action="/Admin/testimonyStatus/{{testimony.id}}">
                                 <button class="btn btn-sm btn-success">Valider</button>
