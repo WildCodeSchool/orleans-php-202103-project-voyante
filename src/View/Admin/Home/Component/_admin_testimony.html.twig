@@ -1,10 +1,10 @@
-<main id="adminTestimonies" class="container">
+<section id="adminTestimonies" class="container">
     <h2 class="mt-5 pb-2">
         Liste des témoignages
     </h2>                      
     <label for="selectTestimonies">Filtre d'affichage des témoignages</label>
-    <form class="m-2" method="POST" action="/Admin/index/" >
-        <select name="filterTestimonies" id="selectTestimonies" class="form-select w-auto" value= "2" aria-label="Filtres d'affichage des témoignages" onChange="this.parentNode.submit()" > 
+    <form class="m-2" method="POST" action="/Admin/index/#adminTestimonies" >
+        <select name="filterTestimonies" id="selectTestimonies" class="form-select w-auto" value= "2" aria-label="Filtres d'affichage des témoignages" onChange="submit()" > 
             {% for selectTestimony in selectTestimonies %}
                 {% if selectActive == loop.index %}
                     <option selected value={{loop.index}}>{{selectTestimony}}</option> 
@@ -52,4 +52,4 @@
             </tbody>
         </table>
     </div>
-</main>
+</section>
