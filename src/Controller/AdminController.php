@@ -12,16 +12,42 @@ class AdminController extends AbstractController
     public const MAX_LENGTH_MESSAGE = 255;
     public function index(): string
     {
+        $labelsTestimonies = ['Tous les messages','Uniquement les messages validés',
+        'Uniquement les messages non validés'];
+        $activeLabel = 1;
+        $testimonies = [];
         $testimoniesManager = new TestimoniesManager();
-        $testimonies = $testimoniesManager->selectAll();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            switch ($_POST['filterTestimonies']) {
+                case 1:
+                    $testimonies = $testimoniesManager->selectAll();
+                    $activeLabel = 1;
+                    break;
+                case 2:
+                    $testimonies = $testimoniesManager->selectedOrderValidate(true);
+                    $activeLabel = 2;
+                    break;
+                case 3:
+                    $testimonies = $testimoniesManager->selectedOrderValidate(false);
+                    $activeLabel = 3;
+                    break;
+            }
+        } else {
+            $testimonies = $testimoniesManager->selectAll();
+        }
 
         $servicesManager = new ServicesManager();
         $services = $servicesManager->selectAll();
+
         return $this->twig->render('Admin/Home/index.html.twig', [
             'services' => $services,
-            'testimonies' => $testimonies
+            'testimonies' => $testimonies,
+            'labelsTestimonies' => $labelsTestimonies,
+            'activeLabel' => $activeLabel
         ]);
     }
+
     public function editService(int $id): string
     {
         $validation = new FormValidation();
@@ -29,7 +55,7 @@ class AdminController extends AbstractController
         $services = $servicesManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $_POST["id"] = $id;
+            $_POST['id'] = $id;
             // clean $_POST data
             $services = array_map('trim', $_POST);
 
