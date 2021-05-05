@@ -15,11 +15,11 @@
 .color-button {
     width: var(--width-half);
     padding: var(--padding);
-    border-radius: var(--border-radius-contact-button);
     border: solid 1px var(--light);
     background: var(--primary-color); 
     font-size: var(--font-xsmall-size);
     color: var(--light);
+    border-radius: var(--border-radius-contact-button);
 }
 
 .color-button:hover {
