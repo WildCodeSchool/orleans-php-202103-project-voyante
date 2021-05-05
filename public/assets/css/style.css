@@ -6,6 +6,7 @@
     --background-color: #f1e6fd;
     --light: #fffbff;
     --card-border-color: #dbc3df;
+    --errors-background: rgba(241, 33, 33, 0.808);
 
     --position-right: 5%;
     --position-left: 10%;
@@ -111,4 +112,13 @@ html {
 
 .fas:hover {
     font-size: var(--font-bigger-size);
+}
+.errors-ul {
+    background-color: var(--errors-background);
+    width: auto;
+    border: var(--light) solid 1px;
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+    font-size: var(--font-xsmall-size);
+    margin-top: calc(var(--margin-top)/3);
 }
