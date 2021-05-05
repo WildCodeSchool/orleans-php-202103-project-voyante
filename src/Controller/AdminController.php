@@ -9,9 +9,9 @@ class AdminController extends AbstractController
 {
     public function index(): string
     {
-        $labelsTesti = ['Tous les messages','Uniquement les messages validés',
+        $labelsTestimonies = ['Tous les messages','Uniquement les messages validés',
         'Uniquement les messages non validés'];
-        $activeLabelTesti = 0;
+        $activeLabel = 1;
         $testimonies = [];
         $testimoniesManager = new TestimoniesManager();
 
@@ -19,15 +19,15 @@ class AdminController extends AbstractController
             switch ($_POST['filterTestimonies']) {
                 case 1:
                     $testimonies = $testimoniesManager->selectAll();
-                    $activeLabelTesti = 1;
+                    $activeLabel = 1;
                     break;
                 case 2:
                     $testimonies = $testimoniesManager->selectedOrderValidate(true);
-                    $activeLabelTesti = 2;
+                    $activeLabel = 2;
                     break;
                 case 3:
                     $testimonies = $testimoniesManager->selectedOrderValidate(false);
-                    $activeLabelTesti = 3;
+                    $activeLabel = 3;
                     break;
             }
         } else {
@@ -40,8 +40,8 @@ class AdminController extends AbstractController
         return $this->twig->render('Admin/Home/index.html.twig', [
             'services' => $services,
             'testimonies' => $testimonies,
-            'labelsTesti' => $labelsTesti,
-            'activeLabelTesti' => $activeLabelTesti
+            'labelsTestimonies' => $labelsTestimonies,
+            'activeLabel' => $activeLabel
         ]);
     }
 

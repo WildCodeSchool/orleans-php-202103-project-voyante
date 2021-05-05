@@ -2,14 +2,15 @@
     <h2 class="mt-5 pb-2">
         Liste des témoignages
     </h2>                      
-    <label for="selectTestimonies">Filtre d'affichage des témoignages</label>
+    
     <form class="m-2" method="POST" action="/Admin/index/#adminTestimonies" >
+        <label class="m-2" for="selectTestimonies">Filtre d'affichage des témoignages</label>
         <select name="filterTestimonies" id="selectTestimonies" class="form-select w-auto" value= "2" aria-label="Filtres d'affichage des témoignages" onChange="submit()" > 
-            {% for labelTesti in labelsTesti %}
-                {% if activeLabelTesti == loop.index %}
-                    <option selected value={{loop.index}}>{{labelTesti}}</option> 
+            {% for labelTestimonies in labelsTestimonies %}
+                {% if activeLabel == loop.index %}
+                    <option selected value={{loop.index}}>{{labelTestimonies}}</option> 
                 {% else %}
-                    <option value={{loop.index}}>{{labelTesti}}</option> 
+                    <option value={{loop.index}}>{{labelTestimonies}}</option> 
                 {% endif %}       
             {% endfor %}
         </select>
