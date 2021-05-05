@@ -16,7 +16,7 @@ class ContactController extends AbstractController
      */
 
 
-    public array $errors = [];
+
     public const MAX_LENGTH_NAME = 255;
     public const MAX_LENGTH_EMAIL = 320;
 
@@ -24,6 +24,8 @@ class ContactController extends AbstractController
     {
         $validation = new FormValidation();
         $subjects = ['tel-session', 'cabinet-session', 'infos', 'other'];
+        $data = [];
+        $errors = $validation->getErrors();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
@@ -49,6 +51,6 @@ class ContactController extends AbstractController
             }
         }
 
-        return $this->twig->render('Visitor/Contact/contact.html.twig', ['errors' => $validation->getErrors()]);
+        return $this->twig->render('Visitor/Contact/contact.html.twig', ['errors' => $errors, 'data' => $data]);
     }
 }

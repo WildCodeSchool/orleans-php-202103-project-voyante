@@ -1,6 +1,6 @@
 <form class="form" method= "POST">
     {% if errors %}
-        <ul>
+        <ul class="errors-ul">
         {% for error in errors %}
             <li class="errors">{{ error }}</li>
         {% endfor %}
@@ -11,11 +11,11 @@
         <input class="name" type="text" name="name" placeholder="Nom de la prestation" value="{{ services.name }}"required>
         <label for="price1hour">Tarif 1h :</label>
         <input class="price1hour" type="number" name="price1hour" placeholder="70" value="{{ services.price1hour }}" required>
-        <label for="price30min">Tarif 30min :</label>
+        <label for="price30min">Tarif 30min (facultatif) :</label>
         <input class="price30min" type="number" name="price30min" placeholder="35" value="{{ services.price30min }}">
     </div>
     <div>
-        <label for="description">Votre message :</label>
+        <label for="description">Votre message (facultatif) :</label>
         <textarea name="description" id="description" rows="4" placeholder="Description du service" required>{{ services.description }}</textarea>
     </div>
     <div class="button-register">

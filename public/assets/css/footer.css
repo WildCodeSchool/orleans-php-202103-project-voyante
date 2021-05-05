@@ -1,3 +1,7 @@
+.row {
+    margin-right: 0;
+}
+
 #footer {
     background-color: var(--background-color);
     height: var(--navbar-height);
@@ -13,6 +17,26 @@
 #footer_right {
     border-left: 2px solid var(--primary-color);
     letter-spacing: var(--light-letter-spacing);
+}
+
+#footer_right a {
+    text-decoration: underline;
+}
+
+#footer_right a:hover {
+    color: var(--secondary-color);
+}
+
+.pointer {
+    position: inherit;
+    color: var(--primary-color);
+    font-size: var(--font-small-size);
+    transform: rotate(var(--pointer-rotation));
+    padding: var(--pointer-padding);
+}
+
+.pointer:hover {
+    font-size: var(--font-small-size);
 }
 
 @media screen and (max-width: 768px) {
