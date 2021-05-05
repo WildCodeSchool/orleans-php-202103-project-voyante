@@ -19,9 +19,6 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-CREATE DATABASE  IF NOT EXISTS projet_voyance; /*!40100 DEFAULT CHARACTER SET latin1 */
-
-USE projet_voyance;
 
 -- Structure de la table `service`
 --
@@ -57,7 +54,7 @@ CREATE TABLE `testimony` (
   `mail` VARCHAR (320) NOT NULL,
   `message` TEXT,
   `validation` BOOLEAN
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Contenu de la table `testimony`
@@ -73,11 +70,4 @@ Pour ma part en tout cas, je suis ravie et toutes ces prédictions et avertissem
 Tout simplement stupéfiante ! Bienveillante, pédagogue, sensible, souriante et pertinente !En 1h, le doute à fait place à l’évidence... 
 Tout simplement : merci d’être sur mon chemin ! À bientôt...", TRUE );
 
---
--- AUTO_INCREMENT pour la table `testimony`
---
-ALTER TABLE `testimony`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
