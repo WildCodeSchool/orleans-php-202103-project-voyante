@@ -98,7 +98,7 @@ body {
     margin-bottom: var(--margin-bottom-services);
 }
 
-#card {
+.service-card {
     width: var(--card-width);
 }
 
@@ -106,13 +106,11 @@ body {
     margin-top: var(--margin-bottom-services);
 }
 
-#button-edit {
-    color: var(--light);
+.btn-success {
     margin-bottom: var(--margin-bottom-admin);
 }
 
-#button-delete {
-    color: var(--light);
+.btn-danger {
     margin-bottom: var(--margin-bottom-admin);
     width: var(--width-Full);
 }

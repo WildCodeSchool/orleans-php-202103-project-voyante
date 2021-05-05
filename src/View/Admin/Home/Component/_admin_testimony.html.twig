@@ -5,7 +5,7 @@
     
     <form class="m-2" method="POST" action="/Admin/index/#adminTestimonies" >
         <label class="m-2" for="selectTestimonies">Filtre d'affichage des témoignages</label>
-        <select name="filterTestimonies" id="selectTestimonies" class="form-select w-auto" value= "2" aria-label="Filtres d'affichage des témoignages" onChange="submit()" > 
+        <select name="filterTestimonies" id="selectTestimonies" class="form-select w-auto" aria-label="Filtres d'affichage des témoignages" onChange="submit()" > 
             {% for labelTestimonies in labelsTestimonies %}
                 {% if activeLabel == loop.index %}
                     <option selected value={{loop.index}}>{{labelTestimonies}}</option> 
