@@ -7,13 +7,9 @@ use App\Model\ServicesManager;
 use App\Service\FormValidation;
 
 class AdminController extends AbstractController
-
-
-
 {
-    public const MAX_LENGTH_NAME = 20; 
+    public const MAX_LENGTH_NAME = 20;
     public const MAX_LENGTH_MESSAGE = 255;
-    
     public function index(): string
     {
         $testimoniesManager = new TestimoniesManager();
@@ -39,12 +35,12 @@ class AdminController extends AbstractController
 
             $validation->sentenceEmpty($services['name'], 'Un nom complet est obligatoire');
             $validation->sentenceEmpty($services['price1hour'], 'Un tarif d\'une heure est obligatoire');
-            $validation->wordMaxSize($services['name'], self::MAX_LENGTH_NAME, 'Le nom de la prestation doit faire moins de '
-            . self::MAX_LENGTH_NAME . ' caractères');
-            $validation->wordMaxSize($services['description'], self::MAX_LENGTH_MESSAGE, 'La description doit faire moins de '
-            . self::MAX_LENGTH_MESSAGE . ' caractères');
+            $validation->wordMaxSize($services['name'], self::MAX_LENGTH_NAME, 'Le nom de la prestation doit
+             faire moins de ' . self::MAX_LENGTH_NAME . ' caractères');
+            $validation->wordMaxSize($services['description'], self::MAX_LENGTH_MESSAGE, 'La description doit
+             faire moins de ' . self::MAX_LENGTH_MESSAGE . ' caractères');
 
-            if (empty($validation->getErrors())){
+            if (empty($validation->getErrors())) {
                 $servicesManager->update($services);
                 header('Location: /Admin/index');
             }
@@ -69,13 +65,12 @@ class AdminController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $service = array_map('trim', $_POST);
-            
             $validation->sentenceEmpty($service['name'], 'Un nom complet est obligatoire');
             $validation->sentenceEmpty($service['price1hour'], 'Un tarif d\'une heure est obligatoire');
-            $validation->wordMaxSize($service['name'], self::MAX_LENGTH_NAME, 'Le nom de la prestation doit faire moins de '
-            . self::MAX_LENGTH_NAME . ' caractères');
-            $validation->wordMaxSize($service['description'], self::MAX_LENGTH_MESSAGE, 'La description doit faire moins de '
-            . self::MAX_LENGTH_MESSAGE . ' caractères');
+            $validation->wordMaxSize($service['name'], self::MAX_LENGTH_NAME, 'Le nom de la prestation doit 
+            faire moins de ' . self::MAX_LENGTH_NAME . ' caractères');
+            $validation->wordMaxSize($service['description'], self::MAX_LENGTH_MESSAGE, 'La description doit 
+            faire moins de ' . self::MAX_LENGTH_MESSAGE . ' caractères');
 
             if (empty($validation->getErrors())) {
                 $servicesManager = new ServicesManager();
