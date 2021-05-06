@@ -115,6 +115,7 @@ html {
 .fas:hover {
     font-size: var(--font-bigger-size);
 }
+
 .errors-ul {
     background-color: var(--errors-background);
     width: auto;
@@ -124,3 +125,4 @@ html {
     font-size: var(--font-xsmall-size);
     margin-top: calc(var(--margin-top)/3);
 }
+

@@ -8,11 +8,11 @@
     {% endif %}
     <div class="info">
         <label for="name">Nom de la prestation :</label>
-        <input class="name" type="text" name="name" placeholder="Nom de la prestation" value="{{ services.name }}"required>
+        <input id="name" type="text" name="name" placeholder="Nom de la prestation" value="{{ services.name }}" required>
         <label for="price1hour">Tarif 1h :</label>
-        <input class="price1hour" type="number" name="price1hour" placeholder="70" value="{{ services.price1hour }}" required>
+        <input id="price1hour" type="number" name="price1hour" placeholder="70" value="{{ services.price1hour }}" required>
         <label for="price30min">Tarif 30min (facultatif) :</label>
-        <input class="price30min" type="number" name="price30min" placeholder="35" value="{{ services.price30min }}">
+        <input id="price30min" type="number" name="price30min" placeholder="35" value="{{ services.price30min }}">
     </div>
     <div>
         <label for="description">Votre message (facultatif) :</label>
