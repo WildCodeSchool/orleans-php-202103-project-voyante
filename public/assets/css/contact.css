@@ -84,6 +84,10 @@ label {
     padding: var(--padding);
     width: var(--phone-form-width);
 }
+
+#arrow {
+    display: none;
+}
     
 @media (min-width: 568px) {
     form {
