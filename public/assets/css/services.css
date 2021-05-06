@@ -107,7 +107,7 @@ body {
     margin-bottom: var(--margin-bottom-admin);
 }
 
-#button-delete {
+.button-delete {
     color: var(--light);
     margin-bottom: var(--margin-bottom-admin);
     width: var(--width-Full);

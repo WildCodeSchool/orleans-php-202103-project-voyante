@@ -19,7 +19,7 @@
                     </ul>
                         <a class="btn btn-sm btn-secondary btn-success button-edit" href="/Admin/editService/{{ service.id }}">Modifier</a>
                         <form method="POST" onSubmit="return confirm('Voulez vous supprimer ?')" action="/Admin/deleteService/{{service.id}}">
-                            <button class="btn btn-sm btn-danger" id="button-delete">Supprimer</button>
+                            <button class="btn btn-sm btn-danger button-delete">Supprimer</button>
                         </form>
                 </div>
             {% endfor %}
