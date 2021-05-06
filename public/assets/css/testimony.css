@@ -7,8 +7,8 @@ h2.carousel-title {
 .carousel-item p {
     font-family: var(--font-family);
     font-size: var(--font-small-size);
-    height: calc(1/2 * var(--section-height));
-    padding-top: 20px;
+    height: var(--height);
+    padding-top: calc(4 * var(--padding));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +24,7 @@ h2.carousel-title {
 
 .testimony {
     height: var(--section-height);
-    padding-top: 50px;
+    padding-top: calc(6 * var(--padding));
 }
 
 .testimonyCarousel {
@@ -61,15 +61,13 @@ h2.carousel-title {
 }
 
 @media screen and (max-width: 1000px){
-    .carousel-caption p {
-        font-size: var(--font-xsmall-size);
+    .carousel-item p {
+        font-size: var(--font-mid-small-size);
     }
 }
 
 @media screen and (max-width: 750px){
     .carousel-item p {
-        font-size: var(--font-xxsmall-size);
-    } 
+        font-size: var(--font-xsmall-size);
+    }
 }
-
-
