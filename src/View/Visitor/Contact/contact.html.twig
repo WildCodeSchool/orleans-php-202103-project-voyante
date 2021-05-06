@@ -22,18 +22,18 @@
         {% endif %}
         <div class="info">
             <label for="name">Nom complet :</label>
-            <input class="name" type="text" name="name" placeholder="Nom complet" value="{{ data.name }}" required>
+            <input id="name" type="text" name="name" placeholder="Nom complet" value="{{ data.name }}" required>
             <label for="email">Adresse mail :</label>
-            <input class="email" type="text" name="email" placeholder="exemple@exemple.com" value="{{ data.email }}" required>
+            <input id="email" type="text" name="email" placeholder="exemple@exemple.com" value="{{ data.email }}" required>
             <label for="tel">Numéro de téléphone :</label>
-            <input class="tel" type="tel" name="tel" size="14" placeholder="00 00 00 00 00" value="{{ data.tel }}" required>
+            <input id="tel" type="tel" name="tel" size="14" placeholder="00 00 00 00 00" value="{{ data.tel }}" required>
             <label for="subject">Sujet : </label>
-            <select class="subject" name="subject" id="subject" value="{{ data.subject }}" >
+            <select class="subject" name="subject" id="subject">
                 <option value="">--Veuillez choisir votre sujet--</option>
                 <option value="tel-session">Séance téléphonique</option>
                 <option value="cabinet-session">Séance au cabinet</option>
                 <option value="infos">Demande d'informations</option>
-                <option value="other">Autres</option>
+                <option selected value="other">Autres</option>
             </select>
         </div>
         <div>
