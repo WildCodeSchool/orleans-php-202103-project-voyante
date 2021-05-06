@@ -79,6 +79,10 @@ label {
     color: var(--background-color);
     list-style: none;
 }
+
+#arrow {
+    display: none;
+}
     
 @media (min-width: 568px) {
     form {
