@@ -106,7 +106,7 @@ body {
     margin-top: var(--margin-bottom-services);
 }
 
-#button-edit {
+.button-edit {
     color: var(--light);
     margin-bottom: var(--margin-bottom-admin);
 }
