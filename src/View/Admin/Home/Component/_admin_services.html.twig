@@ -16,7 +16,7 @@
                         {% if service.price30min == true %}
                             <li class="list-group-item">Tarif 30 minutes : {{ service.price30min }} €</li>
                         {% endif %}
-                        <a class="btn btn-sm btn-secondary btn-success" id="button-edit" href="/Admin/editService/{{ service.id }}">Modifier</a>
+                        <a class="btn btn-sm btn-secondary btn-success" href="/Admin/editService/{{ service.id }}">Modifier</a>
                         <form method="POST" onSubmit="return confirm('Voulez vous supprimer ?')" action="/Admin/deleteService/{{service.id}}">
                             <button class="btn btn-sm btn-danger" id="button-delete">Supprimer</button>
                         </form>
