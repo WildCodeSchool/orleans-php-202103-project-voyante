@@ -21,10 +21,12 @@ class ContactController extends AbstractController
 
     public function index(): string
     {
-        $validation = new FormValidation();
-        $subjects = ['tel-session', 'cabinet-session', 'infos', 'other'];
+        $labelSubjects = ['--Veuillez choisir votre sujet--', 'Séance téléphonique', 'Séance au cabinet', 'Demande d\'informations', 'Autres'];
+        $activeLabel = 1;
         $data = [];
-
+        $errors = [];
+        $validation = new FormValidation();
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
             $validation->sentenceEmpty($data['name'], 'Un nom complet est obligatoire');
@@ -36,22 +38,28 @@ class ContactController extends AbstractController
                 . self::MAX_LENGTH_NAME . ' caractères');
             $validation->wordMaxSize($data['email'], self::MAX_LENGTH_EMAIL, 'L\'adresse mail doit faire moins de '
                 . self::MAX_LENGTH_EMAIL . ' caractères');
-
-            $validation->wordIsInArray($data['subject'], $subjects, 'Le sujet saisi n\'est pas valable');
             $validation->emailFilterValidate($data['email'], 'L\'email saisi n\'est pas valable');
-
-            if (empty($validation->getErrors())) {
+            
+            $errors = $validation->getErrors(); 
+            if ($data['subject'] === '1'){
+                $errors[] = 'Le sujet saisi n\'est pas valable';
+            } else {
+                $activeLabel = $data['subject'];
+            }
+            if (empty($errors)) {
                     $message = 'Vous avez reçu un nouveau message de la part de ' . $data['name'] .
                     ', vous pouvez le joindre à ce numéro : ' . $data['tel'] . ' ou part mail : ' . $data['email'] .
                      'Son message est : ' . $data['message'];
-                    mail("projetvoyance@gmail.com", $data['subject'], $message);
+                    mail("projetvoyance@gmail.com", $labelSubjects[intval($data['subject'])-1], $message);
                 return $this->twig->render('Visitor/Contact/success.html.twig');
             }
         }
 
         return $this->twig->render('Visitor/Contact/contact.html.twig', [
-            'errors' => $validation->getErrors(),
-            'data' => $data
+            'errors' => $errors,
+            'data' => $data,
+            'labelSubjects' => $labelSubjects,
+            'activeLabel' => $activeLabel
         ]);
     }
 }
