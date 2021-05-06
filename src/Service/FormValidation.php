@@ -51,7 +51,7 @@ class FormValidation
         }
     }
 
-    public function phoneNumberValidate(string $phone, string $messageError) : void 
+    public function phoneNumberValidate(string $phone, string $messageError): void
     {
         if (!filter_var($phone, FILTER_SANITIZE_NUMBER_INT)) {
             $this->addError($messageError);

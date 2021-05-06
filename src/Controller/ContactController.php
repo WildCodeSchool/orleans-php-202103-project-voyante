@@ -38,8 +38,8 @@ class ContactController extends AbstractController
                 . self::MAX_LENGTH_NAME . ' caractères');
             $validation->wordMinSize($data['tel'], self::MIN_LENGTH_NUMBER, 'Le numéro de téléphone doit faire plus de '
             . self::MIN_LENGTH_NUMBER . ' caractères');
-            $validation->wordMaxSize($data['tel'], self::MAX_LENGTH_NUMBER, 'Le numéro de téléphone doit faire moins de '
-            . self::MAX_LENGTH_NUMBER . ' caractères');
+            $validation->wordMaxSize($data['tel'], self::MAX_LENGTH_NUMBER, 'Le numéro de téléphone doit faire moins
+             de ' . self::MAX_LENGTH_NUMBER . ' caractères');
             $validation->wordMaxSize($data['email'], self::MAX_LENGTH_EMAIL, 'L\'adresse mail doit faire moins de '
                 . self::MAX_LENGTH_EMAIL . ' caractères');
 
