@@ -26,7 +26,7 @@ body {
   
 .card {
     border: solid var(--card-border-color) 1px;
-    width: var(--width-Small);
+    width: var(--card-width);
     transition: var(--transition-services);
     background: var(--light);
     margin-bottom: var(--margin-bottom-services);
@@ -96,10 +96,6 @@ body {
     font-size: var(--font-xsmall-size);
     font-family: var(--font-family);
     margin-bottom: var(--margin-bottom-services);
-}
-
-#card {
-    width: var(--card-width);
 }
 
 #container-admin {
