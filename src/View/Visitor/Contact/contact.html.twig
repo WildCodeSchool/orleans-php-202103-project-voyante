@@ -29,11 +29,13 @@
             <input id="tel" type="tel" name="tel" size="14" placeholder="00 00 00 00 00" value="{{ data.tel }}" required>
             <label for="subject">Sujet : </label>
             <select class="subject" name="subject" id="subject">
-                <option value="">--Veuillez choisir votre sujet--</option>
-                <option value="tel-session">Séance téléphonique</option>
-                <option value="cabinet-session">Séance au cabinet</option>
-                <option value="infos">Demande d'informations</option>
-                <option value="other">Autres</option>
+                {% for labelSubject in labelSubjects %}
+                    {% if activeLabel == loop.index %}
+                        <option selected value={{ loop.index }}>{{ labelSubject }}</option>
+                    {% else %}
+                        <option value={{ loop.index }}>{{ labelSubject }}</option> 
+                    {% endif %}       
+                {% endfor %}
             </select>
         </div>
         <div>
