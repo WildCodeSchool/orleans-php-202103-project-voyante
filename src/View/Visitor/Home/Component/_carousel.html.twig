@@ -5,9 +5,9 @@
             <div class="carousel-inner" role="listbox">
                 {% for testimony in testimonies %}
                     {% if loop.index == 1 %}
-                        <div class="carousel-item active text-left p-2">
+                        <div class="carousel-item active text-left p-2" data-bs-interval="10000">
                     {% else %}
-                        <div class="carousel-item text-left p-2">
+                        <div class="carousel-item text-left p-2" data-bs-interval="10000">
                     {% endif %}
                             <p>{{ testimony.message }}</p>
                             <h3 class="testifying">{{ testimony.name }}</h3>            
