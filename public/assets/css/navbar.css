@@ -6,6 +6,10 @@
     height: var(--navbar-height);
 }
 
+.navbar-brand {
+    margin-right: 0;
+}
+
 .navbar-brand-subtitle {
     font-size: var(--font-xsmall-size);
 }
