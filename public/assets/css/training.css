@@ -60,3 +60,15 @@ h3 {
     left: var(--part-before-after);
     bottom: var(--part-before-after);
 }
+
+.pointer {
+    position: inherit;
+    color: var(--primary-color);
+    font-size: var(--font-small-size);
+    transform: rotate(var(--pointer-rotation));
+    padding: var(--pointer-padding);
+}
+
+.pointer:hover {
+    font-size: var(--font-small-size);
+}
