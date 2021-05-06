@@ -21,12 +21,13 @@ class ContactController extends AbstractController
 
     public function index(): string
     {
-        $labelSubjects = ['--Veuillez choisir votre sujet--', 'Séance téléphonique', 'Séance au cabinet', 'Demande d\'informations', 'Autres'];
+        $labelSubjects = ['--Veuillez choisir votre sujet--', 'Séance téléphonique', 'Séance au cabinet',
+        'Demande d\'informations', 'Autres'];
         $activeLabel = 1;
         $data = [];
         $errors = [];
         $validation = new FormValidation();
-        
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
             $validation->sentenceEmpty($data['name'], 'Un nom complet est obligatoire');
@@ -39,9 +40,8 @@ class ContactController extends AbstractController
             $validation->wordMaxSize($data['email'], self::MAX_LENGTH_EMAIL, 'L\'adresse mail doit faire moins de '
                 . self::MAX_LENGTH_EMAIL . ' caractères');
             $validation->emailFilterValidate($data['email'], 'L\'email saisi n\'est pas valable');
-            
-            $errors = $validation->getErrors(); 
-            if ($data['subject'] === '1'){
+            $errors = $validation->getErrors();
+            if ($data['subject'] === '1') {
                 $errors[] = 'Le sujet saisi n\'est pas valable';
             } else {
                 $activeLabel = $data['subject'];
@@ -49,8 +49,8 @@ class ContactController extends AbstractController
             if (empty($errors)) {
                     $message = 'Vous avez reçu un nouveau message de la part de ' . $data['name'] .
                     ', vous pouvez le joindre à ce numéro : ' . $data['tel'] . ' ou part mail : ' . $data['email'] .
-                     'Son message est : ' . $data['message'];
-                    mail("projetvoyance@gmail.com", $labelSubjects[intval($data['subject'])-1], $message);
+                    'Son message est : ' . $data['message'];
+                    mail("projetvoyance@gmail.com", $labelSubjects[intval($data['subject']) - 1], $message);
                 return $this->twig->render('Visitor/Contact/success.html.twig');
             }
         }
