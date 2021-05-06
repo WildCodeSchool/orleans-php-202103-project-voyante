@@ -16,7 +16,8 @@ class ContactController extends AbstractController
      */
 
 
-
+    public const MIN_LENGTH_NUMBER = 8;
+    public const MAX_LENGTH_NUMBER = 14;
     public const MAX_LENGTH_NAME = 255;
     public const MAX_LENGTH_EMAIL = 320;
 
@@ -25,7 +26,6 @@ class ContactController extends AbstractController
         $validation = new FormValidation();
         $subjects = ['tel-session', 'cabinet-session', 'infos', 'other'];
         $data = [];
-        $errors = $validation->getErrors();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
@@ -36,11 +36,16 @@ class ContactController extends AbstractController
 
             $validation->wordMaxSize($data['name'], self::MAX_LENGTH_NAME, 'Le nom complet doit faire moins de '
                 . self::MAX_LENGTH_NAME . ' caractères');
+            $validation->wordMinSize($data['tel'], self::MIN_LENGTH_NUMBER, 'Le numéro de téléphone doit faire plus de '
+            . self::MIN_LENGTH_NUMBER . ' caractères');
+            $validation->wordMaxSize($data['tel'], self::MAX_LENGTH_NUMBER, 'Le numéro de téléphone doit faire moins de '
+            . self::MAX_LENGTH_NUMBER . ' caractères');
             $validation->wordMaxSize($data['email'], self::MAX_LENGTH_EMAIL, 'L\'adresse mail doit faire moins de '
                 . self::MAX_LENGTH_EMAIL . ' caractères');
 
             $validation->wordIsInArray($data['subject'], $subjects, 'Le sujet saisi n\'est pas valable');
             $validation->emailFilterValidate($data['email'], 'L\'email saisi n\'est pas valable');
+            $validation->phoneNumberValidate($data['tel'], 'Le numéro de téléphone saisie n\'est pas valable');
 
             if (empty($validation->getErrors())) {
                     $message = 'Vous avez reçu un nouveau message de la part de ' . $data['name'] .
@@ -51,6 +56,9 @@ class ContactController extends AbstractController
             }
         }
 
-        return $this->twig->render('Visitor/Contact/contact.html.twig', ['errors' => $errors, 'data' => $data]);
+        return $this->twig->render('Visitor/Contact/contact.html.twig', [
+            'errors' => $validation->getErrors(),
+            'data' => $data
+        ]);
     }
 }
