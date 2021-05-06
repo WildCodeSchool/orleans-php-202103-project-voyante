@@ -2,7 +2,7 @@
     <div class="container" id="container-admin">
         <div class="row">
             {% for service in services %}
-                <div class="card" id="card">
+                <div class="card">
                     <div class="card-header">
                         <h3>{{ service.name }}</h3>
                     </div>
@@ -16,11 +16,11 @@
                         {% if service.price30min == true %}
                             <li class="list-group-item">Tarif 30 minutes : {{ service.price30min }} €</li>
                         {% endif %}
-                        <a class="btn btn-sm btn-secondary btn-success" id="button-edit" href="/Admin/editService/{{ service.id }}">Modifier</a>
-                        <form method="POST" onSubmit="return confirm('Voulez vous supprimer ?')" action="/Admin/deleteService/{{service.id}}">
-                            <button class="btn btn-sm btn-danger" id="button-delete">Supprimer</button>
-                        </form>
                     </ul>
+                        <a class="btn btn-sm btn-secondary btn-success button-edit" href="/Admin/editService/{{ service.id }}">Modifier</a>
+                        <form method="POST" onSubmit="return confirm('Voulez vous supprimer ?')" action="/Admin/deleteService/{{service.id}}">
+                            <button class="btn btn-sm btn-danger button-delete">Supprimer</button>
+                        </form>
                 </div>
             {% endfor %}
         </div>
